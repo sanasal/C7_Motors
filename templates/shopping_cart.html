@@ -338,11 +338,11 @@
                             if (paymentType === "full") {
                                 const totalPriceElement = document.getElementById("total-price-display");
                                 if (totalPriceElement) totalPriceElement.textContent = response.total_price + " AED";
-                                alert("Full payment successful!");
+                                alert("please wait until return to cheackout page");
                             } else if (paymentType === "deposit") {
                                 const depositPriceElement = document.getElementById("deposit-price-display");
                                 if (depositPriceElement) depositPriceElement.textContent = response.paid_amount + " AED";
-                                alert("Deposit payment successful!");
+                                alert("please wait until return to cheackout page");
                             }
                         } else {
                             console.error("Error:", response.errors);
@@ -403,10 +403,6 @@
                     // Fetch total price
                     const totalPrice = parseFloat("{{ total_price }}");
     
-                    // Confirm user action
-                    const confirmFullPayment = confirm("Are you sure you want to proceed with the full payment?");
-                    if (!confirmFullPayment) return;
-    
                     // Add full payment data
                     addData("full", totalPrice, "/cash_add_data/");
     
@@ -425,10 +421,6 @@
     
                     // Fetch deposit price
                     const depositPrice = parseFloat("{{ deposit_price }}");
-    
-                    // Confirm user action
-                    const confirmDepositPayment = confirm("Are you sure you want to proceed with the deposit payment?");
-                    if (!confirmDepositPayment) return;
     
                     // Add deposit data
                     addData("deposit", depositPrice, "/deposit_add_data/");

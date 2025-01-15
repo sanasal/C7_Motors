@@ -229,17 +229,21 @@ def car_details(request, car_name, car_model, car_id):
         # Handle invalid `car_id`
         return HttpResponseBadRequest("Invalid ID")
 
-    description_lines = car.description.splitlines() 
+    # Fetch all images related to the car
+    car_images = car.images.all()
+
+    description_lines = car.description.splitlines()
 
     context = {
         'stripe_remaining': stripe_remaining,
         'STRIPE_PUBLISHABLE_KEY': settings.STRIPE_PUBLIC_KEY,
         'description_lines': description_lines,
         'car': car,
+        'car_images': car_images,  # Pass images to the template
     }
 
-    # Render the car details page with the car object
-    return render(request, 'car_details.html',context)
+    return render(request, 'car_details.html', context)
+
 
 
 
@@ -580,7 +584,25 @@ def installments_payment_success(request):
        return JsonResponse({'error': str(e)}, status=500)
 
     context = {
-       'last_customer_data': last_customer_data
+       'last_customer_data': last_customer_data,
+       "last_customer_data": {
+            "name": last_customer_data.name,
+            "email": last_customer_data.email,
+            "mobile_phone": last_customer_data.mobile_phone,
+            "cars": last_customer_data.cars,
+            "total_amount": last_customer_data.total_amount,
+            "paid_amount": last_customer_data.paid_amount,
+            "remaining_amount": last_customer_data.remaining_amount,
+            "bank": last_customer_data.bank,
+            "passport": request.build_absolute_uri(last_customer_data.passport.url) if last_customer_data.passport else '',
+            "driver_license": request.build_absolute_uri(last_customer_data.driver_license.url) if last_customer_data.driver_license else '',
+            "personal_identification_card": request.build_absolute_uri(last_customer_data.personal_identification_card.url) if last_customer_data.personal_identification_card else '',
+            "salary_certificate": request.build_absolute_uri(last_customer_data.salary_certificate.url) if last_customer_data.salary_certificate else '',
+            "bank_statement": request.build_absolute_uri(last_customer_data.bank_statement.url) if last_customer_data.bank_statement else '',
+            "pick_up_date": last_customer_data.pick_up_date,
+            "pick_up_time": last_customer_data.pick_up_time,
+            "pick_up_location": last_customer_data.pick_up_location,
+        }
     }
 
     return render(request, 'installments_success.html', context)

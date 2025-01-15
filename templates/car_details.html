@@ -7,7 +7,7 @@
 
     <head>
         <meta charset="utf-8">
-        <title>C7 Rental cars</title>
+        <title>C7 Motors</title>
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
         <meta content="" name="keywords">
         <meta content="" name="description">
@@ -55,7 +55,18 @@
                 padding-top: 0%;
                 padding-bottom: 7em;
             }
-              
+
+            .work .img {
+                width: 100%;
+                height: 100%;
+                position: relative;
+                z-index: 0;
+                border-radius: 10px;
+                overflow: hidden;
+                -webkit-box-shadow: 0px 20px 35px -30px rgba(0, 0, 0, 0.26);
+                -moz-box-shadow: 0px 20px 35px -30px rgba(0, 0, 0, 0.26);
+                box-shadow: 0px 20px 35px -30px rgba(0, 0, 0, 0.26);
+            }   
         </style>
     </head>
 
@@ -149,27 +160,19 @@
                     <div class="col-lg-7 col-md-12 order-1 order-lg-1">
                         <div class="slider-hero">
                             <div class="featured-carousel owl-carousel">
+                                {% for image in car_images %}
                                 <div class="item">
                                     <div class="work">
-                                        <img src="{% static 'img/car1.jpg'%}" class="img d-flex align-items-center justify-content-center">
+                                        <img src="{{ image.image.url }}" class="img d-flex align-items-center justify-content-center" height="100%" width="100%">
                                     </div>
                                 </div>
-                                <div class="item">
-                                    <div class="work">
-                                        <img src="{% static 'img/car12.jpg'%}" class="img d-flex align-items-center justify-content-center">
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="work">
-                                        <img src="{% static 'img/car13.jpg'%}" class="img d-flex align-items-center justify-content-center">
-                                    </div>
-                                </div>
+                                {% endfor %}
                             </div>
                             <div class="my-5 text-center">
                                 <ul class="thumbnail">
-                                    <li class="active img"><a href="#"><img src="{% static 'img/car1.jpg'%}" alt="Image" class="img-fluid"></a></li>
-                                    <li><a href="#"><img src="{% static 'img/car12.jpg'%}" alt="Image" class="img-fluid"></a></li>
-                                    <li><a href="#"><img src="{% static 'img/car13.jpg'%}" alt="Image" class="img-fluid"></a></li>
+                                    {% for image in car_images %}
+                                    <li><a href="#"><img src="{{ image.image.url }}" alt="Image" class="img-fluid"></a></li>
+                                    {% endfor %}
                                 </ul>
                             </div>
                         </div>
