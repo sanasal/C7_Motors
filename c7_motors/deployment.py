@@ -61,11 +61,11 @@ parameters = {pair.split("=")[0]: pair.split("=")[1] for pair in connection_stri
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': os.environ.get('MYSQL_NAME') ,
-        'USER' : os.environ.get('MYSQL_USER') ,
-        'PASSWORD' : os.environ.get('MYSQL_PASSWORD') ,
-        'HOST' : os.environ.get('MYSQL_HOST') , 
-        'PORT' :os.environ.get('MYSQL_PORT') ,
+        'NAME': os.environ.get('AZURE_MYSQL_NAME') ,
+        'USER' : os.environ.get('AZURE_MYSQL_USER') ,
+        'PASSWORD' : os.environ.get('AZURE_MYSQL_PASSWORD') ,
+        'HOST' : os.environ.get('AZURE_MYSQL_HOST') , 
+        'PORT' :os.environ.get('AZURE_MYSQL_PORT') ,
     }
 }
 

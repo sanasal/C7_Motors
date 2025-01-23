@@ -28,5 +28,4 @@ whitenoise==6.8.2
 gunicorn==23.0.0
 PyYAML==6.0.2
 requests==2.32.3
-pillow==10.3.0
 pytz==2024.1
