@@ -66,7 +66,7 @@ DATABASES = {
         'PASSWORD' : os.environ.get('AZURE_MYSQL_PASSWORD') ,
         'HOST' : os.environ.get('AZURE_MYSQL_HOST') , 
         'PORT' :os.environ.get('AZURE_MYSQL_PORT') ,
-        'ssl_disabled': False
+        'ssl_disabled': True
     }
 }
 
