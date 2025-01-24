@@ -61,11 +61,11 @@ parameters = {pair.split("=")[0]: pair.split("=")[1] for pair in connection_stri
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME':  'c7-database',
-        'USER' : 'grjyhkvgvn' ,
-        'PASSWORD' : 'SAna2679627' ,
-        'HOST' : 'c7-server.mysql.database.azure.com' , 
-        'PORT' :'3306' ,
+        'NAME': os.environ.get('AZURE_MYSQL_NAME') ,
+        'USER' : os.environ.get('AZURE_MYSQL_USER') ,
+        'PASSWORD' : os.environ.get('AZURE_MYSQL_PASSWORD') ,
+        'HOST' : os.environ.get('AZURE_MYSQL_HOST') , 
+        'PORT' :os.environ.get('AZURE_MYSQL_PORT') ,
         'ssl_disabled': True
     }
 }
@@ -74,15 +74,3 @@ DATABASES = {
 #Payment By STRIPE
 STRIPE_PUBLIC_KEY = os.environ.get('STRIPE_PUBLIC_KEY')
 STRIPE_SECRET_KEY =os.environ.get('STRIPE_SECRET_KEY')
-
-
-
-'''
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': os.environ.get('AZURE_MYSQL_NAME') ,
-        'USER' : os.environ.get('AZURE_MYSQL_USER') ,
-        'PASSWORD' : os.environ.get('AZURE_MYSQL_PASSWORD') ,
-        'HOST' : os.environ.get('AZURE_MYSQL_HOST') , 
-        'PORT' :os.environ.get('AZURE_MYSQL_PORT') ,
-        'ssl_disabled': True
-'''
