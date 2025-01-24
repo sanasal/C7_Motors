@@ -5,8 +5,8 @@ import stripe
 
 #The trusted urls and domains from which requests can come into our applictation 
 SECRET_KEY = os.environ.get('SECRET')
-ALLOWED_HOSTS = ['c7motors-cracgggsbcchenap.uaenorth-01.azurewebsites.net']
-CSRF_TRUSTED_ORIGINS = ['https://c7motors-cracgggsbcchenap.uaenorth-01.azurewebsites.net']
+ALLOWED_HOSTS = [os.environ.get('HOSTNAME')]
+CSRF_TRUSTED_ORIGINS = ['https://' + os.environ.get('HOSTNAME')]
 
 DEBUG = False
 
@@ -66,7 +66,6 @@ DATABASES = {
         'PASSWORD' : os.environ.get('AZURE_MYSQL_PASSWORD') ,
         'HOST' : os.environ.get('AZURE_MYSQL_HOST') , 
         'PORT' :os.environ.get('AZURE_MYSQL_PORT') ,
-        'ssl_disabled': True
     }
 }
 
