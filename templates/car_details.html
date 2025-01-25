@@ -49,7 +49,7 @@
             } 
             
             /* descrption styling */
-            .desc-section {
+            .desc-section { 
                 padding-left: 0%;
                 padding-right: 0%;
                 padding-top: 0%;
@@ -67,6 +67,40 @@
                 -moz-box-shadow: 0px 20px 35px -30px rgba(0, 0, 0, 0.26);
                 box-shadow: 0px 20px 35px -30px rgba(0, 0, 0, 0.26);
             }   
+
+            .carousel-prev,
+            .carousel-next {
+                background: rgba(0, 0, 0, 0.6);
+                color: white;
+                border: none;
+                border-radius: 50%;
+                width: 30px;
+                height: 30px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 26px;
+                cursor: pointer;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                z-index: 10;
+                pointer-events: auto;
+                transition: background 0.3s;
+            }
+
+            .carousel-prev:hover,
+            .carousel-next:hover {
+                background: rgba(0, 0, 0, 0.9);
+            }
+
+            .carousel-prev {
+                left: 20px;
+            }
+
+            .carousel-next {
+                right: 20px;
+            }
         </style>
     </head>
 
@@ -158,25 +192,22 @@
                 <div class="row">
                     <!-- Images Slider -->
                     <div class="col-lg-7 col-md-12 order-1 order-lg-1">
-                        <div class="slider-hero">
+                        <div class="slider-hero position-relative">
                             <div class="featured-carousel owl-carousel">
                                 {% for image in car_images %}
                                 <div class="item">
                                     <div class="work">
-                                        <img src="{{ image.image.url }}" class="img d-flex align-items-center justify-content-center" height="100%" width="100%">
+                                        <img src="{{ image.image.url }}" class="img d-flex align-items-center justify-content-center">
                                     </div>
                                 </div>
                                 {% endfor %}
                             </div>
-                            <div class="my-5 text-center">
-                                <ul class="thumbnail">
-                                    {% for image in car_images %}
-                                    <li><a href="#"><img src="{{ image.image.url }}" alt="Image" class="img-fluid"></a></li>
-                                    {% endfor %}
-                                </ul>
-                            </div>
+                            <!-- Navigation Arrows -->
+                            <button class="carousel-prev">&lt;</button>
+                            <button class="carousel-next">&gt;</button>
                         </div>
                     </div>
+                    
         
                     <!-- Card Section -->
                     <div class="col-lg-5 col-md-12 order-2 order-lg-2 d-flex justify-content-center align-items-center">
@@ -344,6 +375,35 @@
         }
         goToManage();
         }
+
+        (function ($) {
+            "use strict";
+        
+            var owl = $('.featured-carousel');
+        
+            // Initialize Owl Carousel
+            owl.owlCarousel({
+                animateOut: 'fadeOut',
+                center: false,
+                items: 1,
+                loop: true,
+                stagePadding: 0,
+                margin: 0,
+                smartSpeed: 1500,
+                autoplay: false,
+                dots: false,
+                nav: false
+            });
+        
+            // Add event listeners to the custom navigation buttons
+            $('.carousel-prev').click(function () {
+                owl.trigger('prev.owl.carousel');
+            });
+        
+            $('.carousel-next').click(function () {
+                owl.trigger('next.owl.carousel');
+            });
+        })(jQuery);
     </script>
     
     <!-- Checkout Stripe -->
