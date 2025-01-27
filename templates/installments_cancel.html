@@ -14,7 +14,7 @@
     <!-- Icon Font Stylesheet -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
-    <link rel="icon" type="image/png" href="{% static 'img/c7.png'%}">
+    <link rel="icon" type="image/png" href="{% static 'img/c7_logo.png'%}">
 
     <!-- Libraries Stylesheet -->
     <link href="{% static 'lib/animate/animate.min.css'%}" rel="stylesheet">
@@ -65,64 +65,66 @@
     <!--Payment Cancel -->
             <!-- Spinner Start -->
             <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-                <div class="spinner-border" style="width: 3rem; height: 3rem;color:rgb(255, 215, 0)" role="status">
+                <div class="spinner-border" style="width: 3rem; height: 3rem;color:#e30a23" role="status">
                     <span class="sr-only">Loading...</span>
                 </div>
             </div>
             <!-- Spinner End -->
     
-            <!-- Topbar Start -->
-            <div class="container-fluid topbar bg-secondary d-none d-xl-block w-100">
-                <div class="container">
-                    <div class="row gx-0 align-items-center" style="height: 45px;">
-                        <div class="col-lg-6 text-center text-lg-start mb-lg-0">
-                            <div class="d-flex flex-wrap">
-                                <a class="text-muted me-4"><i class="fas fa-phone-alt me-2" style="color: rgb(255, 215, 0);"></i>+971562341000</a>
-                                <a class="text-muted me-0"><i class="fas fa-envelope me-2" style="color: rgb(255, 215, 0);"></i>Csev7motors@gmail.com</a>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 text-center text-lg-end">
-                            <div class="d-flex align-items-center justify-content-end">
-                                <a href="https://www.tiktok.com/@_c7motors" class="btn btn-light btn-sm-square rounded-circle me-3"><i class="fab fa-tiktok"></i></a>
-                                <a href="https://www.instagram.com/c_seven_motors/profilecard/" class="btn btn-light btn-sm-square rounded-circle me-3"><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
+    <!-- Topbar Start -->
+    <div class="container-fluid topbar d-none d-xl-block w-100" style="background:#ffffff;">
+        <div class="container">
+            <div class="row gx-0 align-items-center" style="height: 45px;">
+                <div class="col-lg-6 text-center text-lg-start mb-lg-0">
+                    <div class="d-flex flex-wrap">
+                        <a class="text-muted me-4"><i class="fas fa-phone-alt me-2" style="color: #e30a23;"></i>+971562341000</a>
+                        <a class="text-muted me-0"><i class="fas fa-envelope me-2" style="color: #e30a23;"></i>Csev7motors@gmail.com</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-center text-lg-end">
+                    <div class="d-flex align-items-center justify-content-end">
+                        <a href="https://www.tiktok.com/@_c7motors" class="btn btn-light btn-sm-square rounded-circle me-3"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://www.instagram.com/c_seven_motors/profilecard/" class="btn btn-light btn-sm-square rounded-circle me-3"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
             </div>
-            <!-- Topbar End -->
-            <!-- Navbar & Hero Start -->
-            <div class="container-fluid shadow nav-bar sticky-top px-0 px-lg-4 py-2 py-lg-0">
-                <div class="container">
-                    <nav class="navbar navbar-expand-lg navbar-light">
-                        <a href="" class="navbar-brand p-0">
-                            <h1 class="display-6" style="color: rgb(255, 215, 0);"><img src="{% static 'img/c7.png'%}" alt=""> Motors</h1>
-                        </a>
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                            <span class="fa fa-bars"></span>
-                        </button>
-                        <div class="collapse navbar-collapse" id="navbarCollapse">
-                            <div class="navbar-nav mx-auto py-0">
-                                <a href="{% url 'c7_motors:home' %}" class="nav-item nav-link"><i class="bi bi-house-door"></i> Home</a>
-                                <a href="{% url 'c7_motors:about' %}" class="nav-item nav-link"><i class="bi bi-info-circle"></i> About</a>
-                                <a href="{% url 'c7_motors:service' %}" class="nav-item nav-link"><i class="bi bi-tools"></i> Service</a>
-                                <a href="{% url 'c7_motors:feature' %}" class="nav-item nav-link"><i class="bi bi-star-fill"></i> Features</a>
-                                <a href="{% url 'c7_motors:shopping_cart' %}" class="nav-item nav-link"><i class="bi bi-basket3"></i> My Cart</a>
-                                <a href="{% url 'c7_motors:contact_us' %}" class="nav-item nav-link"><i class="bi bi-telephone"></i> Contact</a>
-                            </div>
-                            {% if user.is_authenticated %}
-                            <form action="/log_out/" method="post" class="main_nav">
-                             {% csrf_token %}
-                             <a class="btn btn-dark rounded-pill py-2 px-4"><button type="submit" class="btn button2">Log out</button></a>
-                            </form>
-                            {% else %}
-                            <a class="btn btn-dark rounded-pill py-2 px-4" href="{% url 'c7_motors:log_in'%}"><button type="submit" class="btn button2">Log in</button></a>
-                            <a class="btn btn-dark rounded-pill py-2 px-4" href="{% url 'c7_motors:sign_in'%}" style="margin-left: 20px;"><button type="submit" class="btn button2">Sign in</button></a>
-                            {% endif %}
-                        </div>
-                    </nav>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+    <!-- Navbar & Hero Start -->
+    <div class="container-fluid nav-bar sticky-top px-0 px-lg-4 py-2 py-lg-0">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <a href="" class="navbar-brand p-0">
+                    <img src="{% static 'img/c7_logo.png'%}" alt="" width="100%" height="100%" style="height: 100%; width:100%;">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="fa fa-bars"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav mx-auto py-0">
+                        <a href="{% url 'c7_motors:home' %}" class="nav-item nav-link active"><i class="bi bi-house-door"></i> Home</a>
+                        <a href="{% url 'c7_motors:about' %}" class="nav-item nav-link"><i class="bi bi-info-circle"></i> About</a>
+                        <a href="{% url 'c7_motors:service' %}" class="nav-item nav-link"><i class="bi bi-tools"></i> Service</a>
+                        <a href="{% url 'c7_motors:feature' %}" class="nav-item nav-link"><i class="bi bi-star-fill"></i> Features</a>
+                        <a href="{% url 'c7_motors:shopping_cart' %}" class="nav-item nav-link"><i class="bi bi-basket3"></i> My Cart</a>
+                        <a class="nav-item nav-link" id="checkout-button" data-bs-toggle="modal" data-bs-target="#exampleModal" type="button"><i class="bi bi-cash"></i> Pay</a>
+                        <a href="{% url 'c7_motors:contact_us' %}" class="nav-item nav-link"><i class="bi bi-telephone"></i> Contact</a>
+                    </div>
+                    {% if user.is_authenticated %}
+                    <form action="/log_out/" method="post" class="main_nav">
+                     {% csrf_token %}
+                     <a class="btn rounded-pill py-2 px-4" style="background-color: #e30a23;"><button type="submit" class="btn" style="color: #ffffff;">Log out</button></a>
+                    </form>
+                    {% else %}
+                    <a class="btn rounded-pill py-2 px-4" style="background-color: #e30a23;" href="{% url 'c7_motors:log_in'%}"><button type="submit" class="btn" style="color: #ffffff;">Log in</button></a>
+                    <a class="btn rounded-pill py-2 px-4" style="background-color: #e30a23;" href="{% url 'c7_motors:sign_in'%}" style="margin-left: 20px;"><button type="submit" class="btn" style="color: #ffffff;">Sign in</button></a>
+                    {% endif %}
                 </div>
-            </div>
+            </nav>
+        </div>
+    </div>
     <!-- Navbar & Hero End -->
 
     <!-- Payment success Start -->
@@ -138,9 +140,6 @@
         </div> 
     </div>
     <!-- Payment success Start -->
-
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-secondary btn-lg-square rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a>  
 
     <!-- Checkout Stripe -->
     <script src="https://js.stripe.com/v3/"></script>
