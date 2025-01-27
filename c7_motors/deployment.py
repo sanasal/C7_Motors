@@ -61,6 +61,7 @@ AZURE_ACCOUNT_KEY = os.environ('AZURE_ACCOUNT_KEY')
 AZURE_CONTAINER = os.environ('AZURE_CONTAINER')
 
 
+
 connection_string = os.environ.get("AZURE_MYSQL_CONNECTIONSTRING")
 parameters = {pair.split("=")[0]: pair.split("=")[1] for pair in connection_string.split(";")}
 
