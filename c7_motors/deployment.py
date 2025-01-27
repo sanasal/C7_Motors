@@ -58,7 +58,6 @@ MEDIA_ROOT= os.path.join(BASE_DIR , 'media')
 DEFAULT_FILE_STORAGE = 'storages.backends.azure_storage.AzureStorage'
 AZURE_ACCOUNT_NAME = os.environ('AZURE_ACCOUNT_NAME')
 AZURE_ACCOUNT_KEY = os.environ('AZURE_ACCOUNT_KEY')
-AZURE_CONTAINER = os.environ('AZURE_CONTAINER')
 
 
 
