@@ -369,21 +369,6 @@
             .navbar-light .navbar-nav .nav-link.active {
                 color: #e30a23;
             }
-
-            .navbar-light .navbar-brand img {
-                max-height: 125px; /* Set a visible default size */
-                transition: 0.5s;
-            }
-            
-            .sticky-top .navbar-light .navbar-brand img {
-                max-height: 125px; /* Ensure the sticky state retains the size */
-            }
-            
-            @media screen and (max-width: 700px) {
-                .navbar-light .navbar-brand img {
-                    max-height: 100px; /* Adjust size for smaller screens */
-                }
-            }
         </style>
     </head>
 
@@ -423,8 +408,8 @@
         <div class="container-fluid nav-bar sticky-top px-0 px-lg-4 py-2 py-lg-0">
             <div class="container">
                 <nav class="navbar navbar-expand-lg navbar-light">
-                    <a href="" class="navbar-brand p-0">
-                        <img src="{% static 'img/c7_logo.png'%}" alt="" width="100%" height="100%">
+                    <a href="" class="navbar-logo p-0">
+                        <img src="{% static 'img/c7_logo.png'%}" alt="">
                     </a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                         <span class="fa fa-bars"></span>
@@ -475,7 +460,7 @@
             <div id="carouselId" class="carousel slide" data-bs-ride="carousel" data-bs-interval="false">
                 <div class="carousel-inner" role="listbox">
                     <div class="carousel-item active">
-                        <img src="{% static 'img/car19.jpg'%}" class="img-fluid" style="max-width: 100%; height: auto;"> alt="First slide"/>
+                        <img src="{% static 'img/car19.jpg'%}" class="img-fluid w-100"> alt="First slide"/>
                         <div class="carousel-caption">
                             <div class="container py-4">
                                 <div class="row g-5">

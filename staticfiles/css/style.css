@@ -141,17 +141,28 @@
 }
 
 .navbar-light .navbar-brand img {
-    max-height: 125px; /* Set a visible default size */
-    transition: 0.5s;
+    max-height: 0px;
+    transition: .5s;
 }
 
 .sticky-top .navbar-light .navbar-brand img {
-    max-height: 125px; /* Ensure the sticky state retains the size */
+    max-height: 125px;
+
 }
 
-@media screen and (max-width: 700px) {
-    .navbar-light .navbar-brand img {
-        max-height: 100px; /* Adjust size for smaller screens */
+.navbar-logo img {
+    max-height: 0px;
+    transition: .5s;
+}
+
+.navbar-logo img {
+    max-height: 125px;
+
+}
+
+@media screen and (max-width: 600px) {
+    .navbar-logo img {
+        max-height: 90px; /* Adjust size for smaller screens */
     }
 }
 
