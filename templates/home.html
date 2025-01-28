@@ -369,6 +369,21 @@
             .navbar-light .navbar-nav .nav-link.active {
                 color: #e30a23;
             }
+
+            .navbar-light .navbar-brand img {
+                max-height: 125px; /* Set a visible default size */
+                transition: 0.5s;
+            }
+            
+            .sticky-top .navbar-light .navbar-brand img {
+                max-height: 125px; /* Ensure the sticky state retains the size */
+            }
+            
+            @media screen and (max-width: 700px) {
+                .navbar-light .navbar-brand img {
+                    max-height: 100px; /* Adjust size for smaller screens */
+                }
+            }
         </style>
     </head>
 
