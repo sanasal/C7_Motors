@@ -150,6 +150,13 @@
 
 }
 
+@media screen and (max-width:700px) and (min-width:100px){
+    .sticky-top .navbar-light .navbar-brand img {
+        max-height: 100px;
+    
+    }
+}
+
 .navbar .dropdown-toggle::after {
     border: none;
     content: "\f107";
