@@ -56,9 +56,9 @@ MEDIA_URL='/media/'
 MEDIA_ROOT= os.path.join(BASE_DIR , 'media')  
 
 DEFAULT_FILE_STORAGE = 'storages.backends.azure_storage.AzureStorage'
-AZURE_ACCOUNT_NAME = os.environ('AZURE_ACCOUNT_NAME')
-AZURE_ACCOUNT_KEY = os.environ('AZURE_ACCOUNT_KEY')
-AZURE_CONTAINER = os.environ('AZURE_CONTAINER')
+AZURE_ACCOUNT_NAME = os.environ.get('AZURE_ACCOUNT_NAME')
+AZURE_ACCOUNT_KEY = os.environ.get('AZURE_ACCOUNT_KEY')
+AZURE_CONTAINER = os.environ.get('AZURE_CONTAINER')
 MEDIA_URL = f'https://{AZURE_ACCOUNT_NAME}.blob.core.windows.net/{AZURE_CONTAINER}/'
 
 connection_string = os.environ.get("AZURE_MYSQL_CONNECTIONSTRING")
