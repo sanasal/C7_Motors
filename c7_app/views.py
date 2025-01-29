@@ -414,8 +414,8 @@ def create_cash_checkout_session(request):
                     'quantity': 1,
                 }],
                 mode='payment',  # Single full payment mode
-                success_url='http://127.0.0.1:8000/C7_payment_success/',  # Adjust the URL to your success page
-                cancel_url='http://127.0.0.1:8000/cash_cancel/',  # Adjust the URL to your cancel page
+                success_url='https://c7motors-cracgggsbcchenap.uaenorth-01.azurewebsites.net/C7_payment_success/',  # Adjust the URL to your success page
+                cancel_url='https://c7motors-cracgggsbcchenap.uaenorth-01.azurewebsites.net/cash_cancel/',  # Adjust the URL to your cancel page
         )
 
         # Return the session ID as JSON response
@@ -446,8 +446,8 @@ def create_deposit_checkout_session(request):
                     'quantity': 1,
                 }],
                 mode='payment',  # Single full payment mode
-                success_url='http://127.0.0.1:8000/C7_payment_success/',  # Adjust the URL to your success page
-                cancel_url='http://127.0.0.1:8000/deposit_cancel/',  # Adjust the URL to your cancel page
+                success_url='https://c7motors-cracgggsbcchenap.uaenorth-01.azurewebsites.net/C7_payment_success/',  # Adjust the URL to your success page
+                cancel_url='https://c7motors-cracgggsbcchenap.uaenorth-01.azurewebsites.net/deposit_cancel/',  # Adjust the URL to your cancel page
         )
 
         # Return the session ID as JSON response
@@ -479,8 +479,8 @@ def create_remaining_checkout_session(request):
                 'quantity': 1,
             }],
             mode='payment',  # Single full payment mode
-            success_url='http://127.0.0.1:8000/C7_remaining_payment_success/',
-            cancel_url='http://127.0.0.1:8000/deposit_cancel/',
+            success_url='https://c7motors-cracgggsbcchenap.uaenorth-01.azurewebsites.net/C7_remaining_payment_success/',
+            cancel_url='https://c7motors-cracgggsbcchenap.uaenorth-01.azurewebsites.net/deposit_cancel/',
         )
 
         # Return the session ID as JSON response
@@ -511,8 +511,8 @@ def create_installments_checkout_session(request):
                     'quantity': 1,
                 }],
                 mode='payment',  # Single full payment mode
-                success_url='http://127.0.0.1:8000/C7_installments_deposit_payment_success/',  # Adjust the URL to your success page
-                cancel_url='http://127.0.0.1:8000/installments_cancel/',  # Adjust the URL to your cancel page
+                success_url='https://c7motors-cracgggsbcchenap.uaenorth-01.azurewebsites.net/C7_installments_deposit_payment_success/',  # Adjust the URL to your success page
+                cancel_url='https://c7motors-cracgggsbcchenap.uaenorth-01.azurewebsites.net/installments_cancel/',  # Adjust the URL to your cancel page
         )
 
         # Return the session ID as JSON response
