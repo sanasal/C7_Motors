@@ -129,9 +129,9 @@
     var rangeSlider = $(".price-range");
     rangeSlider.slider({
         range: true,
-        min: 1,
-        max: 170000,
-        values: [800, 3200],
+        min: 0,
+        max: 4000000,
+        values: [0, 100000],
         slide: function (event, ui) {
             $("#amount").val(ui.values[0] + "AED" + " - " + ui.values[1] + "AED") ;
         }
@@ -141,9 +141,9 @@
     var carSlider = $(".car-price-range");
     carSlider.slider({
         range: true,
-        min: 1,
-        max: 4000,
-        values: [900, 3000],
+        min: 0,
+        max: 4000000,
+        values: [0, 100000],
         slide: function (event, ui) {
             $("#caramount").val(ui.values[0] + "AED" + " - " + ui.values[1] + "AED");
         }
@@ -153,9 +153,9 @@
     var filterSlider = $(".filter-price-range");
     filterSlider.slider({
         range: true,
-        min: 1,
-        max: 1200000,
-        values: [180000, 1000000],
+        min: 0,
+        max: 4000000,
+        values: [0, 100000],
         slide: function (event, ui) {
             $("#filterAmount").val("[ " + ui.values[0] + "AED" + " - " + ui.values[1] + "AED" + " ]");
         }

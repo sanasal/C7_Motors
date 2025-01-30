@@ -178,6 +178,7 @@ def payments_in_installments(request):
 
 def cars_search(request):
     '''get the car from the DataBase'''
+    
     # Initialize query parameters
     year = request.GET.get('year')
     brand = request.GET.get('brand')
@@ -191,15 +192,15 @@ def cars_search(request):
 
     # Apply filters
     if year:
-        cars = cars.filter(model_year=year)
+        cars = cars.filter(model_year=year)  # Exact match for year
     if brand:
-        cars = cars.filter(brand_name__icontains=brand)
+        cars = cars.filter(brand_name__icontains=brand)  # Case-insensitive partial match for brand
     if model:
-        cars = cars.filter(model__icontains=model)
+        cars = cars.filter(model__icontains=model)  # Case-insensitive partial match for model
     if mileage:
-        cars = cars.filter(mileage__lte=mileage)
+        cars = cars.filter(mileage__gte=0, mileage__lte=int(mileage))  # Mileage filter
     if price_min and price_max:
-        cars = cars.filter(cash_price__gte=int(price_min), cash_price__lte=int(price_max))
+        cars = cars.filter(cash_price__gte=int(price_min), cash_price__lte=int(price_max))  # Price range filter
 
     return render(request, 'home.html', {'cars': cars})
 
