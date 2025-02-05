@@ -577,8 +577,13 @@
                     {% for car in cars %}
                     <div class="categories-item p-4">
                         <div class="categories-item-inner">
-                            <div class="categories-img rounded-top">
+                            <div class="categories-img rounded-top position-relative">
+                                <!-- Car Image -->
                                 <img src="{{ car.main_img.url }}" class="img-fluid w-100 rounded-top" alt="">
+                                <!-- Sold Overlay Image -->
+                                {% if car.selled %}
+                                    <img src="{% static 'img/sold.png' %}" class="position-absolute top-0 start-0 w-100 h-100" alt="Sold" style="z-index: 1;">
+                                {% endif %}
                             </div>
                             <div class="categories-content rounded-bottom p-4">
                                 <h4 style="color: #e30a23;">{{ car.brand_name }} {{ car.model }}</h4>
@@ -588,7 +593,6 @@
                                     </h5>
                                 </div>
                                 <div class="row gy-2 gx-0 text-center mb-4">
-                                    
                                     <div class="col-4 border-end border-white">
                                         <i class="fa fa-car" style="color: #e30a23;"></i> <span class="text-body ms-1">{{ car.model_year }}</span>
                                     </div>
@@ -596,7 +600,12 @@
                                         <i class="fa fa-road" style="color: #e30a23;"></i> <span class="text-body ms-1">{{ car.mileage }}KM</span>
                                     </div>
                                 </div>
-                                <a href="{% url 'c7_motors:car_details' car_name=car.brand_name car_model=car.model car_id=car.id %}" class="btn rounded-pill d-flex justify-content-center py-3" style="background-color: #e30a23; color:rgb(0,0,0)">Show Details</a>
+                                <!-- Button Logic -->
+                                {% if car.selled %}
+                                    <button class="btn rounded-pill d-flex justify-content-center py-3 w-100" style="background-color: #e30a23; color:rgb(0,0,0); cursor: not-allowed;" disabled>Sold Out</button>
+                                {% else %}
+                                    <a href="{% url 'c7_motors:car_details' car_name=car.brand_name car_model=car.model car_id=car.id %}" class="btn rounded-pill d-flex justify-content-center py-3" style="background-color: #e30a23; color:rgb(0,0,0)">Show Details</a>
+                                {% endif %}
                             </div>
                         </div>
                     </div>

@@ -105,6 +105,7 @@ class Car(models.Model):
     cash_price =models.IntegerField(null=True, blank=True)
     monthly_installments_price = models.IntegerField(null=True, blank=True)
     description = models.TextField(blank=True)
+    selled = models.BooleanField(default=False)
 
     def __str__(self):
         return f"{self.brand_name} {self.model}"
@@ -113,6 +114,9 @@ class Car(models.Model):
 class CarImages(models.Model):
     product = models.ForeignKey(Car, related_name='images', on_delete=models.CASCADE)
     image = models.ImageField(upload_to='C7_Motors\media')
+
+    def __str__(self):
+        return f"{self.product.brand_name} {self.product.model}"
 
 
 class CarsCart(models.Model):

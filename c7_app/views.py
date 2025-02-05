@@ -254,9 +254,13 @@ def add_customers_data(request):
             instance = form.save(commit=False)
             instance.user = request.user
 
-            # Get the cart total amount
+            # Get the cart and associated cars
             cart = Cart.objects.filter(user=request.user, completed=False).first()
             if cart:
+                # Get all cars in the cart
+                cars_in_cart = CarsCart.objects.filter(cart=cart)
+                car_names = [f"{car_item.car.brand_name} {car_item.car.model}" for car_item in cars_in_cart]  # Extract brand and model names
+                instance.cars = ', '.join(car_names)  # Save car names as comma-separated string
                 instance.total_amount = cart.total_price()  # Get total price from the cart
             else:
                 return JsonResponse({'success': False, 'error': 'Cart not found.'}, status=404)
@@ -336,16 +340,19 @@ def add_payment_data(request):
 def add_installments_data(request):
     '''Add the customers data whose pay in installments to InstallmentsCustomer model'''
     if request.method == 'POST':
-
-        form = forms2.Installments_Customers_Data(request.POST , request.FILES)
+        form = forms2.Installments_Customers_Data(request.POST, request.FILES)
 
         if form.is_valid():
             instance = form.save(commit=False)
             instance.user = request.user
 
-            # Get the cart total amount
+            # Get the cart and associated cars
             cart = Cart.objects.filter(user=request.user, completed=False).first()
             if cart:
+                 # Get all cars in the cart
+                cars_in_cart = CarsCart.objects.filter(cart=cart)
+                car_names = [f"{car_item.car.brand_name} {car_item.car.model}" for car_item in cars_in_cart]  # Extract brand and model names
+                instance.cars = ', '.join(car_names)  # Save car names as comma-separated string
                 instance.total_amount = cart.total_price()  # Get total price from the cart
             else:
                 return JsonResponse({'success': False, 'error': 'Cart not found.'}, status=404)
@@ -518,12 +525,36 @@ def create_installments_checkout_session(request):
 
 
 def send_book_data_after_success(request):
-    '''Send the data to email if the payment is successful and delete the car from the database and customer's cart'''
+    '''Send the data to email if the payment is successful and mark the car as sold'''
     customer_book_data = None
     if request.user.is_authenticated:
         customer_book_data = customers_data.objects.filter(user=request.user).order_by('-id').first()
+        print(f"Customer Book Data: {customer_book_data}")  # Debug print
+
+        # Mark the cart as completed
+        cart = Cart.objects.filter(user=request.user, completed=False).first()
+        if cart:
+            cart.completed = True
+            cart.save()
+            print(f"Cart {cart.id} marked as completed")  # Debug print
     else:
-        print('error')
+        print('User is not authenticated')  # Debug print
+
+    if customer_book_data and customer_book_data.cars:
+        print(f"Cars field: {customer_book_data.cars}")  # Debug print
+        car_names = customer_book_data.cars.split(', ')  # Split the comma-separated string into a list of car names
+        for car_name in car_names:
+            try:
+                # Split the car name into brand and model
+                brand_name, model = car_name.split(' ', 1)  # Split on the first space
+                car = Car.objects.get(brand_name=brand_name, model=model)  # Fetch the car by brand and model
+                print(f"Updating car {car_name} to sold")  # Debug print
+                car.selled = True
+                car.save()
+            except (ValueError, Car.DoesNotExist) as e:
+                print(f"Error processing car {car_name}: {e}")  # Debug print
+    else:
+        print('No customer book data or cars field is empty')  # Debug print
 
     context = {
        'customer_book_data': customer_book_data
@@ -537,17 +568,31 @@ def remaining_payment_success(request):
         # Update customer data
         if request.user.is_authenticated:
             last_customer_data = customers_data.objects.filter(user=request.user).order_by('-id').first()
+        
+            # Assuming `cars` field in `customers_data` contains the brand and model names of the cars sold
+            if last_customer_data and last_customer_data.cars:
+                car_names = last_customer_data.cars.split(', ')  # Split the comma-separated string into a list of car names
+                for car_name in car_names:
+                    try:
+                        # Split the car name into brand and model
+                        brand_name, model = car_name.split(' ', 1)  # Split on the first space
+                        car = Car.objects.get(brand_name=brand_name, model=model)  # Fetch the car by brand and model
+                        car.selled = True
+                        car.save()
+                    except (ValueError, Car.DoesNotExist) as e:
+                        print(f"Error processing car {car_name}: {e}")
+        
         else:
-            print('error')
+            print('User is not authenticated')  # Debug print
         
         if not last_customer_data:
             return JsonResponse({'error': 'Customer data not found.'}, status=404)
 
+        # Update payment details
         last_customer_data.paid_amount += last_customer_data.remaining_amount
         last_customer_data.remaining_amount = 0
         last_customer_data.save()
 
-    
     except Exception as e:
        return JsonResponse({'error': str(e)}, status=500)
 
@@ -563,8 +608,21 @@ def installments_payment_success(request):
         # Update customer data
         if request.user.is_authenticated:
             last_customer_data = InstallmentsCustomer.objects.filter(user=request.user).order_by('-id').first()
+
+            # Assuming `cars` field in `customers_data` contains the brand and model names of the cars sold
+            if last_customer_data and last_customer_data.cars:
+                car_names = last_customer_data.cars.split(', ')  # Split the comma-separated string into a list of car names
+                for car_name in car_names:
+                    try:
+                        # Split the car name into brand and model
+                        brand_name, model = car_name.split(' ', 1)  # Split on the first space
+                        car = Car.objects.get(brand_name=brand_name, model=model)  # Fetch the car by brand and model
+                        car.selled = True
+                        car.save()
+                    except (ValueError, Car.DoesNotExist) as e:
+                        print(f"Error processing car {car_name}: {e}")
         else:
-            print('error')
+            print('User is not authenticated')  # Debug print
         
         if not last_customer_data:
             return JsonResponse({'error': 'Customer data not found.'}, status=404)
@@ -574,7 +632,7 @@ def installments_payment_success(request):
 
     context = {
        'last_customer_data': last_customer_data,
-       "last_customer_data": {
+       "last_customer_data_details": {
             "name": last_customer_data.name,
             "email": last_customer_data.email,
             "mobile_phone": last_customer_data.mobile_phone,
