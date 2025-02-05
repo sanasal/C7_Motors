@@ -524,16 +524,6 @@ def send_book_data_after_success(request):
         customer_book_data = customers_data.objects.filter(user=request.user).order_by('-id').first()
     else:
         print('error')
-    
-    # Delete the car from the database and the customer's cart
-    if customer_book_data:
-        cart = Cart.objects.filter(user=request.user, completed=False).first()
-        if cart:
-            cart_items = cart.cartitems.all()
-            for item in cart_items:
-                car = item.car
-                car.delete()  # Delete the car from the database
-            cart.delete()  # Delete the cart
 
     context = {
        'customer_book_data': customer_book_data
@@ -557,14 +547,6 @@ def remaining_payment_success(request):
         last_customer_data.remaining_amount = 0
         last_customer_data.save()
 
-        # Delete the car from the database and the customer's cart
-        cart = Cart.objects.filter(user=request.user, completed=False).first()
-        if cart:
-            cart_items = cart.cartitems.all()
-            for item in cart_items:
-                car = item.car
-                car.delete()  # Delete the car from the database
-            cart.delete()  # Delete the cart
     
     except Exception as e:
        return JsonResponse({'error': str(e)}, status=500)
@@ -586,19 +568,6 @@ def installments_payment_success(request):
         
         if not last_customer_data:
             return JsonResponse({'error': 'Customer data not found.'}, status=404)
-
-        #last_customer_data.paid_amount += last_customer_data.remaining_amount
-        #last_customer_data.remaining_amount = 0
-        #last_customer_data.save()
-
-        # Delete the car from the database and the customer's cart
-        cart = Cart.objects.filter(user=request.user, completed=False).first()
-        if cart:
-            cart_items = cart.cartitems.all()
-            for item in cart_items:
-                car = item.car
-                car.delete()  # Delete the car from the database
-            cart.delete()  # Delete the cart
     
     except Exception as e:
        return JsonResponse({'error': str(e)}, status=500)
