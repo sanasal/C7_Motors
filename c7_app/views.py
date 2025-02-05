@@ -40,7 +40,7 @@ def home(request):
 
     return render(request, 'home.html', context)
 
-@login_required(login_url='/log_in/')
+
 def contact_us(request):
     '''Display the contact us page'''
     
@@ -82,7 +82,6 @@ def service(request):
 
     return render(request , 'service.html' , context)
 
-@login_required(login_url='/log_in/')
 def feature(request):
     '''Display the features page'''
     try:
@@ -182,8 +181,6 @@ def cars_search(request):
     # Initialize query parameters
     year = request.GET.get('year')
     brand = request.GET.get('brand')
-    model = request.GET.get('model')
-    mileage = request.GET.get('mileage')
     price_min = request.GET.get('price_min')
     price_max = request.GET.get('price_max')
 
@@ -195,10 +192,6 @@ def cars_search(request):
         cars = cars.filter(model_year=year)  # Exact match for year
     if brand:
         cars = cars.filter(brand_name__icontains=brand)  # Case-insensitive partial match for brand
-    if model:
-        cars = cars.filter(model__icontains=model)  # Case-insensitive partial match for model
-    if mileage:
-        cars = cars.filter(mileage__gte=0, mileage__lte=int(mileage))  # Mileage filter
     if price_min and price_max:
         cars = cars.filter(cash_price__gte=int(price_min), cash_price__lte=int(price_max))  # Price range filter
 
