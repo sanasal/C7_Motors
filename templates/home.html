@@ -582,7 +582,11 @@
                                 <img src="{{ car.main_img.url }}" class="img-fluid w-100 rounded-top" alt="">
                                 <!-- Sold Overlay Image -->
                                 {% if car.selled %}
-                                    <img src="{% static 'img/sold.png' %}" class="position-absolute top-0 start-0 w-50 h-50" alt="Sold" style="z-index: 1;">
+                                <div class="position-absolute" style="z-index: 1; left: 15px; top: 15px;">
+                                    <div class="p-2 rounded" style="background-color: #e30a23;">
+                                        <h5 class="text-white mb-0">Sold out</h5>
+                                    </div>
+                                </div>
                                 {% endif %}
                             </div>
                             <div class="categories-content rounded-bottom p-4">
