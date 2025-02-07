@@ -89,6 +89,19 @@ class Car(models.Model):
     brand_name = models.CharField(max_length=100 , blank=True)
     model = models.CharField(max_length=100 , blank=True)
     main_img = models.ImageField(default = '' , blank=True)
+
+    SUV = 'SUV'
+    SEDAN = 'Sedan'
+    HATCHBACK = 'Hatchback'
+    HYBIRD = 'Hybird'
+    GEAR_CHOICES = [
+        (SUV, 'SUV'),
+        (SEDAN, 'Sedan'),
+        (HATCHBACK, 'Hatchback'),
+        (HYBIRD, 'Hybird')
+    ]
+
+    type = models.CharField(max_length=20, choices=GEAR_CHOICES , blank=True)
     exterior_color = models.CharField(max_length=100 , blank=True)
     interior_color = models.CharField(max_length=100 , blank=True)
     

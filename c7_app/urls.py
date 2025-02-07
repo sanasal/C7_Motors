@@ -16,6 +16,8 @@ urlpatterns = [
     path('features/' , views.feature , name='feature' ),
     path('contact_us/' , views.contact_us , name='contact_us'),
     path('car_details/<str:car_name>/<str:car_model>/<int:car_id>/' , views.car_details , name='car_details'),
+    path('cars/', views.cars, name='cars'),
+    path('cars/<str:car_type>/', views.cars, name='cars_filtered'),
     path('shopping_cart/' , views.shopping_cart , name='shopping_cart'),
     path('payment_in_installments/' , views.payments_in_installments , name='payment_in_installments'),
 

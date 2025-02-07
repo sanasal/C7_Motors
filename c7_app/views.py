@@ -172,13 +172,38 @@ def payments_in_installments(request):
 
     return render(request , 'payment_in_installments.html' , context)
 
+def cars(request, car_type=None):
+    '''Display the cars page with optional filtering by type'''
+
+    # Start with all cars
+    cars = Car.objects.all()
+
+    # Filter by type if provided in the URL
+    if car_type:
+        cars = cars.filter(type=car_type)
+
+    # Retrieve customer data (if available)
+    try:
+        last_customer_data = customers_data.objects.filter(user=request.user).order_by('-id').first()
+        remaining_price = last_customer_data.remaining_amount
+    except:
+        remaining_price = 0
+
+    context = {
+        'stripe_remaining': remaining_price,
+        'STRIPE_PUBLISHABLE_KEY': settings.STRIPE_PUBLIC_KEY,
+        'cars': cars,
+    }
+
+    return render(request, 'cars.html', context)
+
 
 
 
 def cars_search(request):
-    '''get the car from the DataBase'''
-    
-    # Initialize query parameters
+    '''Filter cars based on search criteria and display them on cars.html'''
+
+    # Retrieve filter parameters
     year = request.GET.get('year')
     brand = request.GET.get('brand')
     price_min = request.GET.get('price_min')
@@ -189,13 +214,13 @@ def cars_search(request):
 
     # Apply filters
     if year:
-        cars = cars.filter(model_year=year)  # Exact match for year
+        cars = cars.filter(model_year=year)
     if brand:
-        cars = cars.filter(brand_name__icontains=brand)  # Case-insensitive partial match for brand
+        cars = cars.filter(brand_name__icontains=brand)
     if price_min and price_max:
-        cars = cars.filter(cash_price__gte=int(price_min), cash_price__lte=int(price_max))  # Price range filter
+        cars = cars.filter(cash_price__gte=int(price_min), cash_price__lte=int(price_max))
 
-    return render(request, 'home.html', {'cars': cars})
+    return render(request, 'cars.html', {'cars': cars})
 
 def car_details(request, car_name, car_model, car_id):
     """Display the details of a car based on brand_name, model, and id."""

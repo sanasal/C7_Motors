@@ -369,6 +369,43 @@
             .navbar-light .navbar-nav .nav-link.active {
                 color: #e30a23;
             }
+
+           /* General styles for buttons */
+            .model-buttons {
+                display: flex;
+                gap: 10px;
+                flex-wrap: wrap;
+            }
+
+            .model-btn {
+                color: white; /* Adjust text color for better contrast */
+                border: none;
+                padding: 10px 20px;
+                border-radius: 10px;
+                font-size: 15px;
+                cursor: pointer;
+                margin-bottom: 7px;
+                margin-right: 7px;
+                transition: background-color 0.3s ease, transform 0.2s ease;
+                background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent background */
+                backdrop-filter: blur(10px); /* Adds the blur effect */
+                -webkit-backdrop-filter: blur(10px); /* Safari support */
+                box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3); /* Optional shadow for better contrast */
+            }
+
+            .model-btn:hover {
+                color: #ffffff;
+                background-color: rgba(227, 10, 35, 0.8); /* Slightly transparent red background */
+                transform: scale(1.05); /* Add hover zoom effect */
+            }
+
+            /* Styles for laptop view */
+            @media (min-width: 992px) {
+                .model-buttons {
+                    flex-direction: row;
+                }
+            }
+
         </style>
     </head>
 
@@ -460,7 +497,7 @@
             <div id="carouselId" class="carousel slide" data-bs-ride="carousel" data-bs-interval="false">
                 <div class="carousel-inner" role="listbox">
                     <div class="carousel-item active">
-                        <img src="{% static 'img/car19.jpg'%}" class="img-fluid w-100"> alt="First slide"/>
+                        <img src="{% static 'img/car19.jpg' %}" class="img-fluid w-100"/>
                         <div class="carousel-caption">
                             <div class="container py-4">
                                 <div class="row g-5">
@@ -528,6 +565,25 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        <!-- Buttons for browsing car models -->
+                                        <div class="browse-models mt-4">
+                                            <div class="model-buttons">
+                                                <div class="icon-buttons">                                      
+                                                    <a class="btn model-btn" href="{% url 'c7_motors:cars_filtered' 'SUV' %}">
+                                                        <span class="iconify" data-icon="mdi-car-suv" style="font-size: 27px;"></span> SUV
+                                                    </a>
+                                                    <a class="btn model-btn" href="{% url 'c7_motors:cars_filtered' 'Sedan' %}">
+                                                        <span class="iconify" data-icon="mdi-car-sports" style="font-size: 27px;"></span> Sedan
+                                                    </a>
+                                                    <a class="btn model-btn" href="{% url 'c7_motors:cars_filtered' 'Hatchback' %}">
+                                                        <span class="iconify" data-icon="mdi-car-hatchback" style="font-size: 27px;"></span> Hatchback
+                                                    </a>
+                                                    <a class="btn model-btn" href="{% url 'c7_motors:cars_filtered' 'Hybird' %}">
+                                                        <span class="iconify" data-icon="mdi-car-electric" style="font-size: 27px;"></span> Hybrid
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                     <div class="col-lg-6 d-none d-lg-flex fadeInRight animated" data-animation="fadeInRight" data-delay="1s" style="animation-delay: 1s;">
                                         <div class="text-start">
@@ -542,6 +598,7 @@
             </div> 
         </div>
         <!-- Carousel End -->
+
 
         <!-- Cars Logos Start -->
         <div class="logos">
@@ -1083,6 +1140,8 @@
     <script src="{% static 'lib/waypoints/waypoints.min.js'%}"></script>
     <script src="{% static 'lib/counterup/counterup.min.js'%}"></script>
     <script src="{% static 'lib/owlcarousel/owl.carousel.min.js'%}"></script>
+    <!-- Add Iconify Script -->
+    <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
     <script>
         function getCookie(name) {
             let cookieValue = null;
