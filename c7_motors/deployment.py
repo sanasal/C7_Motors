@@ -8,7 +8,7 @@ SECRET_KEY = os.environ.get('SECRET')
 ALLOWED_HOSTS = [os.environ.get('HOSTNAME')]
 CSRF_TRUSTED_ORIGINS = ['https://' + os.environ.get('HOSTNAME')]
 
-DEBUG = False
+DEBUG = True
 
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
