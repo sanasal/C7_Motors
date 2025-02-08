@@ -94,11 +94,13 @@ class Car(models.Model):
     SEDAN = 'Sedan'
     HATCHBACK = 'Hatchback'
     HYBIRD = 'Hybird'
+    ELECTRIC = 'Electric'
     GEAR_CHOICES = [
         (SUV, 'SUV'),
         (SEDAN, 'Sedan'),
         (HATCHBACK, 'Hatchback'),
-        (HYBIRD, 'Hybird')
+        (HYBIRD, 'Hybird'),
+        (ELECTRIC, 'Electric')
     ]
 
     type = models.CharField(max_length=20, choices=GEAR_CHOICES , blank=True)

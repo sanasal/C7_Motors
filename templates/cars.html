@@ -26,6 +26,59 @@
 
     <!-- Template Stylesheet -->
     <link href="{% static 'css/style.css'%}" rel="stylesheet">
+
+    <style>
+        /*** Cars Categories Start ***/
+        .categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adjust minmax for card size */
+            gap: 20px; /* Space between cards */
+            padding: 20px; /* Optional: Add padding to the container */
+        }
+
+        .categories .categories-item {
+            position: relative;
+            border: 1px solid linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9));
+            border-radius: 10px;
+            transition: 0.5s;
+            background: #fff; /* Optional: Add background color */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for better appearance */
+        }
+
+        .categories .categories-item:hover {
+            border: 1px solid #e30a23;
+            transform: translateY(-5px); /* Optional: Add hover effect */
+        }
+
+        .categories .categories-item .categories-item-inner {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            transition: 0.5s;
+        }
+
+        .categories .categories-item .categories-item-inner:hover {
+            box-shadow: 0 0 50px #e30a23;
+        }
+
+        .categories .categories-item-inner .categories-img {
+            background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9));
+        }
+
+        .categories .categories-item-inner .categories-content {
+            border-top: 4px solid var(--bs-white);
+            text-align: center;
+            background: rgb(0,0,0);
+            padding: 15px; /* Adjust padding for smaller cards */
+        }
+
+        .categories .categories-item-inner .categories-review {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        /*** Cars Categories End ***/
+    </style>
 </head>
 <body>
     <!-- Cars -->
@@ -95,9 +148,9 @@
     <!-- Navbar & Hero End -->
 
     <!-- Cars Start -->
-    <div class="container-fluid categories py-5">
+    <div class="container-fluid py-5">
         <div class="container" style="padding: 0%;">
-            <div id="car_categories" class="categories-carousel owl-carousel wow fadeInUp" data-wow-delay="0.1s">
+            <div id="car_categories" class="categories wow fadeInUp" data-wow-delay="0.1s">
                 {% for car in cars %}
                 <div class="categories-item p-4">
                     <div class="categories-item-inner">

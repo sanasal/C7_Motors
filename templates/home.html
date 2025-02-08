@@ -406,6 +406,11 @@
                 }
             }
 
+            @media (min-width: 1200px) {
+                .owl-nav {
+                    display: flex !important;
+                }
+            }            
         </style>
     </head>
 
@@ -580,6 +585,9 @@
                                                     </a>
                                                     <a class="btn model-btn" href="{% url 'c7_motors:cars_filtered' 'Hybird' %}">
                                                         <span class="iconify" data-icon="mdi-car-electric" style="font-size: 27px;"></span> Hybrid
+                                                    </a>
+                                                    <a class="btn model-btn" href="{% url 'c7_motors:cars_filtered' 'Electric' %}">
+                                                        <span class="iconify" data-icon="mdi-charging-station" style="font-size: 27px;"></span> Electric
                                                     </a>
                                                 </div>
                                             </div>
@@ -1200,8 +1208,6 @@
             // Perform search here
         });
 
-
-        
     </script>
 
     <!-- Checkout Stripe -->
@@ -1251,7 +1257,7 @@
     </script>
 
     <!-- Template Javascript -->
-    <script src="{% static 'js/main.js'%}"></script>
+    <script src="{% static 'js/main1.js'%}"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
     <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
