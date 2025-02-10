@@ -820,3 +820,71 @@ def delete_item(request):
         cart_items = CarsCart.objects.filter(cart=cart , car_id =car_id) 
         cart_items.delete()
     return JsonResponse('Delete Item Done' , safe= False)
+
+def calculate_customer_salary(request):
+    '''Calculate Your Installments'''
+    if not request.user.is_authenticated:
+        return JsonResponse({'error': 'User not authenticated'}, status=401)
+
+    if request.method == 'GET':
+        # Render the HTML template on a GET request
+        cart, _ = Cart.objects.get_or_create(user=request.user, completed=False)
+        items = cart.cartitems.all()
+        context = {
+            'items': items,
+            'downpayment': "$0.00",
+            'monthly_with_dp': "$0.00",
+            'monthly_without_dp': "$0.00",
+            'annual_interest': "$0.00",
+            'total_with_dp': "$0.00",
+            'total_without_dp': "$0.00",
+        }
+        return render(request, 'calculater.html', context)
+
+    if request.method == 'POST':
+        try:
+            # Parse data based on content type
+            if request.content_type == 'application/json':
+                body = json.loads(request.body)
+            else:
+                body = request.POST
+
+            salary = float(body.get('salary', 0))
+            salary_bank = body.get('salary_bank', "")
+            monthly_payments_bank = body.get('monthly_payments_bank', "")
+            nationality = body.get('nationality', "")
+
+            # Handle cart and cart items
+            cart, _ = Cart.objects.get_or_create(user=request.user, completed=False)
+            cartitems = cart.cartitems.all()
+            total_price = cart.total_price()
+
+            if salary_bank == monthly_payments_bank:
+                downpayment = total_price * 0.2
+            else:
+                downpayment = total_price * 0.3
+
+            # Calculate annual interest and downpayment
+            if nationality == "Emirati":
+                annual_interest = (total_price - downpayment) * 0.03
+                total_with_dp = total_price + (annual_interest * 5)
+                total_without_dp = total_price + (annual_interest * 5)
+            else:
+                annual_interest = ((total_price - downpayment)* 3.8) / 100
+                total_with_dp = total_price + (annual_interest * 5)
+                total_without_dp = total_price + (annual_interest * 5)
+
+            monthly_with_dp = ((total_with_dp - downpayment) + (annual_interest * 5)) / 60
+            monthly_without_dp = cartitems.first().car.monthly_installments_price
+
+            return JsonResponse({
+                'downpayment': f"AED {downpayment:.2f}",
+                'monthly_with_dp': f"AED {monthly_with_dp:.2f}",
+                'monthly_without_dp': f"AED {monthly_without_dp:.2f}",
+                'annual_interest': f"AED {annual_interest:.2f}",
+                'total_with_dp': f"AED {total_with_dp:.2f}",
+                'total_without_dp': f"AED {total_without_dp:.2f}"
+            })
+
+        except Exception as e:
+            return JsonResponse({'error': str(e)}, status=400)

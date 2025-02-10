@@ -27,6 +27,7 @@ urlpatterns = [
     
     path('add_to_cart/' , views.add_to_cart , name='add'),
     path('delete/' , views.delete_item , name = 'delete'),
+    path('calculate_your_salary/' , views.calculate_customer_salary , name = 'calculate_your_salary'),
 
     path('cash_add_data/' , views.add_customers_data , name = 'cash_add_data'),
     path('deposit_add_data/' , views.add_customers_data , name = 'deposit_add_data'),
