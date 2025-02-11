@@ -206,8 +206,6 @@ def cars_search(request):
     # Retrieve filter parameters
     year = request.GET.get('year')
     brand = request.GET.get('brand')
-    price_min = request.GET.get('price_min')
-    price_max = request.GET.get('price_max')
 
     # Start with all cars
     cars = Car.objects.all()
@@ -217,8 +215,6 @@ def cars_search(request):
         cars = cars.filter(model_year=year)
     if brand:
         cars = cars.filter(brand_name__icontains=brand)
-    if price_min and price_max:
-        cars = cars.filter(cash_price__gte=int(price_min), cash_price__lte=int(price_max))
 
     return render(request, 'cars.html', {'cars': cars})
 
