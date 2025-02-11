@@ -150,7 +150,7 @@ def shopping_cart(request):
     return render(request , 'shopping_cart.html' , context)
 
 def payments_in_installments(request):
-    '''Display payment in installments page and save customer data to InstallmentsCustomer model'''
+    '''Display payment in installments with downpayment page and save customer data to InstallmentsCustomer model'''
     cart = None        
     cartitems = []
 
@@ -864,18 +864,20 @@ def calculate_customer_salary(request):
             else:
                 downpayment = total_price * 0.3
 
+            monthly_without_dp = cartitems.first().car.monthly_installments_price
+            
             # Calculate annual interest and downpayment
             if nationality == "Emirati":
                 annual_interest = (total_price - downpayment) * 0.03
                 total_with_dp = total_price + (annual_interest * 5)
-                total_without_dp = total_price + (annual_interest * 5)
+                total_without_dp = monthly_without_dp * 60
             else:
                 annual_interest = ((total_price - downpayment)* 3.8) / 100
                 total_with_dp = total_price + (annual_interest * 5)
-                total_without_dp = total_price + (annual_interest * 5)
+                total_without_dp = monthly_without_dp * 60
 
-            monthly_with_dp = ((total_with_dp - downpayment) + (annual_interest * 5)) / 60
-            monthly_without_dp = cartitems.first().car.monthly_installments_price
+            monthly_with_dp = ((total_price - downpayment) + (annual_interest * 5)) / 60
+            
 
             return JsonResponse({
                 'downpayment': f"AED {downpayment:.2f}",
