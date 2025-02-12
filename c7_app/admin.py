@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import  Car,Cart , customers_data , CarsCart , CarImages , InstallmentsCustomer
+from .models import  Car,Cart , customers_data , CarsCart , CarImages , InstallmentsCustomer , InstallmentsCustomerWithoutDP
 
 # Register your models here.
 class CarImagesInline(admin.TabularInline):  # Or use StackedInline
@@ -16,3 +16,4 @@ admin.site.register(customers_data)
 admin.site.register(CarsCart)
 admin.site.register(CarImages)
 admin.site.register(InstallmentsCustomer)
+admin.site.register(InstallmentsCustomerWithoutDP)

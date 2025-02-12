@@ -37,9 +37,10 @@ class InstallmentsCustomer(models.Model):
     name = models.TextField(max_length=300, default='', blank=True)
     email = models.TextField(max_length=300, default='', blank=True)
     mobile_phone = models.TextField(blank=True, default='')
-    total_amount =models.IntegerField(null=True)
-    paid_amount = models.IntegerField(null=True)
-    remaining_amount = models.IntegerField(null=True)
+    deposit = 3000
+    downpayment = models.IntegerField(null=True)
+    monthly_installment = models.IntegerField(null=True)
+    total_amount = models.IntegerField(null=True)
     bank = models.TextField(max_length=300, default='', blank=True)
     passport = models.FileField(default = '' , blank=True)
     driver_license = models.FileField(default = '' , blank=True)
@@ -51,11 +52,28 @@ class InstallmentsCustomer(models.Model):
     pick_up_time = models.TimeField(null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True , null=True)
 
-    def save(self, *args, **kwargs):
-        # Automatically calculate the remaining amount
-        if self.total_amount is not None and self.paid_amount is not None:
-            self.remaining_amount = self.total_amount - self.paid_amount
-        super(InstallmentsCustomer, self).save(*args, **kwargs)
+    def __str__(self):
+        return f"cars:{self.cars} - user:{self.user} - name:{self.name}"
+
+class InstallmentsCustomerWithoutDP(models.Model):
+    user = models.ForeignKey(User,null = True, on_delete = models.SET_NULL) 
+    cars = models.TextField(default='', blank=True)
+    name = models.TextField(max_length=300, default='', blank=True)
+    email = models.TextField(max_length=300, default='', blank=True)
+    mobile_phone = models.TextField(blank=True, default='')
+    deposit = 3000
+    monthly_installment = models.IntegerField(null=True)
+    total_amount = models.IntegerField(null=True)
+    bank = models.TextField(max_length=300, default='', blank=True)
+    passport = models.FileField(default = '' , blank=True)
+    driver_license = models.FileField(default = '' , blank=True)
+    personal_identification_card = models.FileField(default = '' , blank=True)
+    salary_certificate = models.FileField(default = '' , blank=True)
+    bank_statement = models.FileField(default = '' , blank=True)
+    pick_up_location = models.TextField(max_length=300, default='', blank=True)
+    pick_up_date = models.DateField(null=True, blank=True)
+    pick_up_time = models.TimeField(null=True, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True , null=True)
 
     def __str__(self):
         return f"cars:{self.cars} - user:{self.user} - name:{self.name}"

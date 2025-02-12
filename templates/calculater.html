@@ -143,7 +143,7 @@
         <div class="form-section">
             {% for item in items %}
             <div class="col-12 input-group">
-                <input value="{{ item.car.brand_name }} {{ item.car.model }}"  id="cars" name="cars"  class="form-select rounded-end" style="padding-right:0%;background-image: none;" disabled>
+                <input value="{{ item.car.brand_name }} {{ item.car.model }}" id="cars" name="cars" class="form-select rounded-end" style="padding-right:0%;background-image: none;" readonly>
                 <i data-car-id="{{ item.car.id }}" style="color: #e30a23;" class="btn delete_item fas fa-trash"></i>
             </div>
             {% endfor %}
@@ -201,8 +201,8 @@
         </div>
 
         <div class="buttons">
-            <button class="calculate"><a style="color: white;" href="{% url 'c7_motors:payment_in_installments' %}">pay downpayment</a></button>
-            <button class="clear" onclick="clearForm()">continue without downpayment</button>
+            <button class="calculate"><a style="color: white;" href="{% url 'c7_motors:payment_in_installments' %}">Pay Deposit</a></button>
+            <button class="clear"><a style="color: white;" href="{% url 'c7_motors:payment_in_installments_without_dp' %}">continue without downpayment</a></button>
         </div>
 
         <div class="output-section">
@@ -246,59 +246,53 @@
         }
 
         //Send Data To Views.py
-        $(document).ready(function() {
-            // Trigger update on input or selection changes
-            $('#salary, select[name="salary_bank"], select[name="monthly_payments_bank"], select[name="nationality"]').on('input change', function() {
-                updateSalaryOverview();
-            });
-        
-            function updateSalaryOverview() {
-                var salary = $('#salary').val();
-                var salary_bank = $('select[name="salary_bank"]').val();
-                var monthly_payments_bank = $('select[name="monthly_payments_bank"]').val();
-                var nationality = $('select[name="nationality"]').val();
-        
-                console.log("Salary:", salary);
-                console.log("Salary Bank:", salary_bank);
-                console.log("Monthly Payments Bank:", monthly_payments_bank);
-                console.log("Nationality:", nationality);
-        
-                // Ensure all required fields are filled before sending the request
-                if (!salary || !salary_bank || !monthly_payments_bank || !nationality) {
-                    console.warn("Please fill all required fields.");
-                    return;
+            $(document).ready(function() {
+                function getCSRFToken() {
+                    return document.cookie.split('; ').find(row => row.startsWith('csrftoken=')).split('=')[1];
                 }
         
-                // Send data to the server using AJAX
-                $.ajax({
-                    url: "{% url 'c7_motors:calculate_your_salary' %}",
-                    method: "POST",
-                    contentType: "application/json",
-                    data: JSON.stringify({
-                        'salary': salary,
-                        'salary_bank': salary_bank,
-                        'monthly_payments_bank': monthly_payments_bank,
-                        'nationality': nationality,
-                    }),
-                    headers: {
-                        'X-CSRFToken': '{{ csrf_token }}'
-                    },
-                    success: function(response) {
-                        // Update the UI with the response data
-                        $('#downpayment').text(response.downpayment || "$0.00");
-                        $('#monthly_installment_with_downpayment').text(response.monthly_with_dp || "$0.00");
-                        $('#monthly_installment_without_downpayment').text(response.monthly_without_dp || "$0.00");
-                        $('#annual_interest_rate').text(response.annual_interest || "$0.00");
-                        $('#total_with_dp').text(response.total_with_dp || "$0.00");
-                        $('#total_without_dp').text(response.total_without_dp || "$0.00");
-                    },
-                    error: function(error) {
-                        // Log errors in the console
-                        console.error("Error:", error.responseJSON || error.responseText);
+                function updateSalaryOverview() {
+                    var salary = $('#salary').val();
+                    var salary_bank = $('select[name="salary_bank"]').val();
+                    var monthly_payments_bank = $('select[name="monthly_payments_bank"]').val();
+                    var nationality = $('select[name="nationality"]').val();
+        
+                    if (!salary || !salary_bank || !monthly_payments_bank || !nationality) {
+                        console.warn("All fields are required.");
+                        return;
                     }
+        
+                    $.ajax({
+                        url: "{% url 'c7_motors:calculate_your_salary' %}",
+                        method: "POST",
+                        contentType: "application/json",
+                        data: JSON.stringify({
+                            'salary': salary,
+                            'salary_bank': salary_bank,
+                            'monthly_payments_bank': monthly_payments_bank,
+                            'nationality': nationality
+                        }),
+                        headers: {
+                            'X-CSRFToken': getCSRFToken()
+                        },
+                        success: function(response) {
+                            $('#downpayment').text(response.downpayment || "AED 0.00");
+                            $('#monthly_installment_with_downpayment').text(response.monthly_with_dp || "AED 0.00");
+                            $('#monthly_installment_without_downpayment').text(response.monthly_without_dp || "AED 0.00");
+                            $('#annual_interest_rate').text(response.annual_interest || "AED 0.00");
+                            $('#total_with_dp').text(response.total_with_dp || "AED 0.00");
+                            $('#total_without_dp').text(response.total_without_dp || "AED 0.00");
+                        },
+                        error: function(error) {
+                            console.error("Error:", error.responseJSON || error.responseText);
+                        }
+                    });
+                }
+        
+                $('#salary, select[name="salary_bank"], select[name="monthly_payments_bank"], select[name="nationality"]').on('input change', function() {
+                    updateSalaryOverview();
                 });
-            }
-        });
+            });
         
     </script>
 

@@ -7,6 +7,7 @@
     <title>Payment success</title>
 
     <!-- Google Web Fonts -->
+     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"> 
@@ -14,7 +15,7 @@
     <!-- Icon Font Stylesheet -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
-    <link rel="icon" type="image/png" href="{% static 'img/c7_.png'%}">
+    <link rel="icon" type="image/png" href="{% static 'img/c7_logo.png'%}">
 
     <!-- Libraries Stylesheet -->
     <link href="{% static 'lib/animate/animate.min.css'%}" rel="stylesheet">
@@ -145,11 +146,11 @@
         (function () {
             // Initialize EmailJS
             emailjs.init({
-                publicKey: "AQC5dlmNN7mjNZR9_",
+                publicKey: "wC3TsK8et5Y0N0rDM",
             });
         })();
     </script>
-    
+
     <script type="text/javascript">
         document.addEventListener("DOMContentLoaded", function () {
             // Fetch the customer data from the context
@@ -158,15 +159,16 @@
                 email: "{{ last_customer_data.email|default:'' }}",
                 mobile_phone: "{{ last_customer_data.mobile_phone|default:'' }}",
                 cars: "{{ last_customer_data.cars|default:'' }}",
-                deposit: "{{ last_customer_data.deposit|default:0 }}",
+                deposit: "{{ last_customer_data.deposit|default:'' }}",
+                downpayment: "{{ last_customer_data.downpayment|default:'' }}",
                 monthly_installment: "{{ last_customer_data.monthly_installment|default:'' }}",
                 total_amount: "{{ last_customer_data.total_amount|default:'' }}",
                 bank: "{{ last_customer_data.bank|default:'' }}",
-                passport: "{{ last_customer_data_details.passport|default:'' }}",
-                driver_license: "{{ last_customer_data_details.driver_license|default:'' }}",
-                personal_identification_card: "{{ last_customer_data_details.personal_identification_card|default:'' }}",
-                salary_certificate: "{{ last_customer_data_details.salary_certificate|default:'' }}",
-                bank_statement: "{{ last_customer_data_details.bank_statement|default:'' }}",
+                passport: "{{ last_customer_data_details.passport|default:'' }}", // Full URL
+                driver_license: "{{ last_customer_data_details.driver_license|default:'' }}", // Full URL
+                personal_identification_card: "{{ last_customer_data_details.personal_identification_card|default:'' }}", // Full URL
+                salary_certificate: "{{ last_customer_data_details.salary_certificate|default:'' }}", // Full URL
+                bank_statement: "{{ last_customer_data_details.bank_statement|default:'' }}", // Full URL
                 pick_up_date: "{{ last_customer_data.pick_up_date|default:'' }}",
                 pick_up_time: "{{ last_customer_data.pick_up_time|default:'' }}",
                 pick_up_location: "{{ last_customer_data.pick_up_location|default:'' }}",
@@ -179,21 +181,22 @@
                 mobile_phone: customerData.mobile_phone || "N/A",
                 cars: customerData.cars || "N/A",
                 deposit: customerData.deposit || "N/A",
+                downpayment: customerData.downpayment || "N/A",
                 monthly_installment: customerData.monthly_installment || "N/A",
                 total_amount: customerData.total_amount || "N/A",
                 bank: customerData.bank || "N/A",
-                passport: customerData.passport || "No Passport Uploaded", 
-                driver_license: customerData.driver_license || "No Driver License Uploaded", 
-                personal_identification_card: customerData.personal_identification_card || "No ID Uploaded", 
-                salary_certificate: customerData.salary_certificate || "No Salary Certificate Uploaded", 
-                bank_statement: customerData.bank_statement || "No Bank Statement Uploaded", 
+                passport: customerData.passport || "No Passport Uploaded", // Plain URL
+                driver_license: customerData.driver_license || "No Driver License Uploaded", // Plain URL
+                personal_identification_card: customerData.personal_identification_card || "No ID Uploaded", // Plain URL
+                salary_certificate: customerData.salary_certificate || "No Salary Certificate Uploaded", // Plain URL
+                bank_statement: customerData.bank_statement || "No Bank Statement Uploaded", // Plain URL
                 pick_up_location: customerData.pick_up_location || "N/A",
                 pick_up_date: customerData.pick_up_date || "N/A",
                 pick_up_time: customerData.pick_up_time || "N/A",
             };
 
             // Send the email using EmailJS
-            emailjs.send("service_4mscqm9", "template_egfzlgs", emailParams)
+            emailjs.send("service_z8v8498", "template_vrcuks3", emailParams)
                 .then(function (response) {
                     console.log("SUCCESS!", response.status, response.text);
                 })
