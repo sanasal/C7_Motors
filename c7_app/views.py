@@ -967,6 +967,7 @@ def calculate_customer_salary(request):
             salary_bank = body.get('salary_bank', "")
             monthly_payments_bank = body.get('monthly_payments_bank', "")
             nationality = body.get('nationality', "")
+            action = body.get('action', "")  # Determine which button was clicked
 
             # Handle cart and cart items
             cart, _ = Cart.objects.get_or_create(user=request.user, completed=False)
@@ -986,27 +987,24 @@ def calculate_customer_salary(request):
 
             car_names = [f"{item.car.brand_name} {item.car.model}" for item in cartitems]
 
-            customer = InstallmentsCustomer.objects.filter(user=request.user).first()
-            if not customer:
-                customer = InstallmentsCustomer.objects.create(user=request.user)
+            if action == "pay_deposit":
+                # Update InstallmentsCustomer (with downpayment)
+                customer, _ = InstallmentsCustomer.objects.get_or_create(user=request.user)
+                customer.cars = ', '.join(car_names)
+                customer.bank = monthly_payments_bank
+                customer.downpayment = downpayment
+                customer.monthly_installment = monthly_with_dp
+                customer.total_amount = total_with_dp
+                customer.save()
 
-            customer.cars = ', '.join(car_names)
-            customer.bank = monthly_payments_bank
-            customer.downpayment = downpayment
-            customer.monthly_installment = monthly_with_dp
-            customer.total_amount = total_with_dp
-            customer.save()
-
-            # Fix for InstallmentsCustomerWithoutDP
-            customer_without_dp = InstallmentsCustomerWithoutDP.objects.filter(user=request.user).first()
-            if not customer_without_dp:
-                customer_without_dp = InstallmentsCustomerWithoutDP.objects.create(user=request.user)
-
-            customer_without_dp.cars = ', '.join(car_names)
-            customer_without_dp.bank = monthly_payments_bank
-            customer_without_dp.monthly_installment = monthly_without_dp
-            customer_without_dp.total_amount = total_without_dp
-            customer_without_dp.save()
+            elif action == "continue_without_dp":
+                # Update InstallmentsCustomerWithoutDP (without downpayment)
+                customer_without_dp, _ = InstallmentsCustomerWithoutDP.objects.get_or_create(user=request.user)
+                customer_without_dp.cars = ', '.join(car_names)
+                customer_without_dp.bank = monthly_payments_bank
+                customer_without_dp.monthly_installment = monthly_without_dp
+                customer_without_dp.total_amount = total_without_dp
+                customer_without_dp.save()
 
             return JsonResponse({
                 'downpayment': f"AED {downpayment:.2f}",
@@ -1015,7 +1013,7 @@ def calculate_customer_salary(request):
                 'annual_interest': f"AED {annual_interest:.2f}",
                 'total_with_dp': f"AED {total_with_dp:.2f}",
                 'total_without_dp': f"AED {total_without_dp:.2f}",
-                'cars': customer.cars  
+                'cars': ', '.join(car_names)
             })
 
         except Exception as e:

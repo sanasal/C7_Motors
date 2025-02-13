@@ -201,9 +201,10 @@
         </div>
 
         <div class="buttons">
-            <button class="calculate"><a style="color: white;" href="{% url 'c7_motors:payment_in_installments' %}">Pay Deposit</a></button>
-            <button class="clear"><a style="color: white;" href="{% url 'c7_motors:payment_in_installments_without_dp' %}">continue without downpayment</a></button>
+            <button id="pay_deposit" class="calculate">Pay Deposit</button>
+            <button id="continue_without_dp" class="clear">Continue Without Downpayment</button>
         </div>
+        
 
         <div class="output-section">
             <h2>Salary Overview:</h2>
@@ -246,53 +247,56 @@
         }
 
         //Send Data To Views.py
-            $(document).ready(function() {
-                function getCSRFToken() {
-                    return document.cookie.split('; ').find(row => row.startsWith('csrftoken=')).split('=')[1];
+        $(document).ready(function () {
+            function getCSRFToken() {
+                return document.cookie.split('; ').find(row => row.startsWith('csrftoken=')).split('=')[1];
+            }
+        
+            function updateSalaryOverview() {
+                var salary = $('#salary').val();
+                var salary_bank = $('select[name="salary_bank"]').val();
+                var monthly_payments_bank = $('select[name="monthly_payments_bank"]').val();
+                var nationality = $('select[name="nationality"]').val();
+                
+                if (!salary || !salary_bank || !monthly_payments_bank || !nationality) {
+                    console.warn("All fields are required.");
+                    return;
                 }
-        
-                function updateSalaryOverview() {
-                    var salary = $('#salary').val();
-                    var salary_bank = $('select[name="salary_bank"]').val();
-                    var monthly_payments_bank = $('select[name="monthly_payments_bank"]').val();
-                    var nationality = $('select[name="nationality"]').val();
-        
-                    if (!salary || !salary_bank || !monthly_payments_bank || !nationality) {
-                        console.warn("All fields are required.");
-                        return;
+              
+                $.ajax({
+                    url: "{% url 'c7_motors:calculate_your_salary' %}",
+                    method: "POST",
+                    contentType: "application/json",
+                    data: JSON.stringify({
+                        'salary': salary,
+                        'salary_bank': salary_bank,
+                        'monthly_payments_bank': monthly_payments_bank,
+                        'nationality': nationality
+                    }),
+                    headers: {
+                        'X-CSRFToken': getCSRFToken()
+                    },
+                    success: function (response) {
+                        $('#downpayment').text(response.downpayment || "AED 0.00");
+                        $('#monthly_installment_with_downpayment').text(response.monthly_with_dp || "AED 0.00");
+                        $('#monthly_installment_without_downpayment').text(response.monthly_without_dp || "AED 0.00");
+                        $('#annual_interest_rate').text(response.annual_interest || "AED 0.00");
+                        $('#total_with_dp').text(response.total_with_dp || "AED 0.00");
+                        $('#total_without_dp').text(response.total_without_dp || "AED 0.00");
+                    },
+                    error: function (error) {
+                        console.error("Error:", error.responseJSON || error.responseText);
                     }
-        
-                    $.ajax({
-                        url: "{% url 'c7_motors:calculate_your_salary' %}",
-                        method: "POST",
-                        contentType: "application/json",
-                        data: JSON.stringify({
-                            'salary': salary,
-                            'salary_bank': salary_bank,
-                            'monthly_payments_bank': monthly_payments_bank,
-                            'nationality': nationality
-                        }),
-                        headers: {
-                            'X-CSRFToken': getCSRFToken()
-                        },
-                        success: function(response) {
-                            $('#downpayment').text(response.downpayment || "AED 0.00");
-                            $('#monthly_installment_with_downpayment').text(response.monthly_with_dp || "AED 0.00");
-                            $('#monthly_installment_without_downpayment').text(response.monthly_without_dp || "AED 0.00");
-                            $('#annual_interest_rate').text(response.annual_interest || "AED 0.00");
-                            $('#total_with_dp').text(response.total_with_dp || "AED 0.00");
-                            $('#total_without_dp').text(response.total_without_dp || "AED 0.00");
-                        },
-                        error: function(error) {
-                            console.error("Error:", error.responseJSON || error.responseText);
-                        }
-                    });
-                }
-        
-                $('#salary, select[name="salary_bank"], select[name="monthly_payments_bank"], select[name="nationality"]').on('input change', function() {
-                    updateSalaryOverview();
                 });
+            }
+        
+            // Check if the event listener is firing
+            $('#salary, select[name="salary_bank"], select[name="monthly_payments_bank"], select[name="nationality"]').on('input change', function () {
+                updateSalaryOverview();
             });
+        });
+        
+               
         
     </script>
 
