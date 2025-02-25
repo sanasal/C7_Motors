@@ -4,6 +4,7 @@ from xml.parsers.expat import model
 from django.db import models
 from django.contrib.auth.models import User
 import uuid
+import os
 
 # Create your models here
 
@@ -141,6 +142,24 @@ class Car(models.Model):
     monthly_installments_price = models.IntegerField(null=True, blank=True)
     description = models.TextField(blank=True)
     selled = models.BooleanField(default=False)
+
+    def delete_selled_car_images(self):
+        """Delete all images from storage and database when a car is sold."""
+        if self.selled:  # Check if the car is sold
+            for img in self.images.all(): 
+                if img.image:  
+                    image_path = img.image.path  # Get the file path
+                    if os.path.exists(image_path):  
+                        os.remove(image_path)  # Delete the file from storage
+                img.delete()  # Remove from database
+
+    def save(self, *args, **kwargs):
+        """Override save to check when a car is marked as sold."""
+        if self.pk:  # Ensure this is an update, not a new instance
+            old_car = Car.objects.filter(pk=self.pk).first()
+            if old_car and not old_car.selled and self.selled:
+                self.delete_selled_car_images()  # Delete images when sold
+        super().save(*args, **kwargs)
 
     def __str__(self):
         return f"{self.brand_name} {self.model}"

@@ -1152,7 +1152,7 @@
     <script src="{% static 'lib/waypoints/waypoints.min.js'%}"></script>
     <script src="{% static 'lib/counterup/counterup.min.js'%}"></script>
     <script src="{% static 'lib/owlcarousel/owl.carousel.min.js'%}"></script>
-    <!-- Add Iconify Script -->
+    <!-- Iconify Script -->
     <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
     <script>
         function getCookie(name) {
@@ -1171,32 +1171,6 @@
             return cookieValue;
         }
         const csrftoken = getCookie('csrftoken');
-
-
-        const carousel = document.getElementById('carousel');
-        const prevBtn = document.getElementById('prevBtn');
-        const nextBtn = document.getElementById('nextBtn');
-
-        // Number of items visible
-        const itemsToShow = 4;
-        let currentIndex = 0;
-
-        const updateCarousel = () => {
-            const itemWidth = carousel.firstElementChild.offsetWidth + 50; // Image width + gap
-            const maxIndex = carousel.children.length - itemsToShow;
-            currentIndex = Math.max(0, Math.min(currentIndex, maxIndex));
-            carousel.style.transform = `translateX(${-currentIndex * itemWidth}px)`;
-        };
-
-        nextBtn.addEventListener('click', () => {
-            currentIndex += 1;
-            updateCarousel();
-        });
-
-        prevBtn.addEventListener('click', () => {
-            currentIndex -= 1;
-            updateCarousel();
-        });
 
 
         document.getElementById('searchForm').addEventListener('submit', function(e) {
