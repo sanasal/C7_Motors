@@ -143,6 +143,7 @@ class Car(models.Model):
     description = models.TextField(blank=True)
     selled = models.BooleanField(default=False)
 
+    '''
     def delete_selled_car_images(self):
         """Delete all images from storage and database when a car is sold."""
         if self.selled:  # Check if the car is sold
@@ -160,6 +161,7 @@ class Car(models.Model):
             if old_car and not old_car.selled and self.selled:
                 self.delete_selled_car_images()  # Delete images when sold
         super().save(*args, **kwargs)
+    '''
 
     def __str__(self):
         return f"{self.brand_name} {self.model}"
