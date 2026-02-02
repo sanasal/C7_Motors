@@ -88,13 +88,13 @@ class Car(models.Model):
 
     model_year = models.IntegerField(null=True, blank=True, db_index=True)
     mileage = models.IntegerField(null=True, blank=True)
-    cash_price = models.IntegerField(null=True, blank=True,db_index=True)
+    cash_price = models.CharField(max_length=40 , null=True, blank=True,db_index=True)
     specification = models.CharField(max_length=40, null=True, blank=True)
-    horsepower = models.PositiveIntegerField(null=True, blank=True)
-    engine_capacity = models.PositiveIntegerField(null=True, blank=True)
+    horsepower = models.CharFieldField(max_length=40 , null=True, blank=True)
+    engine_capacity = models.CharField(max_length=40 , null=True, blank=True)
     cylinders = models.PositiveIntegerField(null=True, blank=True)
     seating_capacity = models.PositiveIntegerField(null=True, blank=True)
-    monthly_installments_price = models.IntegerField(null=True, blank=True)
+    monthly_installments_price = models.CharField(max_length=40 ,null=True, blank=True)
     description = models.TextField(blank=True)
 
     selled = models.BooleanField(default=False, db_index=True)
