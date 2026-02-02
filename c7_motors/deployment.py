@@ -1,17 +1,27 @@
 import os
 from django.utils.translation import gettext_lazy as _
-
-# Load from .env if needed
+from .settings import *
 from dotenv import load_dotenv
 load_dotenv()
+
+
+ROOT_URLCONF = 'c7_motors.urls'
 
 # Security & Allowed Hosts
 SECRET_KEY =  os.environ.get('SECRET')
 host = os.environ.get('HOSTNAME' , 'c7motors.com')
 #ALLOWED_HOSTS = [host, 'www.' + host.lstrip('www.')]
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = [
+    '76.13.128.225',
+    'c7motors.com',
+    'www.c7motors.com',
+]
 #CSRF_TRUSTED_ORIGINS = [f'https://{host}', f'https://www.{host.lstrip("www.")}']
 
+CSRF_TRUSTED_ORIGINS = [
+    "https://c7motors.com",
+    "https://www.c7motors.com",
+]
 
 # Debug Mode
 DEBUG = os.environ.get('DEBUG', 'False') == 'True'
@@ -59,7 +69,6 @@ TEMPLATES = [
 # Middleware
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.gzip.GZipMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.locale.LocaleMiddleware',
@@ -67,7 +76,7 @@ MIDDLEWARE = [
     'simple_history.middleware.HistoryRequestMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    #'c7_app.middleware.exception_middleware.ExceptionMiddleware',
+    'c7_app.middleware.exception_middleware.ExceptionMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
 ]
@@ -87,13 +96,12 @@ CACHES = {
 SESSION_ENGINE = "django.contrib.sessions.backends.cached_db"
 
 # Static & Media Files
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR , 'staticfiles')]
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.environ.get('MEDIA_ROOT')
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+MEDIA_URL = "/media/"
 
 STATICFILES_FINDERS = [
     'django.contrib.staticfiles.finders.FileSystemFinder',
