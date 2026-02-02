@@ -583,32 +583,26 @@ msgstr "تمويل السيارات في دبي"
 msgid "Everything You Need to Know"
 msgstr "كل ما تحتاج لمعرفته"
 
-#: .\templates\financing.html:24
-msgid ""
-"Car financing in Dubai has become an increasingly popular option for "
-"residents and expats looking to purchase their dream car without having to "
-"make a full upfront payment."
-msgstr "أصبح تمويل السيارات في دبي خيارًا شائعًا بشكل متزايد للمقيمين والمغتربين الذين يتطلعون إلى شراء سيارة أحلامهم دون الحاجة إلى دفع المبلغ كاملاً مقدمًا."
 
-#: .\templates\financing.html:25
+#: .\templates\financing.html:33
 msgid ""
-"With the rapid growth of the automotive sector in the UAE and the "
-"availability of a wide variety of financing options, buying a car—especially "
-"a premium pre-owned one—has never been easier."
-msgstr "مع النمو السريع لقطاع السيارات في الإمارات وتوافر مجموعة واسعة من خيارات التمويل، أصبح شراء سيارة - خاصة سيارة فاخرة مملوكة سابقًا - أسهل من أي وقت مضى."
+"Car financing in Dubai has become a popular option for residents and expats "
+"who want to buy a car without paying the full amount upfront, especially "
+"with the growth of the UAE automotive market."
+msgstr ""
+"أصبح تمويل السيارات في دبي خيارًا شائعًا للمقيمين والمغتربين الراغبين بشراء "
+"سيارة دون دفع كامل المبلغ مقدمًا، خاصة مع نمو سوق السيارات في دولة الإمارات."
 
-#: .\templates\financing.html:26
+#: .\templates\financing.html:34
 msgid ""
-"Whether you're a salaried employee or self-employed, there are flexible "
-"solutions that can match your income level and lifestyle."
-msgstr "سواء كنت موظفًا براتب ثابت أو تعمل لحسابك الخاص، تتوفر حلول مرنة يمكن أن تتناسب مع مستوى دخلك ونمط حياتك."
-
-#: .\templates\financing.html:27
-msgid ""
-"Major local banks and financial institutions offer tailored car loan "
-"packages that are both Shariah-compliant and conventional, giving buyers "
-"freedom to choose what best suits their needs."
-msgstr "تقدم البنوك والمؤسسات المالية المحلية الكبرى حزم قروض سيارات مصممة خصيصًا تتوافق مع الشريعة الإسلامية وتقليدية على حد سواء، مما يمنح المشترين حرية اختيار ما يناسب احتياجاتهم."
+"With a wide range of flexible financing solutions available for both "
+"salaried and self-employed buyers, local banks and financial institutions "
+"offer conventional and Shariah-compliant options to suit different needs "
+"and lifestyles."
+msgstr ""
+"ومع توفر مجموعة واسعة من حلول التمويل المرنة للموظفين وأصحاب الأعمال الحرة، "
+"تقدم البنوك والمؤسسات المالية المحلية خيارات تقليدية وأخرى متوافقة مع الشريعة "
+"لتناسب مختلف الاحتياجات وأنماط الحياة."
 
 #: .\templates\financing.html:35
 msgid "Learn"

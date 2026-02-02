@@ -583,32 +583,27 @@ msgstr "Автокредитование в Дубае"
 msgid "Everything You Need to Know"
 msgstr "Все, что вам нужно знать"
 
-#: .\templates\financing.html:24
+#: .\templates\financing.html:33
 msgid ""
-"Car financing in Dubai has become an increasingly popular option for "
-"residents and expats looking to purchase their dream car without having to "
-"make a full upfront payment."
-msgstr "Автокредитование в Дубае стало все более популярным вариантом для резидентов и экспатов, желающих приобрести автомобиль своей мечты без необходимости вносить полную предоплату."
+"Car financing in Dubai has become a popular option for residents and expats "
+"who want to buy a car without paying the full amount upfront, especially "
+"with the growth of the UAE automotive market."
+msgstr ""
+"Автокредитование в Дубае стало популярным вариантом для резидентов и "
+"экспатов, желающих приобрести автомобиль без полной предоплаты, особенно "
+"на фоне роста автомобильного рынка ОАЭ."
 
-#: .\templates\financing.html:25
+#: .\templates\financing.html:34
 msgid ""
-"With the rapid growth of the automotive sector in the UAE and the "
-"availability of a wide variety of financing options, buying a car—especially "
-"a premium pre-owned one—has never been easier."
-msgstr "С быстрым ростом автомобильного сектора в ОАЭ и наличием широкого спектра вариантов финансирования, покупка автомобиля, особенно премиального подержанного, стала как никогда простой."
-
-#: .\templates\financing.html:26
-msgid ""
-"Whether you're a salaried employee or self-employed, there are flexible "
-"solutions that can match your income level and lifestyle."
-msgstr "Независимо от того, являетесь ли вы наемным работником или самозанятым, существуют гибкие решения, которые могут соответствовать вашему уровню дохода и образу жизни."
-
-#: .\templates\financing.html:27
-msgid ""
-"Major local banks and financial institutions offer tailored car loan "
-"packages that are both Shariah-compliant and conventional, giving buyers "
-"freedom to choose what best suits their needs."
-msgstr "Крупные местные банки и финансовые учреждения предлагают индивидуальные пакеты автокредитов, которые соответствуют как нормам шариата, так и традиционным, предоставляя покупателям свободу выбора того, что лучше всего соответствует их потребностям."
+"With a wide range of flexible financing solutions available for both "
+"salaried and self-employed buyers, local banks and financial institutions "
+"offer conventional and Shariah-compliant options to suit different needs "
+"and lifestyles."
+msgstr ""
+"Благодаря широкому выбору гибких финансовых решений для наёмных сотрудников "
+"и самозанятых, местные банки и финансовые учреждения предлагают как "
+"традиционные, так и соответствующие нормам шариата варианты, подходящие под "
+"разные потребности и образ жизни."
 
 #: .\templates\financing.html:35
 msgid "Learn"
