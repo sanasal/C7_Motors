@@ -27,7 +27,7 @@ def home(request):
             'id', 'cash_price', 'main_img', 'brand_name',
             'model', 'model_year', 'mileage'
         )
-        .order_by('-id')[:15]
+        .order_by('-id')[:9]
     )
 
     articles = Article.objects.only('id', 'title', 'image')[:4]
