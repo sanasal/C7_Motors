@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'simple_history',
     'jazzmin',
 
+    'django.contrib.sitemaps',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

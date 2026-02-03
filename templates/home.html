@@ -189,7 +189,7 @@
                                 {% endif %}
                             </div>
                             <div class="categories-content rounded-bottom p-4">
-                                <h4 style="color: #e30a23;">{{ car.brand_name }} {{ car.model }}</h4>
+                                <h4 style="color: #f10b26;">{{ car.brand_name }} {{ car.model }}</h4>
                                 <div class="mb-4">
                                     <h5 class="bg-white text-dark rounded-pill py-2 px-4 mb-0">
                                         {{ car.cash_price }} {% trans 'AED' %}
@@ -204,11 +204,11 @@
                                     </div>
                                 </div>
                                 {% if car.selled %}
-                                    <button class="btn rounded-pill d-flex justify-content-center py-3 w-100" style="background-color: #e30a23; color:rgb(0,0,0); cursor: not-allowed;" disabled>{% trans 'Sold Out' %}</button>
+                                    <button class="btn rounded-pill d-flex justify-content-center py-3 w-100" style="background-color: #e30a23; color:rgb(255, 255, 255); cursor: not-allowed;" disabled>{% trans 'Sold Out' %}</button>
                                 {% elif car.not_available %}
-                                    <button class="btn rounded-pill d-flex justify-content-center py-3 w-100" style="background-color: #e30a23; color:rgb(0,0,0); cursor: not-allowed;" disabled>{% trans 'Not Available' %}</button>
+                                    <button class="btn rounded-pill d-flex justify-content-center py-3 w-100" style="background-color: #e30a23; color:rgb(255, 250, 250); cursor: not-allowed;" disabled>{% trans 'Not Available' %}</button>
                                 {% else %}
-                                    <a href="{% url 'c7_motors:car_details' car_slug=car.slug %}" class="btn rounded-pill d-flex justify-content-center py-3" style="background-color: #e30a23; color:rgb(0,0,0)">{% trans 'Show Details' %}</a>
+                                    <a href="{% url 'c7_motors:car_details' car_slug=car.slug %}" class="btn rounded-pill d-flex justify-content-center py-3" style="background-color: #e30a23; color:rgb(255, 255, 255)">{% trans 'Show Details' %}</a>
                                 {% endif %}
                             </div>
                         </div>
@@ -388,7 +388,7 @@
             <div class="row g-4 mt-4">
                 <div class="col-12 text-center">
                     <a href="{% url 'c7_motors:articles' %}" 
-                     class="btn btn-lg px-4 py-2 rounded-pill shadow text-light" style='background-color:#e30a23;'>
+                     class="btn btn-lg px-4 py-2 rounded-pill shadow text-light" style='background-color:#e30a23;color: white;'>
                      {% trans 'More Articles' %}
                     </a>
                 </div>

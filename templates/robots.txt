@@ -1,6 +1,13 @@
 User-agent: *
 Disallow: /admin/
-
-Allow: /
-
 Sitemap: https://c7motors.com/sitemap.xml
+
+# Block AI Training Bots
+User-agent: GPTBot
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
