@@ -1,13 +1,9 @@
 {% extends 'base.html' %}
-{% block content %}
 {% load static %}
 {% load i18n %}
 {% csrf_token %}
 
-<!DOCTYPE html>
-<html lang="{{ LANGUAGE_CODE }}">
-
-    <head>
+{% block meta %}
         <title>{% trans "Buy Used Cars in Dubai | Premium Vehicles at C7 Motors" %}</title>
         <meta name="description" content="{% trans 'Discover premium used cars for sale in Dubai with C7 Motors. Browse our curated selection and drive away your dream car today.' %}">
         <meta name="keywords" content="{% trans 'used cars Dubai, buy cars UAE, C7 Motors, second hand cars Dubai' %}">
@@ -21,10 +17,8 @@
         <meta property="og:url" content="https://www.c7motors.com/">
         <meta property="og:type" content="website">
 
-    </head>
-
-    <body>
-
+{% endblock %}
+{% block content %}
         <!-- Carousel Start -->
         <div class="header-carousel">
             <div id="carouselId" class="carousel slide" data-bs-ride="carousel" data-bs-interval="false">
