@@ -88,7 +88,7 @@ class Car(models.Model):
 
     model_year = models.IntegerField(null=True, blank=True, db_index=True)
     mileage = models.IntegerField(null=True, blank=True)
-    cash_price = models.PositiveIntegerField(null=True, blank=True)
+    cash_price = models.IntegerField(null=True,blank=True)
     specification = models.CharField(max_length=50,null=True, blank=True)
     horsepower = models.CharField(max_length=40 , null=True, blank=True)
     engine_capacity = models.CharField(max_length=40 , null=True, blank=True)
