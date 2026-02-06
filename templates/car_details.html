@@ -200,11 +200,13 @@
                     </div>
                 </div>
 
-                <a href="{% url 'c7_motors:get_it_now' car_id=car.id %}" 
-                class="btn w-100 fw-semibold mt-3" 
-                style="background:#e30a23; color:#fff; border-radius:10px;">
-                {% trans "Get It Now" %}
-                </a>
+                <a href="https://wa.me/971502564677"
+                class="btn w-100 fw-semibold mt-3" style="background:#e30a23; color:#fff; border-radius:10px;">
+                {% trans "Chat on WhatsApp" %}</a>
+
+                <a href="{% url 'c7_motors:financing_with_car' car_slug=car.slug %}"
+                class="btn w-100 fw-semibold mt-3" style="color: #e20a23;border-color: #e30a23; border-radius:10px;">
+                {% trans "Calculate Payment" %}</a>
             </div>
         </div>
         <!-- Mobile Car Images Slider and Details End -->
@@ -273,12 +275,16 @@
                         
                             <!-- CTA Button -->
                             <div class="card-body pt-3">
-                                <a href="{% url 'c7_motors:get_it_now' car_id=car.id %}" class="btn w-100 fw-semibold py-2"
+                                <a href="https://wa.me/971502564677" class="btn w-100 fw-semibold py-2"
                                 style="background-color: #e30a23; color: white; border-radius: 8px;">
-                                {% trans "Get It Now" %}
+                                {% trans "Chat on WhatsApp" %}
                                 </a>
+
+                                <a href="{% url 'c7_motors:financing_with_car' car_slug=car.slug %}"
+                                class="btn w-100 fw-semibold mt-3" style="border-radius:10px;color: #e20a23;border-color: #e30a23;">
+                                {% trans "Calculate Payment" %}</a>
                             </div>
-                        
+
                             </div>
                         </div>                      
                         
@@ -403,7 +409,7 @@
 
         carousel.addEventListener('touchend', function () {
             let diffX = startX - endX;
-            if (Math.abs(diffX) > 50) { // عشان ما يتقلب إلا لو السحب قوي شوي
+            if (Math.abs(diffX) > 50) { 
             if (diffX > 0) {
                 bootstrap.Carousel.getInstance(carousel).next();
             } else {

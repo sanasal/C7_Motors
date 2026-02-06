@@ -376,7 +376,7 @@ msgstr "التقسيط"
 
 #: .\templates\car_details.html:195 .\templates\car_details.html:267
 msgid "Get It Now"
-msgstr "احصل عليها الآن"
+msgstr "راسلنا عبر واتساب"
 
 #: .\templates\car_details.html:239
 msgid "Mileage:"
@@ -1322,3 +1322,6 @@ msgstr "اقرأ أقل"
 
 msgid "Tips"
 msgstr "نصائح"
+
+msgid "Calculate Payment"
+msgstr "احسب القسط"

@@ -375,8 +375,8 @@ msgid "Installment"
 msgstr "Рассрочка"
 
 #: .\templates\car_details.html:195 .\templates\car_details.html:267
-msgid "Get It Now"
-msgstr "Получить сейчас"
+msgid "Chat on WhatsApp"
+msgstr "Написать в WhatsApp"
 
 #: .\templates\car_details.html:239
 msgid "Mileage:"
@@ -1240,3 +1240,6 @@ msgstr "Свернуть"
 
 msgid "Tips"
 msgstr "Советы"
+
+msgid "Calculate Payment"
+msgstr "Рассчитать платёж"

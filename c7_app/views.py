@@ -1,10 +1,8 @@
 # views.py
 from django.shortcuts import render, redirect, get_object_or_404
-from django.http import JsonResponse, HttpResponseBadRequest
 from django.views.decorators.cache import cache_page
 from django.utils import translation
 from django.views.decorators.http import require_http_methods
-from django.db.models import Prefetch
 import json, urllib
 
 from .models import Car, Article
@@ -84,11 +82,19 @@ def articles(request):
 
 
 @require_http_methods(["GET", "POST"])
-def financing(request):
+def financing(request , car_slug = None):
+    car_price = None
+
+    if car_slug:
+        car_price = Car.objects.values_list('cash_price', flat=True).get(slug=car_slug)
+
     if request.method == 'POST':
         try:
             data = json.loads(request.body)
-            car_price = float(data.get('car_price', 0))
+            if car_slug:
+                car_price = Car.objects.values_list('cash_price', flat=True).get(slug=car_slug)
+            else:  
+                car_price = float(data.get('car_price', 0))
             downpayment = float(data.get('downpayment', 0))
             loan_duration = int(data.get('loan_duration', 1))
 
@@ -108,21 +114,10 @@ def financing(request):
         "financing.html",
         {
             'cars': Car.objects.only('id', 'brand_name', 'model'),
+            'car_price' : car_price,
             'form': RequestsForm()
         }
     )
-
-
-
-def get_it_now(request , car_id):
-    '''Get It Now Request'''
-
-    car = Car.objects.get(id=car_id)
-
-    context = {'car':car}
-
-    return render(request , 'get_it_now.html' , context)
-
 
 
 def _handle_request_form(request, template):
@@ -146,12 +141,8 @@ def _handle_request_form(request, template):
 def add_financing_request_data(request):
     return _handle_request_form(request, 'financing.html')
 
-@require_http_methods(["POST"])
-def add_request_data(request):
-    return _handle_request_form(request, 'get_it_now.html')
 
-
-@cache_page(60 * 10)  # 10 minutes cache
+@cache_page(60 * 10) 
 def cars(request, car_type=None):
     """
     High-performance cars listing with optional type filtering

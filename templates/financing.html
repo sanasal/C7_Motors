@@ -27,14 +27,98 @@
                 {% trans "Everything You Need to Know" %}
                 </p>
             </div>
-
-            <div class="mx-auto mt-4" style="max-width: 850px; line-height: 1.8; font-size: 18px;">
-                <p class="text-muted">
-                    {% trans "Car financing in Dubai has become a popular option for residents and expats who want to buy a car without paying the full amount upfront, especially with the growth of the UAE automotive market." %}
-                    {% trans "With a wide range of flexible financing solutions available for both salaried and self-employed buyers, local banks and financial institutions offer conventional and Shariah-compliant options to suit different needs and lifestyles." %}
-                </p>
-            </div>
         </div>
+
+        <!-- CALCULATOR & FORM SECTION -->
+        <div class="row g-4 mb-5" id="calculator">
+            <div class="finance-wrapper container my-5">
+                <div class="row g-4">
+                    <!-- LEFT SIDE -->
+                    <div class="col-lg-6">
+                        <!-- Car Price -->
+                        <label class="calc-label">Car Price</label>
+                        <div class="calc-input-box mb-2">
+                            <span>AED</span>
+                            <input type="number" id="car_price" value="{{ car_price|default_if_none:10000 }}">
+                        </div>
+                        <input type="range" id="price_slider" min="10000" max="1500000" value="{{ car_price|default_if_none:10000 }}" class="calc-slider">
+
+                        <!-- Down Payment -->
+                        <label class="calc-label mt-4">Down Payment</label>
+                        <div class="row g-2 mb-2">
+                            <div class="col-8">
+                                <div class="calc-input-box">
+                                <span>AED</span>
+                                    <input type="number" id="downpayment" value="8400">
+                                </div>
+                            </div>
+
+                            <div class="col-4">
+                                <div class="calc-input-box">
+                                    <input type="number" id="down_percent" value="20">
+                                <span>%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <input type="range" id="down_slider" min="0" max="50" value="20" class="calc-slider">
+
+                        <!-- Interest Rate -->
+                        <label class="calc-label mt-4">Interest Rate</label>
+                        <div class="calc-input-box mb-2">
+                            <input type="number" id="interest_rate" value="2.79">
+                            <span>%</span>
+                        </div>
+                        <input type="range" id="interest_slider" min="1" max="10" value="2.79" step="0.01" class="calc-slider">
+
+                        <!-- Loan Period -->
+                        <label class="calc-label mt-4">Loan Period</label>
+                        <div class="d-flex gap-2 flex-wrap mt-2">
+                            <button class="period-btn active" data-value="1">1</button>
+                            <button class="period-btn" data-value="2">2</button>
+                            <button class="period-btn" data-value="3">3</button>
+                            <button class="period-btn" data-value="4">4</button>
+                            <button class="period-btn" data-value="5">5</button>
+                        </div>
+
+                    </div>
+
+                    <!-- RIGHT SIDE SUMMARY -->
+                    <div class="col-lg-6">
+                        <div class="summary-box">
+                            <p class="summary-title">Monthly Payment</p>
+                            <h1 class="summary-amount" id="monthly_payment">AED 638</h1>
+
+                            <div class="summary-row">
+                                <span>Car Price</span>
+                                <strong id="s_car_price">
+                                    AED {{ car_price|default_if_none:10000 }}
+                                </strong>
+                            </div>
+
+                            <div class="summary-row">
+                                <span>Down Payment</span>
+                                <strong id="s_downpayment">AED 0 / 0%</strong>
+                            </div>
+
+                            <div class="summary-row">
+                                <span>Total Loan Amount</span>
+                                <strong id="s_loan_amount">AED 0</strong>
+                            </div>
+
+                            <div class="summary-row">
+                                <span>Loan Period</span>
+                                <strong id="s_period">0 Years</strong>
+                            </div>
+
+                            <div class="summary-row">
+                                <span>Total interest</span>
+                                <strong id="s_interest">AED 0</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
 
         <!-- Financing Sections -->
         <div class="container py-4">
@@ -93,99 +177,6 @@
                 </div>
             </div>
         </div>
-
-
-
-        <!-- CALCULATOR & FORM SECTION -->
-        <div class="row g-4 mb-5" id="calculator">
-            <div class="finance-wrapper container my-5">
-                <h2 class="fw-bold mb-4">Car Finance Calculator</h2>
-
-                <div class="row g-4">
-                    <!-- LEFT SIDE -->
-                    <div class="col-lg-6">
-                        <!-- Car Price -->
-                        <label class="calc-label">Car Price</label>
-                        <div class="calc-input-box mb-2">
-                            <span>AED</span>
-                            <input type="number" id="car_price" value="42000">
-                        </div>
-                        <input type="range" id="price_slider" min="5000" max="300000" value="42000" class="calc-slider">
-
-                        <!-- Down Payment -->
-                        <label class="calc-label mt-4">Down Payment</label>
-                        <div class="row g-2 mb-2">
-                            <div class="col-8">
-                                <div class="calc-input-box">
-                                <span>AED</span>
-                                    <input type="number" id="downpayment" value="8400">
-                                </div>
-                            </div>
-
-                            <div class="col-4">
-                                <div class="calc-input-box">
-                                    <input type="number" id="down_percent" value="20">
-                                <span>%</span>
-                                </div>
-                            </div>
-                        </div>
-                        <input type="range" id="down_slider" min="0" max="50" value="20" class="calc-slider">
-
-                        <!-- Interest Rate -->
-                        <label class="calc-label mt-4">Interest Rate</label>
-                        <div class="calc-input-box mb-2">
-                            <input type="number" id="interest_rate" value="2.79">
-                            <span>%</span>
-                        </div>
-                        <input type="range" id="interest_slider" min="1" max="10" value="2.79" step="0.01" class="calc-slider">
-
-                        <!-- Loan Period -->
-                        <label class="calc-label mt-4">Loan Period</label>
-                        <div class="d-flex gap-2 flex-wrap mt-2">
-                            <button class="period-btn active" data-value="1">1</button>
-                            <button class="period-btn" data-value="2">2</button>
-                            <button class="period-btn" data-value="3">3</button>
-                            <button class="period-btn" data-value="4">4</button>
-                            <button class="period-btn" data-value="5">5</button>
-                        </div>
-
-                    </div>
-
-                    <!-- RIGHT SIDE SUMMARY -->
-                    <div class="col-lg-6">
-                        <div class="summary-box">
-                            <p class="summary-title">Monthly Payment</p>
-                            <h1 class="summary-amount" id="monthly_payment">AED 638</h1>
-
-                            <div class="summary-row">
-                                <span>Car Price</span>
-                                <strong id="s_car_price">AED 42,000</strong>
-                            </div>
-
-                            <div class="summary-row">
-                                <span>Down Payment</span>
-                                <strong id="s_downpayment">AED 8,400 / 20%</strong>
-                            </div>
-
-                            <div class="summary-row">
-                                <span>Total Loan Amount</span>
-                                <strong id="s_loan_amount">AED 38,287</strong>
-                            </div>
-
-                            <div class="summary-row">
-                                <span>Loan Period</span>
-                                <strong id="s_period">5 Years</strong>
-                            </div>
-
-                            <div class="summary-row">
-                                <span>Total interest</span>
-                                <strong id="s_interest">AED 4,687</strong>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
 
                 
             <div class="row justify-content-center mb-5">
