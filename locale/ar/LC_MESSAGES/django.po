@@ -336,7 +336,7 @@ msgstr "نظرة عامة على السيارة"
 
 #: .\templates\car_details.html:180
 msgid "Exterior"
-msgstr "الخارجي"
+msgstr "الميزات الخارجية"
 
 #: .\templates\car_details.html:181
 msgid "Interior"
@@ -1325,3 +1325,13 @@ msgstr "نصائح"
 
 msgid "Calculate Payment"
 msgstr "احسب القسط"
+
+#: .\templates\car_details.html:195 .\templates\car_details.html:267
+msgid "Chat on WhatsApp"
+msgstr "تواصل عبر واتساب"
+
+msgid "Comfort & Convenience"
+msgstr "الراحة والملاءمة"
+
+msgid "Driver Assistance & Safety"
+msgstr "مساعدة السائق والسلامة"

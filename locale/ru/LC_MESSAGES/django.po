@@ -1243,3 +1243,9 @@ msgstr "Советы"
 
 msgid "Calculate Payment"
 msgstr "Рассчитать платёж"
+
+msgid "Comfort & Convenience"
+msgstr "Комфорт и удобство"
+
+msgid "Driver Assistance & Safety"
+msgstr "Помощь водителю и безопасность"
