@@ -56,6 +56,97 @@
         <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
         <link rel="stylesheet" href="{% static 'css/nice-select.min.css' %}">
         <link rel="stylesheet" href="{% static 'css/style.min.css' %}">
+
+    <style>
+.top-banner {
+    background: linear-gradient(90deg, #7a0000, #c40000);
+    color: #fff;
+    padding: 13px 15px;
+    z-index: 9999;
+    border-bottom: 2px solid rgba(255,255,255,0.15);
+}
+
+.banner-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.banner-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.3;
+}
+
+.banner-text strong {
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.banner-sub {
+    font-size: 15px;
+    opacity: 0.95;
+}
+
+.banner-actions {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.banner-btn {
+    background: #ffffff;
+    color: #b30000;
+    padding: 8px 22px;
+    border-radius: 30px;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 14px;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+}
+
+.banner-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+}
+
+.banner-close {
+    cursor: pointer;
+    font-size: 18px;
+    opacity: 0.85;
+    transition: 0.2s ease;
+}
+
+.banner-close:hover {
+    opacity: 1;
+}
+
+/* الموبايل */
+@media (max-width: 768px) {
+
+    .top-banner {
+        padding: 12px 15px;
+    }
+
+    .banner-text strong {
+        font-size: 14px;
+    }
+
+    .banner-sub {
+        font-size: 12px;
+    }
+
+    .banner-btn {
+        padding: 6px 14px;
+        font-size: 12px;
+    }
+}
+    </style>
 </head>
 
 <body>
@@ -70,7 +161,23 @@
         </div>
         <!-- Spinner End -->
 
-        <!-- Topbar Start -->
+        <div class="top-banner">
+            <div class="container banner-wrapper">
+                <div class="banner-text">
+                    <strong>RAMADAN EXCLUSIVE</strong>
+                    <span class="banner-sub">Up to 10% on Selected Models</span>
+                </div>
+
+                <div class="banner-actions">
+                    <a href="{% url 'c7_motors:inventory' %}" class="banner-btn">
+                        Explore
+                    </a>
+                    <span class="banner-close" onclick="closeBanner()">✕</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Topbar Start 
         <div class="container-fluid topbar d-none d-xl-block w-100" style="background:#ffffff;">
             <div class="container">
                 <div class="row gx-0 align-items-center" style="height: 45px;">
@@ -90,7 +197,7 @@
                 </div>
             </div>
         </div>
-        <!-- Topbar End -->
+        Topbar End -->
 
         <!-- Navbar Start -->
         <div class="container-fluid nav-bar sticky-top px-0 px-lg-2">
@@ -98,7 +205,7 @@
             <nav class="navbar navbar-expand-lg navbar-dark">
             <!-- Logo -->
             <a href="{% url 'c7_motors:home' %}" class="navbar-logo p-0 me-1">
-                <img src="{% static 'img/c7_logo.webp' %}" alt="{% trans 'C7 Motors company logo' %}" width="auto">
+                <img src="{% static 'img/ramadan_logo.webp' %}" alt="{% trans 'C7 Motors company logo' %}" width="auto">
             </a>
 
             <!-- Mobile toggler -->
@@ -243,6 +350,26 @@
        <i class="fab fa-whatsapp"></i>
     </a>
     
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const banner = document.querySelector(".top-banner");
+            const closeBtn = document.querySelector(".banner-close");
+
+            if (closeBtn) {
+                closeBtn.addEventListener("click", function () {
+                    banner.style.display = "none";
+                    localStorage.setItem("bannerClosed", "true");
+                });
+            }
+
+            if (localStorage.getItem("bannerClosed")) {
+                banner.style.display = "none";
+            }
+
+        });
+    </script>
+
     <!-- JavaScript Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
