@@ -56,97 +56,151 @@
         <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
         <link rel="stylesheet" href="{% static 'css/nice-select.min.css' %}">
         <link rel="stylesheet" href="{% static 'css/style.min.css' %}">
+        <style>
+            .eid-bar {
+                background: linear-gradient(90deg, #8f0818, #b30b1d);
+                border-bottom: 1px solid rgba(212,175,55,0.6);
+                color: #fff;
+                padding: 10px 50px;
+            }
 
-    <style>
-.top-banner {
-    background: linear-gradient(90deg, #7a0000, #c40000);
-    color: #fff;
-    padding: 13px 15px;
-    z-index: 9999;
-    border-bottom: 2px solid rgba(255,255,255,0.15);
-}
+            .eid-container {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                flex-wrap: wrap;
+            }
 
-.banner-wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 20px;
-    max-width: 1400px;
-    margin: 0 auto;
-}
+            /* LEFT */
+            .eid-left {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+            }
 
-.banner-text {
-    display: flex;
-    flex-direction: column;
-    line-height: 1.3;
-}
+            .eid-text {
+                display: flex;
+                flex-direction: column;
+            }
 
-.banner-text strong {
-    font-size: 18px;
-    font-weight: 800;
-    letter-spacing: 1px;
-}
+            .eid-text strong {
+                font-weight: bold;
+                font-size: 15px;
+            }
 
-.banner-sub {
-    font-size: 15px;
-    opacity: 0.95;
-}
+            .eid-text small {
+                font-size: 15px;
+                opacity: 0.9;
+                white-space: nowrap;
+            }
 
-.banner-actions {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-}
+            /* BUTTON */
+            .eid-btn {
+                background: #fff;
+                color: #b30b1d;
+                padding: 6px 14px;
+                border-radius: 20px;
+                font-size: 13px;
+                font-weight: bold;
+                text-decoration: none;
+            }
 
-.banner-btn {
-    background: #ffffff;
-    color: #b30000;
-    padding: 8px 22px;
-    border-radius: 30px;
-    font-weight: 700;
-    text-decoration: none;
-    font-size: 14px;
-    white-space: nowrap;
-    transition: all 0.3s ease;
-}
+            /* RIGHT */
+            .eid-right {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+            }
 
-.banner-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
-}
+            /* COUNTDOWN */
+            .eid-countdown {
+                display: flex;
+                gap: 6px;
+            }
 
-.banner-close {
-    cursor: pointer;
-    font-size: 18px;
-    opacity: 0.85;
-    transition: 0.2s ease;
-}
+            .box {
+                background: transparent;
+                border: 2px rgba(212,175,55,0.6);
+                border-radius: 6px;
+                padding: 5px 8px;
+                text-align: center;
+                min-width: 55px;
+            }
 
-.banner-close:hover {
-    opacity: 1;
-}
+            .box span {
+                display: block;
+                color: white;
+                font-weight: bold;
+                font-size: 20px;
+            }
 
-/* الموبايل */
-@media (max-width: 768px) {
+            .box small {
+                font-size: 15px;
+                color: #ccc;
+            }
 
-    .top-banner {
-        padding: 12px 15px;
-    }
+            .fireworks-canvas {
+                width: 100px;
+                height: 70px;
+                position: relative;
+            }
 
-    .banner-text strong {
-        font-size: 14px;
-    }
+            .fireworks-canvas canvas {
+                width: 100%;
+                height: 100%;
+                display: block;
+            }
 
-    .banner-sub {
-        font-size: 12px;
-    }
+            /* 📱 MOBILE */
+            @media (max-width: 768px) {
 
-    .banner-btn {
-        padding: 6px 14px;
-        font-size: 12px;
-    }
-}
-    </style>
+            .eid-container {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 8px;
+            }
+
+            .eid-bar {
+                padding: 10px 12px;
+            }
+
+            .eid-left {
+                justify-content: space-between;
+            }
+
+            .eid-right {
+                justify-content: space-between;
+            }
+
+            .eid-countdown {
+                width: 100%;
+                justify-content: space-between;
+            }
+
+            .box {
+                flex: 1;
+            }
+
+            .box span {
+                display: block;
+                color: white;
+                font-weight: bold;
+                font-size: 15px;
+            }
+
+            .box small {
+                font-size: 12px;
+                color: #ccc;
+            }
+
+            .eid-text strong {
+                font-weight: bold;
+                font-size: 15px;
+                text-align: center;
+            }
+
+            }
+        </style>
 </head>
 
 <body>
@@ -159,24 +213,54 @@
                 <span class="sr-only">{% trans 'Loading...' %}</span>
             </div>
         </div>
-        <!-- Spinner End -->
+    <!-- Spinner End -->
 
-        <div class="top-banner">
-            <div class="container banner-wrapper">
-                <div class="banner-text">
-                    <strong>RAMADAN EXCLUSIVE</strong>
-                    <span class="banner-sub">Up to 10% on Selected Models</span>
-                </div>
+    <div class="eid-bar" id="eidBar">
+        <div class="eid-container">
 
-                <div class="banner-actions">
-                    <a href="{% url 'c7_motors:inventory' %}" class="banner-btn">
-                        Explore
-                    </a>
-                    <span class="banner-close" onclick="closeBanner()">✕</span>
-                </div>
+            <!-- LEFT -->
+            <div class="eid-left">
+
+            <!-- 🎆 FIREWORK -->
+            <div class="fireworks-canvas">
+                <canvas></canvas>
+            </div>
+
+            <div class="eid-text">
+                <strong>EID MUBARAK</strong>
+                <small>Up to 15% on Selected Cars</small>
+            </div>
+
+            <div class="fireworks-canvas">
+                <canvas></canvas>
+            </div>
+    </div>
+
+        <!-- RIGHT -->
+        <div class="eid-right">
+
+        <div class="eid-countdown">
+            <div class="box">
+            <span id="days">00</span>
+            <small>Days</small>
+            </div>
+            <div class="box">
+            <span id="hours">00</span>
+            <small>Hour</small>
+            </div>
+            <div class="box">
+            <span id="minutes">00</span>
+            <small>Min</small>
+            </div>
+            <div class="box">
+            <span id="seconds">00</span>
+            <small>Sec</small>
             </div>
         </div>
+        </div>
 
+    </div>
+    </div>
         <!-- Topbar Start 
         <div class="container-fluid topbar d-none d-xl-block w-100" style="background:#ffffff;">
             <div class="container">
@@ -205,7 +289,7 @@
             <nav class="navbar navbar-expand-lg navbar-dark">
             <!-- Logo -->
             <a href="{% url 'c7_motors:home' %}" class="navbar-logo p-0 me-1">
-                <img src="{% static 'img/ramadan_logo.webp' %}" alt="{% trans 'C7 Motors company logo' %}" width="auto">
+                <img src="{% static 'img/eid_logo.png' %}" alt="{% trans 'C7 Motors company logo' %}" width="auto">
             </a>
 
             <!-- Mobile toggler -->
@@ -349,24 +433,134 @@
         class="whatsapp-btn">
        <i class="fab fa-whatsapp"></i>
     </a>
-    
+
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
+        function startCountdown() {
 
-            const banner = document.querySelector(".top-banner");
-            const closeBtn = document.querySelector(".banner-close");
+        let endDate = localStorage.getItem("eid_end_date");
 
-            if (closeBtn) {
-                closeBtn.addEventListener("click", function () {
-                    banner.style.display = "none";
-                    localStorage.setItem("bannerClosed", "true");
-                });
+        if (!endDate) {
+            const now = new Date().getTime();
+
+            // 7 أيام + ساعة ونص
+            const duration = ((7 * 24 + 1.5) * 60 * 60 * 1000);
+
+            endDate = now + duration;
+
+            localStorage.setItem("eid_end_date", endDate);
+        } else {
+            endDate = parseInt(endDate);
+        }
+
+        const timer = setInterval(() => {
+            const now = new Date().getTime();
+            const diff = endDate - now;
+
+            if (diff <= 0) {
+            clearInterval(timer);
+            return;
             }
 
-            if (localStorage.getItem("bannerClosed")) {
-                banner.style.display = "none";
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+            const minutes = Math.floor((diff / (1000 * 60)) % 60);
+            const seconds = Math.floor((diff / 1000) % 60);
+
+            document.getElementById("days").innerText = String(days).padStart(2,'0');
+            document.getElementById("hours").innerText = String(hours).padStart(2,'0');
+            document.getElementById("minutes").innerText = String(minutes).padStart(2,'0');
+            document.getElementById("seconds").innerText = String(seconds).padStart(2,'0');
+
+        }, 1000);
+        }
+
+        startCountdown();
+
+        class FireworkSystem {
+        constructor(canvas) {
+            this.canvas = canvas;
+            this.ctx = canvas.getContext("2d");
+
+            this.canvas.width = 80;
+            this.canvas.height = 80;
+
+            this.particles = [];
+            this.rockets = [];
+
+            this.animate();
+        }
+
+        launchRocket() {
+            this.rockets.push({
+            x: Math.random() * this.canvas.width,
+            y: this.canvas.height,
+            vy: -3 - Math.random() * 2,
+            exploded: false
+            });
+        }
+
+        explode(x, y) {
+            for (let i = 0; i < 30; i++) {
+            const angle = Math.random() * Math.PI * 2;
+            const speed = Math.random() * 2;
+
+            this.particles.push({
+                x,
+                y,
+                vx: Math.cos(angle) * speed,
+                vy: Math.sin(angle) * speed,
+                alpha: 1
+            });
+            }
+        }
+
+        update() {
+            this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+
+            if (Math.random() < 0.03) this.launchRocket();
+
+            this.rockets.forEach((r, i) => {
+            r.y += r.vy;
+
+            if (r.y < this.canvas.height / 2 && !r.exploded) {
+                r.exploded = true;
+                this.explode(r.x, r.y);
             }
 
+            this.ctx.fillStyle = "#f6d36a";
+            this.ctx.fillRect(r.x, r.y, 2, 6);
+
+            if (r.exploded) this.rockets.splice(i, 1);
+            });
+
+            this.particles.forEach((p, i) => {
+            p.x += p.vx;
+            p.y += p.vy;
+            p.vy += 0.02;
+            p.alpha -= 0.015;
+
+            this.ctx.globalAlpha = p.alpha;
+            this.ctx.fillStyle = "#f6d36a";
+
+            this.ctx.beginPath();
+            this.ctx.arc(p.x, p.y, 1.5, 0, Math.PI * 2);
+            this.ctx.fill();
+
+            this.ctx.globalAlpha = 1;
+
+            if (p.alpha <= 0) this.particles.splice(i, 1);
+            });
+        }
+
+        animate() {
+            this.update();
+            requestAnimationFrame(() => this.animate());
+        }
+        }
+
+        /* 🔥 شغل كل الـ canvas */
+        document.querySelectorAll(".fireworks-canvas canvas").forEach(canvas => {
+        new FireworkSystem(canvas);
         });
     </script>
 
