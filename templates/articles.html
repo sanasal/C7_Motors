@@ -3,86 +3,655 @@
 {% load i18n %}
 
 {% block meta %}
-    <title>{% trans "Car Tips & Articles | C7 Motors" %}</title>
-    <meta name="description" content="{% trans 'Browse our selection of high-quality used' %} {{ car_type }} {% trans 'for sale. Find reliable, affordable, and well-maintained' %} {{ car_type }} {% trans 'at the best prices. Check out our inventory today!' %}" />
-    <meta name="keywords" content="{% trans 'used' %} {{ car_type }} {% trans 'for sale, best SUV deals, pre-owned' %} {{ car_type }}{% trans ', buy an SUV online' %}" />
 
-  <style>
-    .article-card {
-        border: none;
-        border-radius: 15px;
-        transition: all 0.3s ease;
+<title>{% trans "Car Tips & Articles | C7 Motors" %}</title>
+
+<meta
+name="description"
+content="{% trans 'Luxury car articles, UAE driving tips, maintenance guides and automotive insights from C7 Motors.' %}">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+
+/*** =========================
+     HERO
+========================= ***/
+
+.articles-hero{
+
+    position: relative;
+
+    height: 550px;
+
+    display: flex;
+    align-items: center;
+
+    background:
+    linear-gradient(
+    rgba(0,0,0,0.72),
+    rgba(0,0,0,0.72)
+    ),
+    url('/static/img/articles-hero.png');
+
+    background-size: cover;
+    background-position: center;
+
+    overflow: hidden;
+}
+
+.articles-hero::before{
+
+    content: '';
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+    linear-gradient(
+    90deg,
+    rgba(0,0,0,0.78),
+    rgba(0,0,0,0.30)
+    );
+}
+
+.articles-overlay{
+
+    position: relative;
+    z-index: 2;
+}
+
+.articles-hero h1{
+
+    color: white;
+
+    font-size: 78px;
+    font-weight: 900;
+
+    margin-bottom: 20px;
+}
+
+.breadcrumb-box{
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+}
+
+.breadcrumb-box a{
+
+    color: white;
+
+    text-decoration: none;
+
+    transition: 0.3s;
+}
+
+.breadcrumb-box a:hover{
+
+    color: #e30a23;
+}
+
+.breadcrumb-box span{
+
+    color: #e30a23;
+
+    font-weight: 700;
+}
+
+/*** =========================
+     ARTICLES
+========================= ***/
+
+.articles-section{
+
+    padding: 100px 0;
+
+    background: #f8f9fb;
+}
+
+/* SECTION TITLE */
+
+.section-title{
+
+    text-align: center;
+
+    max-width: 850px;
+
+    margin: auto auto 70px;
+}
+
+.section-title h2{
+
+    font-size: 54px;
+    font-weight: 900;
+
+    color: #111827;
+
+    margin-bottom: 22px;
+}
+
+.section-title h2 span{
+
+    color: #e30a23;
+}
+
+.section-title p{
+
+    color: #6b7280;
+
+    font-size: 17px;
+
+    line-height: 1.9;
+}
+
+/* GRID */
+
+.articles-grid{
+
+    display: grid;
+
+    grid-template-columns:
+    repeat(auto-fit, minmax(350px,1fr));
+
+    gap: 35px;
+}
+
+/* CARD */
+
+.article-card{
+
+    position: relative;
+
+    background: white;
+
+    border-radius: 28px;
+
+    overflow: hidden;
+
+    box-shadow:
+    0 10px 40px rgba(0,0,0,0.05);
+
+    transition: 0.4s ease;
+}
+
+.article-card:hover{
+
+    transform: translateY(-10px);
+
+    box-shadow:
+    0 20px 50px rgba(0,0,0,0.12);
+}
+
+/* IMAGE */
+
+.article-image{
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.article-image img{
+
+    width: 100%;
+    height: 260px;
+
+    object-fit: cover;
+
+    transition: 0.5s;
+}
+
+.article-card:hover .article-image img{
+
+    transform: scale(1.08);
+}
+
+/* BADGE */
+
+.article-badge{
+
+    position: absolute;
+
+    top: 18px;
+    left: 18px;
+
+    background: #e30a23;
+
+    color: white;
+
+    padding: 10px 18px;
+
+    border-radius: 14px;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    z-index: 5;
+}
+
+/* CONTENT */
+
+.article-content{
+
+    padding: 35px 30px;
+}
+
+/* TITLE */
+
+.article-content h3{
+
+    font-size: 30px;
+    font-weight: 800;
+
+    color: #111827;
+
+    margin-bottom: 20px;
+
+    line-height: 1.4;
+}
+
+/* TEXT */
+
+.article-content p{
+
+    color: #6b7280;
+
+    font-size: 15px;
+
+    line-height: 1.9;
+
+    margin-bottom: 0;
+}
+
+/* BUTTON */
+
+.read-more-btn{
+
+    margin-top: 25px;
+
+    width: 100%;
+
+    height: 56px;
+
+    border: none;
+
+    border-radius: 16px;
+
+    background:
+    linear-gradient(
+    135deg,
+    #ff002f,
+    #e30a23
+    );
+
+    color: white;
+
+    font-size: 15px;
+    font-weight: 700;
+
+    transition: 0.3s;
+}
+
+.read-more-btn:hover{
+
+    transform: translateY(-3px);
+
+    box-shadow:
+    0 10px 20px rgba(227,10,35,0.25);
+}
+
+/* HIDDEN */
+
+.more-text{
+
+    display: none;
+}
+
+.more-text.show{
+
+    display: inline;
+}
+
+/*** =========================
+     RESPONSIVE
+========================= ***/
+
+@media(max-width:991px){
+
+    .articles-hero{
+
+        height: 600px;
+
+        padding: 0 25px;
     }
-    
-    .article-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+
+    .articles-hero h1{
+
+        font-size: 50px;
+
+        line-height: 1.1;
     }
-    
-    .article-img {
-        border-top-left-radius: 15px;
-        border-top-right-radius: 15px;
+
+    .articles-hero p{
+
+        font-size: 16px;
+
+        max-width: 650px;
+
+        margin: auto;
+    }
+
+    .section-title{
+
+        margin-bottom: 45px;
+    }
+
+    .section-title h2{
+
+        font-size: 38px;
+    }
+
+    .articles-grid{
+
+        grid-template-columns: repeat(2,1fr);
+
+        gap: 25px;
+    }
+
+    .article-content{
+
+        padding: 26px;
+    }
+
+    .article-content h3{
+
+        font-size: 24px;
+    }
+
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:768px){
+
+    .articles-hero{
+
+        height: 220px;
+
+        padding: 0 18px;
+
+        text-align: center;
+    }
+
+    .articles-hero h1{
+
+        font-size: 34px;
+
+        margin-bottom: 10px;
+
+        line-height: 1.15;
+    }
+
+    .articles-hero p{
+
+        font-size: 14px;
+
+        line-height: 1.7;
+
+        max-width: 95%;
+    }
+
+    .section-title{
+
+        margin-bottom: 35px;
+    }
+
+    .section-title h2{
+
+        font-size: 28px;
+
+        line-height: 1.2;
+    }
+
+    .section-title p{
+
+        font-size: 14px;
+
+        line-height: 1.8;
+
+        padding: 0 5px;
+    }
+
+    .articles-grid{
+
+        grid-template-columns: 1fr;
+
+        gap: 22px;
+    }
+
+    .article-card{
+
+        border-radius: 24px;
+    }
+
+    .article-image img{
+
+        height: 220px;
+    }
+
+    .article-content{
+
+        padding: 24px 20px;
+    }
+
+    .article-content h3{
+
+        font-size: 22px;
+
+        line-height: 1.4;
+    }
+
+    .article-content p{
+
+        font-size: 14px;
+
+        line-height: 1.8;
+    }
+
+    .article-btn{
+
+        width: 100%;
+
+        justify-content: center;
+
+        height: 52px;
+
+        font-size: 15px;
+    }
+
+}
+
+/* SMALL MOBILE */
+
+@media(max-width:480px){
+
+    .articles-hero{
+
+        height: 450px;
+    }
+
+    .articles-hero h1{
+        text-align: start;
+        font-size: 28px;
+    }
+
+    .articles-hero p{
+
+        font-size: 13px;
+    }
+
+    .section-title h2{
+
+        font-size: 24px;
+    }
+
+    .article-image img{
+
         height: 200px;
-        object-fit: cover;
-    }
-    
-    .card-text {
-        margin-bottom: 0;
-    }
-        
-    .badge-red {
-        background-color: #e50914;
-        padding: 0.5em 0.7em;
-        font-size: 0.85rem;
-        border-radius: 0.5rem;
-    }
-    .more-text {
-        display: none;
-    }
-    
-    .more-text.show {
-        display: inline;
     }
 
-  </style>
+    .article-content{
+
+        padding: 20px 18px;
+    }
+
+    .article-content h3{
+
+        font-size: 20px;
+    }
+
+}
+
+</style>
+
 {% endblock %}
-{% block content %}
-<section class="container my-5">
-  <div class="text-center mx-auto pb-5" style="max-width: 800px;">
-      <h1 class="display-5 text-capitalize mb-3" style="color: #e30a23;">{% trans "Articles" %}</h1>
-      <p class="mb-0" style="color: rgb(53,53,53);">
-          {% trans "All the articles on this page are written by our dedicated team at C7 Motors to keep you informed, inspired, and confident when it comes to car ownership in the UAE. From expert tips to the latest trends, everything here is crafted to support your journey on the road" %}
-      </p>
-  </div>
 
-  <div class="row row-cols-1 row-cols-md-3 g-4">
-      {% for article in articles %}
-      <div class="col d-flex">
-          <div class="card article-card shadow-sm position-relative">
-              <img src="{{ article.image.url }}" class="article-img" alt="{% trans 'Article Image' %}">
-              <span class="badge badge-red text-white position-absolute" style="top: 15px; left: 15px">{% trans 'Tips'%}</span>
-              <div class="card-body d-flex flex-column mt-4">
-                  <h5 class="card-title">{{ article.title }}</h5>
-                    <p class="card-text">
-                        {{ article.header }}
-                        <span class="more-text">
-                            {{ article.read_more }}
-                        </span>
-                    </p>
-                    
-                    <button
-                        type="button"
-                        onclick="toggleReadMore(this)"
-                        class="btn btn-outline-dark btn-sm mt-3"
-                        data-more-text="{% trans 'Read More' %}"
-                        data-less-text="{% trans 'Read Less' %}">
-                        {% trans "Read More" %}
-                    </button>
-              </div>
-          </div>
-      </div>
-      {% endfor %}
-  </div>
+{% block content %}
+
+<!-- HERO -->
+
+<section class="articles-hero">
+
+    <div class="container">
+
+        <div class="articles-overlay">
+
+            <h1>Articles</h1>
+
+            <div class="breadcrumb-box">
+
+                <a href="/">
+                    Home
+                </a>
+
+                <span>/</span>
+
+                <span>
+                    Articles
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
 </section>
 
+<!-- ARTICLES -->
+
+<section class="articles-section">
+
+    <div class="container">
+
+        <!-- TITLE -->
+
+        <div class="section-title">
+
+            <h2>
+
+                Automotive
+                <span>Insights</span>
+
+            </h2>
+
+            <p>
+
+                {% trans "Discover premium automotive content crafted by the C7 Motors team — from luxury car ownership tips and UAE driving insights to maintenance guides and industry trends." %}
+
+            </p>
+
+        </div>
+
+        <!-- GRID -->
+
+        <div class="articles-grid">
+
+            {% for article in articles %}
+
+            <div class="article-card c7-article-content">
+
+                <!-- IMAGE -->
+
+                <div class="article-image">
+
+                    <img
+                    src="{{ article.image.url }}"
+                    alt="{{ article.title }}">
+
+                    <div class="article-badge">
+
+                        Tips
+
+                    </div>
+
+                </div>
+
+                <!-- CONTENT -->
+
+                <div class="article-content">
+
+                    <h3>
+
+                        {{ article.title }}
+
+                    </h3>
+
+                    <p>
+
+                        {{ article.header }}
+
+                        <span class="more-text">
+
+                            {{ article.read_more }}
+
+                        </span>
+
+                    </p>
+
+                    <button
+
+                        type="button"
+
+                        onclick="toggleReadMore(this)"
+
+                        class="read-more-btn"
+
+                        data-more-text="{% trans 'Read More' %}"
+
+                        data-less-text="{% trans 'Read Less' %}"
+
+                    >
+
+                        {% trans "Read More" %}
+
+                    </button>
+
+                </div>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+</section>
 {% endblock %}

@@ -78,22 +78,20 @@ function getCookie(name) {
 const csrftoken = getCookie('csrftoken');
 
 // Price Range Functionality
-const priceToggle = document.getElementById('price-toggle');
-const dropdown = document.querySelector('.price-dropdown');
-
-priceToggle.addEventListener('focus', () => {
-    dropdown.style.display = 'block';
-});
-
-document.addEventListener('click', function (e) {
-    if (!e.target.closest('.price-group')) {
-    dropdown.style.display = 'none';
-    }
-});
-
 function applyPrice() {
-    dropdown.style.display = 'none';
-    const from = document.querySelector('input[name="price_from"]').value;
-    const to = document.querySelector('input[name="price_to"]').value;
-    priceToggle.value = from && to ? `${from} AED - ${to} AED` : from ? `From ${from}` : to ? `Upto ${to}` : '';
+
+    const from = document.querySelector('input[name="price_from"]').value || 0;
+
+    const to = document.querySelector('input[name="price_to"]').value || 'Any';
+
+    document.getElementById('price-toggle').value =
+    `${from} AED - ${to} AED`;
+
+    document.querySelector('.price-dropdown').style.display = 'none';
 }
+
+document.getElementById('price-toggle').addEventListener('click', function() {
+
+    document.querySelector('.price-dropdown').style.display = 'block';
+
+});

@@ -3,64 +3,552 @@
 {% load i18n %}
 
 {% block meta %}
-    <title>{% trans "Used Cars for Sale - Reliable & Affordable Cars | C7 Motors" %}</title>
-    <meta name="description" content="{% blocktrans %}Browse our selection of high-quality used {{ car_type }} for sale. Find reliable, affordable, and well-maintained {{ car_type }} at the best prices. Check out our inventory today!{% endblocktrans %}" />
-    <meta name="keywords" content="{% blocktrans %}used {{ car_type }} for sale, best SUV deals, pre-owned {{ car_type }}, buy an SUV online{% endblocktrans %}" />
-    <link rel="stylesheet" href="{% static 'css/inventory.css'%}">
+<title>C7 Motors Inventory</title>
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="{% static 'css/inventory.css' %}">
 {% endblock %}
-{% block content %}
-    <!-- Cars Start -->
-    <div class="container-fluid py-5">
-        <div class="container" style="padding: 0%;">
-            <div id="car_categories" class="categories">
-                {% for car in cars %}
-                <div class="categories-item p-4">
-                    <div class="categories-item-inner">
-                        <div class="categories-img rounded-top position-relative">
-                            <!-- Car Image -->
-                            <img src="{{ car.main_img.url }}" class="img-fluid w-100 rounded-top" alt="">
-                            <!-- Sold Overlay Image -->
-                            {% if car.selled %}
-                            <div class="position-absolute" style="z-index: 1; left: 15px; top: 15px;">
-                                <div class="p-2 rounded" style="background-color: #e30a23;">
-                                    <h5 class="text-white mb-0">{% trans "Sold out" %}</h5>
-                                </div>
-                            </div>
-                            {% endif %}
-                        </div>
-                        <div class="categories-content rounded-bottom p-4">
-                            <h4 style="color: #e30a23;">{{ car.brand_name }} {{ car.model }}</h4>
-                            <div class="mb-4">
-                                <h5 class="bg-white text-dark rounded-pill py-2 px-4 mb-0">
-                                    {{ car.cash_price }} AED
-                                </h5>
-                            </div>
-                            <div class="row gy-2 gx-0 text-center mb-4">
-                                <div class="col-5 border-end border-white">
-                                    <i class="fa fa-car" style="color: #e30a23;"></i> 
-                                    <span class="ms-1" style="color: white;">{{ car.model_year }}</span>
-                                </div>
-                                <div class="col-6">
-                                    <i class="fa fa-road" style="color: #e30a23;"></i> 
-                                    <span class="ms-1" style="color: white;">{{ car.mileage }} KM</span>
-                                </div>
-                            </div>
 
-                            <!-- Button Logic -->
-                            {% if car.selled %}
-                            <button class="btn rounded-pill d-flex justify-content-center py-3 w-100" style="background-color: #e30a23; color:rgb(0,0,0); cursor: not-allowed;" disabled>{% trans "Sold Out" %}</button>
-                            {% elif car.not_available %}
-                            <button class="btn rounded-pill d-flex justify-content-center py-3 w-100" style="background-color: #e30a23; color:rgb(0,0,0); cursor: not-allowed;" disabled>{% trans "Not Available" %}</button>
-                            {% else %}
-                            <a href="{% url 'c7_motors:car_details' car_slug=car.slug %}" class="btn rounded-pill d-flex justify-content-center py-3" style="background-color: #e30a23; color:rgb(0,0,0)">{% trans "Show Details" %}</a>
-                            {% endif %}
-                        </div>
-                    </div>
-                </div>
-                {% endfor %}
+{% block content %}
+
+<script src="https://unpkg.com/htmx.org@1.9.12"></script>
+
+<!-- HERO -->
+
+<section class="inventory-hero">
+
+    <div class="inventory-overlay">
+
+        <div class="container">
+
+            <h1>Inventory</h1>
+
+            <div class="breadcrumb-box">
+                <a href="/">Home</a>
+                <span>/</span>
+                <span>Inventory</span>
             </div>
+
         </div>
+
     </div>
-    <!-- Cars End -->
+
+</section>
+<section class="inventory-filter">
+
+    <div class="container">
+
+        <!-- MOBILE BUTTON -->
+
+        <button
+            type="button"
+            class="mobile-filter-btn"
+            id="openFilters"
+        >
+
+            <i class="fa-solid fa-sliders"></i>
+
+            Filter Cars
+
+        </button>
+
+        <!-- DESKTOP FILTER -->
+
+        <form
+            method="get"
+            class="filter-wrapper desktop-filter"
+    hx-get="{% url 'c7_motors:inventory' %}"
+    hx-target="#carsContainer"
+            hx-select="#carsContainer"
+            hx-trigger="change delay:300ms"
+            hx-swap="outerHTML"          
+            hx-push-url="true">
+
+    <!-- BRAND -->
+
+            <div class="filter-group">
+
+        <i class="fa-solid fa-car-side"></i>
+
+        <select name="brand" class="select-list-item">
+
+            <option value="">
+                Brands
+            </option>
+
+            {% for brand in brands %}
+
+            <option
+
+                value="{{ brand }}"
+
+                {% if request.GET.brand == brand %}
+                selected
+                {% endif %}
+
+            >
+                {{ brand }}
+            </option>
+
+            {% endfor %}
+
+        </select>
+
+    </div>
+
+    <!-- MODEL -->
+
+    <div class="filter-group select-list-item">
+
+        <i class="fa-solid fa-car"></i>
+
+        <select name="model">
+
+            <option value="">
+                Models
+            </option>
+
+            {% for model in models %}
+
+            <option
+
+                value="{{ model }}"
+
+                {% if request.GET.model == model %}
+                selected
+                {% endif %}
+
+            >
+                {{ model }}
+            </option>
+
+            {% endfor %}
+
+        </select>
+
+    </div>
+
+    <!-- MIN PRICE -->
+
+    <div class="filter-group">
+        <i class="fa-solid fa-tag"></i>
+        <input type="number" name="min_price" placeholder="Min Price">
+    </div>
+
+    <!-- MAX PRICE -->
+
+    <div class="filter-group">
+        <i class="fa-solid fa-money-bill-wave"></i>
+        <input type="number" name="max_price" placeholder="Max Price">
+    </div>
+
+    <!-- YEAR -->
+
+    <div class="filter-group select-list-item">
+
+                <i class="fa-solid fa-calendar-days"></i>
+
+        <select name="year_from">
+
+            <option value="">
+                Model Year
+            </option>
+
+            {% for year in years %}
+
+            <option
+
+                value="{{ year }}"
+
+                {% if request.GET.year_from == year|stringformat:"s" %}
+                selected
+                {% endif %}
+
+            >
+                {{ year }}
+            </option>
+
+            {% endfor %}
+
+        </select>
+
+    </div>
+
+    <!-- BODY STYLE -->
+
+    <div class="filter-group select-list-item">
+
+        <i class="fa-solid fa-truck"></i>
+
+        <select name="body_style">
+
+            <option value="">
+                Body Style
+            </option>
+
+            {% for value, label in type_choices %}
+
+            <option
+
+                value="{{ value }}"
+
+                {% if request.GET.body_style == value %}
+                selected
+                {% endif %}
+
+            >
+                {{ label }}
+            </option>
+
+            {% endfor %}
+
+        </select>
+
+    </div>
+
+    <!-- SEARCH -->
+
+    <button
+        type="submit"
+        class="search-btn"
+    >
+
+        <i class="fa-solid fa-magnifying-glass"></i>
+
+        Search
+
+    </button>
+
+    <!-- RESET -->
+
+            <a
+                href="{% url 'c7_motors:inventory' %}"
+                class="reset-btn"
+            >
+
+                <i class="fa-solid fa-rotate-right"></i>
+
+                Reset
+
+            </a>
+
+        </form>
+
+        <!-- MOBILE FILTER MODAL -->
+
+        <div
+            class="mobile-filter-modal"
+            id="filterModal"
+        >
+
+            <div class="mobile-filter-content">
+
+                <!-- HEADER -->
+
+                <div class="mobile-filter-header">
+
+                    <h3>
+                        Filter Cars
+                    </h3>
+
+    <button
+        type="button"
+                        id="closeFilters"
+                    >
+
+                        <i class="fa-solid fa-xmark"></i>
+
+                    </button>
+
+                </div>
+
+                <!-- MOBILE FORM -->
+
+                <form
+
+                    method="GET"
+
+                    class="mobile-filter-form"
+
+                    hx-get="{% url 'c7_motors:inventory' %}"
+                    hx-target="#carsContainer"
+                    hx-trigger="change delay:300ms"
+                    hx-swap="innerHTML"
+
+                >
+
+                    <!-- BRAND -->
+
+                    <div class="filter-group select-list-item">
+
+                        <i class="fa-solid fa-car-side"></i>
+
+                        <select name="brand">
+
+                            <option value="">
+                                Brands
+                            </option>
+
+                            {% for brand in brands %}
+
+                            <option value="{{ brand }}">
+                                {{ brand }}
+                            </option>
+
+                            {% endfor %}
+
+                        </select>
+
+                    </div>
+
+                    <!-- MODEL -->
+
+                    <div class="filter-group">
+
+                        <i class="fa-solid fa-car"></i>
+
+                        <select name="model">
+
+                            <option value="">
+                                Models
+                            </option>
+
+                            {% for model in models %}
+
+                            <option value="{{ model }}">
+                                {{ model }}
+                            </option>
+
+                            {% endfor %}
+
+                        </select>
+
+                    </div>
+
+                    <!-- MIN PRICE -->
+                    <div class="filter-group">
+                        <i class="fa-solid fa-tag"></i>
+                        <input type="number" name="min_price" placeholder="Min Price" value="{{ request.GET.min_price }}">
+                    </div>
+
+                    <!-- MAX PRICE -->
+                    <div class="filter-group">
+                        <i class="fa-solid fa-money-bill-wave"></i>
+                        <input type="number" name="max_price" placeholder="Max Price" value="{{ request.GET.max_price }}">
+                    </div>
+
+                    <!-- YEAR -->
+                    <div class="filter-group">
+
+                        <i class="fa-solid fa-calendar-days"></i>
+
+                        <select name="year_from">
+
+                            <option value="">
+                                Model Year
+                            </option>
+
+                            {% for year in years %}
+
+                            <option value="{{ year }}">
+                                {{ year }}
+                            </option>
+
+                            {% endfor %}
+
+                        </select>
+
+                    </div>
+
+                    <!-- BODY STYLE -->
+
+                    <div class="filter-group">
+
+                        <i class="fa-solid fa-truck"></i>
+
+                        <select name="body_style">
+
+                            <option value="">
+                                Body Style
+                            </option>
+
+                            {% for value, label in type_choices %}
+
+                            <option value="{{ value }}">
+                                {{ label }}
+                            </option>
+
+                            {% endfor %}
+
+                        </select>
+
+                    </div>
+
+                    <!-- SEARCH -->
+
+                    <button
+                        type="submit"
+                        class="search-btn mobile-btn"
+                    >
+
+                        <i class="fa-solid fa-magnifying-glass"></i>
+
+                        Search
+
+                    </button>
+
+                    <!-- RESET -->
+
+                    <a
+
+                        href="{% url 'c7_motors:inventory' %}"
+
+                        class="reset-btn mobile-btn"
+
+    >
+
+        <i class="fa-solid fa-rotate-right"></i>
+
+        Reset
+
+                    </a>
+
+</form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<script>
+
+const openBtn = document.getElementById("openFilters");
+const closeBtn = document.getElementById("closeFilters");
+const modal = document.getElementById("filterModal");
+
+openBtn.onclick = () => {
+    modal.classList.add("active");
+}
+
+closeBtn.onclick = () => {
+    modal.classList.remove("active");
+}
+
+document.body.addEventListener('htmx:afterSwap', function () {
+
+    modal.classList.remove("active");
+
+});
+
+</script>
+
+<!-- CARS -->
+
+<section class="inventory-cars" id="#carsContainer">
+
+    <div class="container">
+
+        <div class="cars-grid">
+
+            {% for car in cars %}
+
+            <div class="car-card">
+
+                <!-- IMAGE -->
+
+                <div class="car-image">
+
+                    <img src="{{ car.main_img.url }}" alt="">
+
+                    {% if car.selled %}
+                    <div class="status-badge sold">
+                        Sold Out
+                    </div>
+                    {% else %}
+                    <div class="status-badge">
+                        For Sale
+                    </div>
+                    {% endif %}
+
+                </div>
+
+                <!-- CONTENT -->
+
+                <div class="car-content">
+
+                    <div class="car-title-price">
+
+                        <h3>
+                            {{ car.brand_name }} {{ car.model }}
+                        </h3>
+
+                        <div class="price-box">
+                            {{ car.cash_price }} AED
+                        </div>
+
+                    </div>
+
+                    <div class="year">
+                        {{ car.model_year }}
+                    </div>
+
+                    <div class="car-specs">
+
+                        <div>
+                            <i class="fa fa-dashboard"></i>
+                            {{ car.mileage }} KM
+                        </div>
+
+                        <div>
+                            <i class="fa fa-gas-pump"></i>
+                            Petrol
+                        </div>
+
+                        <div>
+                            <i class="fa fa-cogs"></i>
+                            Automatic
+                        </div>
+
+                    </div>
+
+                    {% if car.selled %}
+
+                    <button class="details-btn sold-btn" disabled>
+                        Sold Out
+                    </button>
+
+                    {% else %}
+
+                    <a href="{% url 'c7_motors:car_details' car_slug=car.slug %}"
+                       class="details-btn">
+
+                        View Details
+
+                        <i class="fa fa-angle-right"></i>
+
+                    </a>
+
+                    {% endif %}
+
+                </div>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+</section>
+
+     <!-- JavaScript Libraries -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+<!-- Template Javascript -->
+<script src="{% static 'js/jquery.nice-select.min.js' %}"></script>
 
 {% endblock %}

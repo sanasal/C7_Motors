@@ -1,4 +1,131 @@
 /*** About Start ***/
+
+.bg-about{
+    background:
+    linear-gradient(
+        rgba(0,0,0,.68),
+        rgba(0,0,0,.78)
+    ),
+    url("/static/img/about-hero.png");
+}
+
+/* HERO */
+
+.bg-breadcrumb{
+
+    position:relative;
+
+    overflow:hidden;
+
+    background-position:center center;
+
+    background-repeat:no-repeat;
+
+    background-size:cover;
+
+    padding:200px 0 110px;
+
+    text-align:center;
+}
+
+/* OVERLAY */
+
+.bg-breadcrumb::before{
+
+    content:'';
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+    linear-gradient(
+        90deg,
+        rgba(0,0,0,.82) 0%,
+        rgba(0,0,0,.45) 50%,
+        rgba(0,0,0,.82) 100%
+    );
+
+    z-index:1;
+}
+
+/* CONTENT */
+
+.bg-breadcrumb .container{
+
+    position:relative;
+    z-index:5;
+}
+
+/* TITLE */
+
+.bg-breadcrumb h1{
+
+    font-size:68px;
+
+    font-weight:900;
+
+    color:#fff;
+
+    margin-bottom:50px;
+
+    letter-spacing:-2px;
+
+    line-height:1;
+}
+
+/* RED WORD */
+
+.bg-breadcrumb h1 span{
+
+    color:#e30a23;
+}
+
+/* BREADCRUMB */
+
+.bg-breadcrumb .breadcrumb{
+
+    justify-content:center;
+
+    margin:0;
+}
+
+.bg-breadcrumb .breadcrumb-item,
+.bg-breadcrumb .breadcrumb-item a{
+
+    color:rgba(255,255,255,.82);
+
+    font-size:15px;
+
+    text-decoration:none;
+}
+
+.bg-breadcrumb .breadcrumb-item a:hover{
+
+    color:#e30a23;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+    .bg-breadcrumb{
+        text-align:start !important;
+        padding:110px 20px 70px;
+    }
+
+    .bg-breadcrumb h1{
+        text-align:start !important;
+        font-size:42px;
+    }
+
+    .bg-breadcrumb .breadcrumb {
+        justify-content: start !important;
+        margin: 0;
+    }
+
+}
+
 .about .about-item .about-item-inner {
     display: flex;
     flex-direction: column;

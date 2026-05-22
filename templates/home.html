@@ -3,417 +3,710 @@
 {% load i18n %}
 
 {% block meta %}
-        <title>{% trans 'C7 Motors | Used Cars for Sale at the Best Prices' %}</title>
-        <meta name="description" content="{% trans 'Find high-quality used cars for sale at competitive prices. Browse our wide selection of well-maintained vehicles with flexible financing options. Explore now!' %}" />
-        <meta name="keywords" content="{% trans 'c7 motors , used cars for sale, buy a used car, best used car prices, second-hand cars, pre-owned vehicles, used cars in Dubai' %}" />
-        <meta name="author" content="C7 Motors Team">
-        <meta name="robots" content="index, follow">
-        <link rel="canonical" href="https://c7motors.com/">
 
-        <!-- Open Graph -->
-        <meta property="og:title" content="{% trans 'C7 Motors | Used Cars for Sale at the Best Prices' %}">
-        <meta property="og:description" content="{% trans 'Find high-quality used cars for sale at competitive prices. Browse our wide selection of well-maintained vehicles with flexible financing options. Explore now!' %}">
-        <meta property="og:image" content="{% static 'img/c7_logo.webp' %}">
-        <meta property="og:type" content="website">
-        <meta property="og:locale" content="en_US">
-        
-        <!-- Template Stylesheet -->
-        <link rel="preload" as="image" href="{% static 'img/hero-mobile.webp'%}" fetchpriority="high">
-        <link href="{% static 'css/home.min.css'%}" rel="stylesheet">
+<title>{% trans 'C7 Motors | Used Cars for Sale at the Best Prices' %}</title>
+
+<meta name="description" content="{% trans 'Find high-quality used cars for sale at competitive prices. Browse our wide selection of well-maintained vehicles with flexible financing options. Explore now!' %}">
+
+<meta name="keywords" content="{% trans 'c7 motors , used cars for sale, buy a used car, best used car prices, second-hand cars, pre-owned vehicles, used cars in Dubai' %}">
+
+<meta name="author" content="C7 Motors Team">
+<meta name="robots" content="index, follow">
+
+<link rel="canonical" href="https://c7motors.com/">
+
+<!-- Open Graph -->
+
+<meta property="og:title" content="{% trans 'C7 Motors | Used Cars for Sale at the Best Prices' %}">
+
+<meta property="og:description" content="{% trans 'Find high-quality used cars for sale at competitive prices. Browse our wide selection of well-maintained vehicles with flexible financing options. Explore now!' %}">
+
+<meta property="og:image" content="{% static 'img/c7_logo.webp' %}">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+
+<link rel="preload" as="image" href="{% static 'img/hero-mobile.webp' %}" fetchpriority="high">
+
+<link href="{% static 'css/home.css' %}" rel="stylesheet">
+
 {% endblock %}
 
 {% block content %}
-        <!-- Carousel Start -->
-        <div class="header-carousel">
-            <div id="carouselId" class="carousel slide" data-bs-ride="carousel" data-bs-interval="false">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img 
-                            src="{% static 'img/hero-mobile.webp'%}"
-                            class="w-100 d-block d-md-none"
-                            style="min-height:100vh; object-fit:cover;"
-                            loading="eager"
-                            fetchpriority="high"
-                            alt="Luxury Cars">
 
-                        <video 
-                            class="w-100 d-none d-md-block"
-                            style="min-height:100vh; object-fit:cover;"
-                            autoplay muted loop playsinline preload="auto">
+<script src="https://unpkg.com/htmx.org@1.9.12"></script>
 
-                            <source 
-                                src="https://c7motors.com/media/about-vid.mp4"
-                                type="video/mp4"  media="(min-width: 758px)">
-                        </video>
+<!-- HERO SECTION -->
 
-                        <div class="carousel-caption justify-content-center">
-                            <div class="container py-3">
-                                <div class="row g-1 justify-content-center">
-                                    <div class="col-lg-6" data-animation="fadeInLeft" data-delay="1s" style="animation-delay: 1s;">
-                                        <div class="text-center">
-                                            <h1 class="display-5 text-white" style="margin-top:5%;">{% trans 'Finest Used Cars In Dubai'%}</h1>
-                                        </div>
-                                        <div class="search-container">
-                                            <div class="row">
-                                                <div class="hero__tab">
-                                                    <div class="tab-content">
-                                                        <div class="tab-pane active" id="tab-1" role="tabpanel">
-                                                            <div class="hero__tab__form">
-                                                                <h2>{% trans 'Find Your Dream Car'%}</h2>
-                                                                <form method="get" action="{% url 'c7_motors:cars_search' %}">
-                                                                    <div class="select-list">
-                                                                        <div class="select-list-item">
-                                                                            <p>{% trans 'Year'%}</p>
-                                                                            <select name="year">
-                                                                                <option data-display=" " value="">Year</option>
-                                                                                {% for year in models_years %}
-                                                                                    <option value="{{ year }}">{{ year }}</option>
-                                                                                {% endfor %}
-                                                                            </select>
-                                                                        </div>
-                                                                        <div class="select-list-item">
-                                                                            <p>{% trans 'Brand'%}</p>
-                                                                            <select name="brand">
-                                                                                <option data-display=" " value="">Brand</option>
-                                                                                {% for car_brand in cars_brands %}
-                                                                                    <option style="color: black;" value="{{ car_brand }}">{{ car_brand }}</option>
-                                                                                {% endfor %}
-                                                                            </select>
-                                                                        </div>
-                                                                        <div class="select-list-item">
-                                                                            <p>{% trans 'Body Style'%}</p>
-                                                                            <select name="style">
-                                                                                <option data-display=" " value="">Body Style</option>
-                                                                                <option value="SUV">SUV</option>
-                                                                                <option value="Sedan">Sedan</option>
-                                                                                <option value="Hybrid">Hybrid</option>
-                                                                                <option value="Electric">Electric</option>
-                                                                                <option value="Coupe">Coupe</option>
-                                                                                <option value="Hatchback">Hatchback</option>
-                                                                            </select>
-                                                                        </div>
-                                                                        <div class="select-list-item price-group">
-                                                                            <p>{% trans 'Price'%}</p>
-                                                                            <label for="price-toggle" class="visually-hidden">Price range</label>
-                                                                            <input type="text" id="price-toggle" readonly />
-                                                                            <div class="price-dropdown">
-                                                                                <label>From</label>
-                                                                                <input type="number" name="price_from" placeholder="0" />
-                                                                                <label>Upto</label>
-                                                                                <input type="number" name="price_to" placeholder="Any" />
-                                                                                <div class="price-actions">
-                                                                                    <button type="button" onclick="applyPrice()">Apply</button>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
+<div class="header-carousel">
+
+    <div id="carouselId" class="carousel slide" data-bs-ride="carousel" data-bs-interval="false">
+
+        <div class="carousel-inner">
+
+            <div class="carousel-item active">
+
+                <!-- HERO IMAGE -->
+
+                <img src="{% static 'img/hero.png' %}" class="hero-bg-image w-100" loading="eager" fetchpriority="high" alt="Luxury Cars">
+
+                <!-- HERO CONTENT -->
+
+                <div class="carousel-caption">
+
+                    <div class="container-fluid">
+
+                        <div class="row min-vh-100">
+
+                            <div class="col-xl-7 col-lg-8 col-md-11">
+
+                                <div class="hero-left">
+
+                                    <!-- SUBTITLE -->
+
+                                    <div class="hero-subtitle">
+                                        DRIVE LUXURY. DRIVE CONFIDENCE.
+                                    </div>
+
+                                    <!-- TITLE -->
+
+                                    <h1 class="display-5">
+                                        Finest Used Cars
+                                        <span>In Dubai</span>
+                                    </h1>
+
+                                    <!-- DESCRIPTION -->
+
+                                    <p class="hero-description">
+                                        Explore our premium collection of luxury used cars in Dubai.
+                                        Exceptional performance, elegance, and unbeatable value.
+                                    </p>
+
+                                    <!-- SEARCH BOX -->
+
+                                    <div class="search-container">
+
+                                        <div class="hero__tab">
+
+                                            <div class="tab-content">
+
+                                                <div class="tab-pane active" id="tab-1" role="tabpanel">
+
+                                                    <div class="hero__tab__form">
+
+                                                        <h2>
+                                                            <i class="fa fa-search me-2 text-danger"></i>
+                                                            Find Your Dream Car
+                                                        </h2>
+
+                                                        <form method="get" action="{% url 'c7_motors:inventory' %}">
+
+                                                            <div class="select-list">
+
+                                                                <!-- YEAR -->
+
+                                                                <div class="select-list-item">
+
+                                                                    <p>Year</p>
+
+                                                                    <select name="year">
+
+                                                                        <option value="">
+                                                                            Select Year
+                                                                        </option>
+
+                                                                        {% for year in models_years %}
+
+                                                                            <option value="{{ year }}">
+                                                                                {{ year }}
+                                                                            </option>
+
+                                                                        {% endfor %}
+
+                                                                    </select>
+
+                                                                </div>
+
+                                                                <!-- BRAND -->
+
+                                                                <div class="select-list-item">
+
+                                                                    <p>Brand</p>
+
+                                                                    <select name="brand">
+
+                                                                        <option value="">
+                                                                            Select Brand
+                                                                        </option>
+
+                                                                        {% for car_brand in cars_brands %}
+
+                                                                            <option value="{{ car_brand }}">
+                                                                                {{ car_brand }}
+                                                                            </option>
+
+                                                                        {% endfor %}
+
+                                                                    </select>
+
+                                                                </div>
+
+                                                                <!-- BODY STYLE -->
+
+                                                                <div class="select-list-item">
+
+                                                                    <p>Body Style</p>
+
+                                                                    <select name="style">
+
+                                                                        <option value="">
+                                                                            Select Body Style
+                                                                        </option>
+
+                                                                        <option value="SUV">SUV</option>
+                                                                        <option value="Sedan">Sedan</option>
+                                                                        <option value="Hybrid">Hybrid</option>
+                                                                        <option value="Electric">Electric</option>
+                                                                        <option value="Coupe">Coupe</option>
+                                                                        <option value="Hatchback">Hatchback</option>
+
+                                                                    </select>
+
+                                                                </div>
+
+                                                                <!-- PRICE -->
+
+                                                                <div class="select-list-item price-group">
+
+                                                                    <p>Price</p>
+
+                                                                    <div class="price-wrapper">
+
+                                                                        <input type="text" id="price-toggle" readonly placeholder="Select Price Range">
+
+                                                                        <span>UAE</span>
+
                                                                     </div>
-                                                                    <button type="submit" class="site-btn">Search</button>
-                                                                </form>
+
+                                                                    <div class="price-dropdown">
+
+                                                                        <label>From</label>
+
+                                                                        <div class="price-field">
+                                                                            <input type="number" name="price_from" placeholder="0">
+                                                                        </div>
+
+                                                                        <label>Upto</label>
+
+                                                                        <div class="price-field">
+                                                                            <input type="number" name="price_to" placeholder="Any">
+                                                                        </div>
+
+                                                                        <button type="button" class="apply-price-btn" onclick="applyPrice()">
+                                                                            Apply
+                                                                        </button>
+
+                                                                    </div>
+
+                                                                </div>
+
                                                             </div>
-                                                        </div>
+
+                                                            <!-- BUTTON -->
+
+                                                            <button type="submit" class="site-btn">
+
+                                                                Search Cars
+
+                                                                <i class="fa fa-arrow-right ms-2"></i>
+
+                                                            </button>
+
+                                                        </form>
+
                                                     </div>
+
                                                 </div>
+
                                             </div>
+
                                         </div>
-                                        <!-- Buttons for browsing car models -->
-                                        <div class="browse-models mt-4">
-                                            <div class="model-buttons">
-                                                <div class="icon-buttons">
-                                                    <a class="btn model-btn text-light" href="{% url 'c7_motors:cars_filtered' 'SUV' %}">
-                                                        <span class="iconify" data-icon="mdi-car-suv" style="font-size: 27px;"></span> SUV
-                                                    </a>
-                                                    <a class="btn model-btn text-light" href="{% url 'c7_motors:cars_filtered' 'Sedan' %}">
-                                                        <span class="iconify" data-icon="mdi-car-side" style="font-size: 27px;"></span> Sedan
-                                                    </a>
-                                                    <a class="btn model-btn text-light" href="{% url 'c7_motors:cars_filtered' 'Hatchback' %}">
-                                                        <span class="iconify" data-icon="mdi-car-hatchback" style="font-size: 27px;"></span> Hatchback
-                                                    </a>
-                                                    <a class="btn model-btn text-light" href="{% url 'c7_motors:cars_filtered' 'Hybrid' %}">
-                                                        <span class="iconify" data-icon="mdi-car-electric" style="font-size: 27px;"></span> Hybrid
-                                                    </a>
-                                                    <a class="btn model-btn text-light" href="{% url 'c7_motors:cars_filtered' 'Electric' %}">
-                                                        <span class="iconify" data-icon="mdi-charging-station" style="font-size: 27px;"></span> Electric
-                                                    </a>
-                                                    <a class="btn model-btn text-light" href="{% url 'c7_motors:cars_filtered' 'coupe' %}">
-                                                        <span class="iconify" data-icon="mdi-car-sports" style="font-size: 27px;"></span> Coupe
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
+
                                     </div>
+
                                 </div>
+
                             </div>
+
                         </div>
+
                     </div>
+
                 </div>
+
             </div>
+
         </div>
-        <!-- Carousel End -->
+
+    </div>
+
+</div>
+
+<!-- LOGOS SECTION -->
+
+<div class="logos">
+
+    <div class="logos-slide">
+
+        <img loading="eager" src="{% static 'logos/bentley.webp' %}" alt="{% trans 'Bentley logo' %}">
+        <img loading="eager" src="{% static 'logos/gmc.webp' %}" alt="{% trans 'GMC logo' %}">
+        <img loading="eager" src="{% static 'logos/ferrari.webp' %}" alt="{% trans 'Ferrari logo' %}">
+        <img loading="eager" src="{% static 'logos/ford.webp' %}" alt="{% trans 'Ford logo' %}">
+        <img loading="eager" src="{% static 'logos/bmw.webp' %}" alt="{% trans 'BMW logo' %}">
+        <img loading="eager" src="{% static 'logos/lamborghini.webp' %}" alt="{% trans 'Lamborghini logo' %}">
+        <img loading="eager" src="{% static 'logos/rolls_royce.webp' %}" alt="{% trans 'Rolls Royce logo' %}">
+
+    </div>
+
+    <div class="logos-slide">
+
+        <img loading="eager" src="{% static 'logos/nissan.webp' %}" alt="{% trans 'Nissan logo' %}">
+        <img loading="eager" src="{% static 'logos/porsche.webp' %}" alt="{% trans 'Porsche logo' %}">
+        <img loading="eager" src="{% static 'logos/mercedes.webp' %}" alt="{% trans 'Mercedes logo' %}">
+        <img loading="eager" src="{% static 'logos/dodge.webp' %}" alt="{% trans 'Dodge logo' %}">
+        <img loading="eager" src="{% static 'logos/kia.webp' %}" alt="{% trans 'Kia logo' %}">
+        <img loading="eager" src="{% static 'logos/lexus.webp' %}" alt="{% trans 'Lexus logo' %}">
+        <img loading="eager" src="{% static 'logos/tesla.webp' %}" alt="{% trans 'Tesla logo' %}">
+
+    </div>
+
+</div>
 
 
-        <!-- Cars Logos Start -->
-        <div class="logos">
-            <div class="logos-slide">
-                <img loading="eager" src="{% static 'logos/bentley.webp' %}" alt="{% trans 'Bentley logo' %}"/>
-                <img loading="eager" src="{% static 'logos/gmc.webp' %}" alt="{% trans 'GMC logo' %}"/>
-                <img loading="eager" src="{% static 'logos/ferrari.webp' %}" alt="{% trans 'Ferrari logo' %}"/>
-                <img loading="eager" src="{% static 'logos/ford.webp' %}" alt="{% trans 'Ford logo' %}"/>
-                <img loading="eager" src="{% static 'logos/bmw.webp' %}" alt="{% trans 'BMW logo' %}"/>
-                <img loading="eager" src="{% static 'logos/lamborghini.webp' %}" alt="{% trans 'Lamborghini logo' %}"/>
-                <img loading="eager" src="{% static 'logos/rolls_royce.webp' %}" alt="{% trans 'Rolls Royce logo' %}"/>
-            </div>
-      
-            <div class="logos-slide">
-                <img loading="eager" src="{% static 'logos/nissan.webp' %}" alt="{% trans 'Nissan logo' %}"/>
-                <img loading="eager" src="{% static 'logos/porsche.webp' %}" alt="{% trans 'Porsche logo' %}"/>
-                <img loading="eager" src="{% static 'logos/mercedes.webp' %}" alt="{% trans 'Mercedes logo' %}"/>
-                <img loading="eager" src="{% static 'logos/dodge.webp' %}" alt="{% trans 'Dodge logo' %}"/>
-                <img loading="eager" src="{% static 'logos/kia.webp' %}" alt="{% trans 'Kia logo' %}"/>
-                <img loading="eager" src="{% static 'logos/lexus.webp' %}" alt="{% trans 'Lexus logo' %}"/>
-                <img loading="eager" src="{% static 'logos/tesla.webp' %}" alt="{% trans 'Tesla logo' %}"/>
-            </div>
+<!-- Car categories Start -->
+
+<div class="container-fluid categories py-5">
+    <div class="container" style="padding: 0%;">
+
+        <div class="text-center mx-auto pb-5" style="max-width: 800px;">
+            <h1 class="display-5 text-capitalize mb-3">
+                {% trans 'Cars' %}
+                <span style="color: #e30a23;">{% trans 'Inventory' %}</span>
+            </h1>
         </div>
-        <!-- Cars Logos End -->
 
-        <!-- Car categories Start -->
-        <div class="container-fluid categories py-5">
-            <div class="container" style="padding: 0%;">
-                <div class="text-center mx-auto pb-5" style="max-width: 800px;">
-                    <h1 class="display-5 text-capitalize mb-3">{% trans 'Cars' %} <span style="color: #e30a23;">{% trans 'Inventory' %}</span></h1>
-                </div>
-                <div id="car_categories" class="categories-carousel owl-carousel">
+        <section class="c7-inventory">
+
+            <div class="c7-top">
+
+                <form method="get"
+                      hx-get="{% url 'c7_motors:home' %}"
+                      hx-target="#cars-wrapper"
+                      hx-select="#cars-wrapper"
+                      hx-swap="outerHTML"
+                      hx-push-url="true">
+
+                    <div class="c7-filters">
+
+                        <input type="radio"
+                               name="type"
+                               value=""
+                               id="all"
+                               hidden
+                               onchange="this.form.requestSubmit()"
+                               {% if not request.GET.type %}checked{% endif %}>
+
+                        <label for="all" class="c7-pill">
+                            All
+                        </label>
+
+                        {% for type_value, type_label in type_choices %}
+
+                            <input type="radio"
+                                   name="type"
+                                   value="{{ type_value }}"
+                                   id="type_{{ type_value }}"
+                                   hidden
+                                   onchange="this.form.requestSubmit()"
+                                   {% if request.GET.type == type_value %}checked{% endif %}>
+
+                            <label for="type_{{ type_value }}" class="c7-pill">
+                                {{ type_label }}
+                            </label>
+
+                        {% endfor %}
+
+                    </div>
+
+                </form>
+
+            </div>
+
+            <div id="cars-wrapper">
+
+                <div class="c7-grid">
+
                     {% for car in cars %}
-                    <div class="categories-item p-4">
-                        <div class="categories-item-inner">
-                            <div class="categories-img rounded-top position-relative">
-                                <img loading="lazy" src="{{ car.main_img.url }}" class="img-fluid w-100 rounded-top" alt="">
-                                {% if car.selled %}
-                                    <div class="position-absolute" style="z-index: 1; left: 15px; top: 15px;">
-                                        <div class="p-2 rounded" style="background-color: #e30a23;">
-                                            <h5 class="text-white mb-0">{% trans 'Sold out' %}</h5>
-                                        </div>
-                                    </div>
-                                {% endif %}
-                                {% if car.not_available %}
-                                    <div class="position-absolute" style="z-index: 1; left: 15px; top: 15px;">
-                                        <div class="p-2 rounded" style="background-color: #e30a23;">
-                                            <h5 class="text-white mb-0">{% trans 'Not available' %}</h5>
-                                        </div>
-                                    </div>
-                                {% endif %}
+
+                    <div class="c7-card">
+
+                        <div class="c7-image">
+                            <img src="{{ car.main_img.url }}" alt="">
+
+                            <div class="c7-badges">
+                                <span class="c7-badge-orange">
+                                    {{ car.get_type_display }}
+                                </span>
                             </div>
-                            <div class="categories-content rounded-bottom p-4">
-                                <h4 style="color: #f10b26;">{{ car.brand_name }} {{ car.model }}</h4>
-                                <div class="mb-4">
-                                    <h5 class="bg-white text-dark rounded-pill py-2 px-4 mb-0">
-                                        {{ car.cash_price }} {% trans 'AED' %}
-                                    </h5>
-                                </div>
-                                <div class="row gy-2 gx-0 text-center mb-4">
-                                    <div class="col-5 border-end border-white">
-                                        <i class="fa fa-car" style="color: #e30a23;"></i> <span class="ms-1" style="color:#e0e0e0;">{{ car.model_year }}</span>
-                                    </div>
-                                    <div class="col-6">
-                                        <i class="fa fa-road" style="color: #e30a23;"></i> <span style="color:#e0e0e0;">{{ car.mileage }}{% trans 'KM' %}</span>
-                                    </div>
-                                </div>
+                        </div>
+
+                        <div class="c7-content">
+
+                            <div class="c7-available {% if car.selled %}sold{% elif car.not_available %}not-available{% endif %}">
+                                <span class="c7-dot"></span>
+
                                 {% if car.selled %}
-                                    <button class="btn rounded-pill d-flex justify-content-center py-3 w-100" style="background-color: #e30a23; color:rgb(255, 255, 255); cursor: not-allowed;" disabled>{% trans 'Sold Out' %}</button>
+                                    Sold Out
                                 {% elif car.not_available %}
-                                    <button class="btn rounded-pill d-flex justify-content-center py-3 w-100" style="background-color: #e30a23; color:rgb(255, 250, 250); cursor: not-allowed;" disabled>{% trans 'Not Available' %}</button>
+                                    Not Available
                                 {% else %}
-                                    <a href="{% url 'c7_motors:car_details' car_slug=car.slug %}" class="btn rounded-pill d-flex justify-content-center py-3" style="background-color: #e30a23; color:rgb(255, 255, 255)">{% trans 'Show Details' %}</a>
+                                    Available
                                 {% endif %}
                             </div>
-                        </div>
-                    </div>
-                    {% endfor %}
 
-                    <!-- last-slide -->
-                    <div class="categories-item p-4 view-all-card last-slide" style="margin-top: 50%;">
-                        <div class="d-flex align-items-center justify-content-center">
-                            <a href="{% url 'c7_motors:inventory' %}" class="btn view-all-btn rounded-pill d-flex justify-content-center py-4 px-4" style="background-color: #e30a23; color:rgb(255, 255, 255)">{% trans 'View All Car' %}</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Car categories End -->
-        
-        <!-- About Start -->
-        <div class="container-fluid overflow-hidden about py-5 mt-5">
-            <div class="container py-5">
-                <div class="row g-5">
-                    <!-- LEFT CONTENT -->
-                    <div class="col-xl-6">
-                        <div class="about-item">
-                            <div class="pb-5">
-                                <h1 class="display-5 text-capitalize">{% trans 'About' %} 
-                                    <span style="color: #e30a23;">{% trans 'C7 Motors' %}</span>
-                                </h1>
-                                <p class="mb-0" style="color: rgb(53, 53, 53)">
-                                    {% trans 'Based in Dubai, we specialize in offering high-quality used cars that go through rigorous inspections to ensure safety, performance, and value. Our dedicated team is committed to providing transparent pricing, honest advice, and flexible payment options tailored to suit each customer’s needs. We understand that buying a car is more than just a transaction — it’s an experience. That’s why we go the extra mile to guide our clients at every step, from selecting the perfect vehicle to completing all necessary paperwork. With years of experience in the automotive industry, C7 Motors has built a reputation for trust, professionalism, and exceptional customer service.'%}
-                                </p>
+                            <h3 class="c7-title">
+                                {{ car.brand_name }} {{ car.model }}
+                            </h3>
+
+                            <div class="c7-row">
+
+                                <div class="c7-location">
+                                    {{ car.transmission }}
+                                </div>
+
+                                <div class="c7-price">
+                                    {{ car.cash_price }} UAE
+                                </div>
+
                             </div>
 
-                            <div class="row g-4">
-                                <div class="col-lg-5 d-flex align-items-center">
-                                    <a href="{% url 'c7_motors:about' %}" class="btn rounded py-3 px-5" style="background-color: #e30a23; color:#ffffff">
-                                        {% trans 'More About Us' %}
+                            <div class="c7-specs">
+
+                                <div class="c7-spec">
+                                    <i class="fa fa-road"></i>
+                                    {{ car.mileage }} KM
+                                </div>
+
+                                <div class="c7-spec">
+                                    <i class="fa fa-calendar"></i>
+                                    {{ car.model_year }}
+                                </div>
+
+                            </div>
+
+                            {% if car.selled or car.not_available %}
+
+                                <div class="c7-buttons">
+                                    <a class="c7-details" aria-disabled="true">
+                                        Sold Out
                                     </a>
                                 </div>
-                            </div>
+
+                            {% else %}
+
+                                <div class="c7-buttons">
+
+                                    <a href="{% url 'c7_motors:car_details' car.slug %}" class="c7-book">
+                                        finance
+                                    </a>
+
+                                    <a href="{% url 'c7_motors:car_details' car.slug %}" class="c7-details">
+                                        Details
+                                    </a>
+
+                                </div>
+
+                            {% endif %}
+
                         </div>
+
                     </div>
 
-                <!-- RIGHT PHOTOS -->
-                <div class="col-xl-6 position-relative">
-                    <!-- الصور -->
-                    <div class="about-photo about-photo-1">
-                        <img src="{% static 'img/about-1.webp' %}" alt="">
-                    </div>
-                    <div class="about-photo about-photo-2">
-                        <img src="{% static 'img/about-2.webp' %}" alt="">
-                    </div>
-                </div>
+                    {% endfor %}
 
                 </div>
+
             </div>
-        </div>
-        <!-- About End -->
 
-
-        <!-- Features Start -->
-        <div class="container-fluid mt-5 feature py-5" style="color: #e0e0e0;">
-            <div class="container py-5">
-                <div class="text-center mx-auto pb-5" style="max-width: 800px;">
-                    <h1 class="display-5 text-capitalize mb-3" style="color: #e30a23;">{% trans 'Why C7 Motors' %}</h1>
-                    <p class="mb-0">
-                        {% trans 'Discover our range of services designed to make buying a used car straightforward and convenient' %}
-                    </p>
-                </div>
-                <div class="row g-4 align-items-center">
-                    <div class="col-xl-4">
-                        <div class="row gy-4 gx-0">
-                            <div class="col-12 wow fadeInLeft" data-wow-delay="0.1s">
-                                <div class="feature-item">
-                                    <div class="feature-icon">
-                                        <span class="fa fa-trophy fa-2x"></span>
-                                    </div>
-                                    <div class="ms-4">
-                                        <h5 class="mb-3" style="color:#e30a23;">{% trans 'High-Quality Used Cars' %}</h5>
-                                        <p class="mb-0">
-                                            {% trans 'We provide a wide selection of high-quality used cars at competitive prices, ensuring you get the best value for your money' %}
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-12 wow fadeInLeft" data-wow-delay="0.3s">
-                                <div class="feature-item">
-                                    <div class="feature-icon">
-                                        <span class="fa fa-phone-alt fa-2x"></span>
-                                    </div>
-                                    <div class="ms-4">
-                                        <h5 class="mb-3" style="color:#e30a23;">{% trans 'Great Team' %}</h5>
-                                        <p class="mb-0">
-                                            {% trans 'Our dedicated team is here to guide you, offering expert advice to help you find the perfect used car for your needs and budget' %}
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-12 col-xl-4">
-                        <img loading="eager" src="{% static 'img/features-img.webp'%}" class="img-fluid w-100" style="object-fit: cover;" alt="{% trans 'Red Mercedes GT' %}">
-                    </div>
-                    <div class="col-xl-4">
-                        <div class="row gy-4 gx-0">
-                            <div class="col-12 wow fadeInRight" data-wow-delay="0.1s">
-                                <div class="feature-item justify-content-end">
-                                    <div class="text-end me-4">
-                                        <h5 class="mb-3" style="color:#e30a23;">{% trans 'Flexible Payment Options' %}</h5>
-                                        <p class="mb-0">
-                                            {% trans 'Enjoy various payment choices, including monthly installments with no down payment, tailored to fit your budget and convenience' %}
-                                        </p>
-                                    </div>
-                                    <div class="feature-icon">
-                                        <span class="fa fa-money-bill-alt fa-2x"></span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-12 wow fadeInRight" data-wow-delay="0.3s">
-                                <div class="feature-item justify-content-end">
-                                    <div class="text-end me-4">
-                                        <h5 class="mb-3" style="color:#e30a23;">{% trans 'Online Financing Calculator' %}</h5>
-                                        <p class="mb-0">
-                                            {% trans 'Easily calculate your financing options directly on our website, giving you full control over your car purchase planning' %}
-                                        </p>
-                                    </div>
-                                    <div class="feature-icon">
-                                        <span><i class="fas fa-calculator fa-2x"></i></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="c7-more">
+                <a href="{% url 'c7_motors:inventory' %}">
+                    See All Cars
+                </a>
             </div>
-        </div>
-        <!-- Features End -->
-        
-        <!-- Articles Start -->
-        <section class="container" style="margin-top:10%; margin-bottom:10%;">
-          <div class="text-center mx-auto pb-5" data-wow-delay="0.1s" style="max-width: 800px;">
-              <h1 class="display-5 text-capitalize mb-3" style="color: #e30a23;">{% trans "Articles" %}</h1>
-              <p class="mb-0" style="color: rgb(53,53,53);">
-                  {% trans "All the articles on this page are written by our dedicated team at C7 Motors to keep you informed, inspired, and confident when it comes to car ownership in the UAE. From expert tips to the latest trends, everything here is crafted to support your journey on the road" %}
-              </p>
-          </div>
-        
-          <div class="row row-cols-1 row-cols-md-3 g-4">
-              {% for article in articles %}
-              <div class="col d-flex">
-                  <div class="card article-card shadow-sm position-relative">
-                      <img src="{{ article.image.url }}" class="article-img" alt="{% trans 'Article Image' %}">
-                      <span class="badge badge-red text-white position-absolute" style="top: 15px; left: 15px;">{% trans 'Tips' %}</span>
-                      <div class="card-body d-flex flex-column mt-4">
-                          <h5 class="card-title">{{ article.title }}</h5>
-                            <p class="card-text">
-                                {{ article.header }}
-                                <span class="more-text">
-                                    {{ article.read_more }}
-                                </span>
-                            </p>
-                            
-                            <button
-                            type="button"
-                            onclick="toggleReadMore(this)"
-                            class="btn btn-outline-dark btn-sm mt-3"
-                            data-more-text="{% trans 'Read More' %}"
-                            data-less-text="{% trans 'Read Less' %}">
-                            {% trans "Read More" %}
-                            </button>
 
-                      </div>
-                  </div>
-              </div>
-              {% endfor %}
-          </div>
-            <div class="row g-4 mt-4">
-                <div class="col-12 text-center">
-                    <a href="{% url 'c7_motors:articles' %}" 
-                     class="btn btn-lg px-4 py-2 rounded-pill shadow text-light" style='background-color:#e30a23;color: white;'>
-                     {% trans 'More Articles' %}
-                    </a>
-                </div>
-            </div>  
         </section>
-        <!-- Articles End -->
+
+    </div>
+
+</div>
+
+<!-- Car categories End -->
         
-    <!-- JavaScript Libraries -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    
-    <!-- Template Javascript -->
-    <script src="{% static 'js/jquery.nice-select.min.js' %}"></script>
-    <script src="{% static 'js/main3.js'%}"></script>
+<!-- C7 ABOUT SECTION -->
+
+<section class="c7-about-section">
+
+    <div class="c7-about-bg"></div>
+    <div class="c7-about-overlay"></div>
+
+    <div class="container position-relative">
+
+        <div class="row align-items-center">
+
+            <!-- LEFT CONTENT -->
+
+            <div class="col-lg-6">
+
+                <div class="c7-about-content">
+
+                    <div class="c7-mini-title">
+                        <span></span>
+                        DRIVEN BY TRUST. FOCUSED ON YOU.
+                    </div>
+
+                    <h1 class="c7-about-title">
+                        <span>C7</span> Motors
+                    </h1>
+
+                    <p>
+                        Based in Dubai, we specialize in offering high-quality
+                        used cars that go through rigorous inspections to ensure
+                        safety, performance, and value.
+                    </p>
+
+                    <p>
+                        Our dedicated team is committed to providing transparent
+                        pricing, honest advice, and flexible payment options
+                        tailored to suit each customer’s needs.
+                    </p>
+
+                    <p>
+                        We understand that buying a car is more than just a
+                        transaction — it’s an experience.
+                    </p>
+
+                    <a href="{% url 'c7_motors:about' %}" class="c7-about-btn">
+                        More About Us
+                    </a>
+
+                </div>
+
+            </div>
+
+            <!-- RIGHT SIDE -->
+
+            <div class="col-lg-6">
+
+                <div class="c7-side-cards">
+
+                    <div class="c7-mini-card">
+
+                        <div class="c7-mini-icon">
+                            <i class="fas fa-gem"></i>
+                        </div>
+
+                        <div>
+                            <h5>PREMIUM</h5>
+                            <span>QUALITY</span>
+                        </div>
+
+                    </div>
+
+                    <div class="c7-mini-card">
+
+                        <div class="c7-mini-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+
+                        <div>
+                            <h5>TRUSTED</h5>
+                            <span>SERVICE</span>
+                        </div>
+
+                    </div>
+
+                    <div class="c7-mini-card">
+
+                        <div class="c7-mini-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+
+                        <div>
+                            <h5>DEDICATED</h5>
+                            <span>SUPPORT</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- BOTTOM FEATURES -->
+
+        <div class="c7-bottom-features">
+
+            <div class="c7-feature-box">
+
+                <i class="fas fa-shield-alt"></i>
+
+                <div>
+                    <h5>Rigorous Inspections</h5>
+                    <p>Every car is thoroughly checked for your safety.</p>
+                </div>
+
+            </div>
+
+            <div class="c7-feature-box">
+
+                <i class="fas fa-tags"></i>
+
+                <div>
+                    <h5>Transparent Pricing</h5>
+                    <p>No hidden fees, only honest and fair deals.</p>
+                </div>
+
+            </div>
+
+            <div class="c7-feature-box">
+
+                <i class="fas fa-handshake"></i>
+
+                <div>
+                    <h5 style="white-space: nowrap;">Trusted by Thousands</h5>
+                    <p>Years of experience and happy customers.</p>
+                </div>
+
+            </div>
+
+            <div class="c7-feature-box">
+
+                <i class="fas fa-headset"></i>
+
+                <div>
+                    <h5>Dedicated Support</h5>
+                    <p>We’re here to assist you at every step.</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- C7 ARTICLES SECTION -->
+
+<section class="c7-articles-section">
+
+    <div class="container">
+
+        <!-- TITLE -->
+
+        <div class="c7-articles-head text-center">
+
+            <h1 class="c7-articles-title">
+                {% trans "Articles" %}
+            </h1>
+
+            <p class="c7-articles-desc">
+                {% trans "All the articles on this page are written by our dedicated team at C7 Motors to keep you informed, inspired, and confident when it comes to car ownership in the UAE. From expert tips to the latest trends, everything here is crafted to support your journey on the road" %}
+            </p>
+
+        </div>
+
+        <!-- GRID -->
+
+        <div class="row g-4">
+
+            {% for article in articles %}
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="c7-article-card">
+
+                    <!-- IMAGE -->
+
+                    <div class="c7-article-image">
+
+                        <img src="{{ article.image.url }}" alt="{% trans 'Article Image' %}">
+
+                        <span class="c7-article-badge">
+                            {% trans "Tips" %}
+                        </span>
+
+                    </div>
+
+                    <!-- CONTENT -->
+
+                    <div class="c7-article-content">
+
+                        <h3 class="c7-article-title">
+                            {{ article.title }}
+                        </h3>
+
+                        <p class="c7-article-text">
+
+                            {{ article.header }}
+
+                            <span class="more-text">
+                                {{ article.read_more }}
+                            </span>
+
+                        </p>
+
+                        <button type="button"
+                                onclick="toggleReadMore(this)"
+                                class="c7-read-btn"
+                                data-more-text="{% trans 'Read More' %}"
+                                data-less-text="{% trans 'Read Less' %}">
+
+                            {% trans "Read More" %}
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+        <!-- BUTTON -->
+
+        <div class="text-center mt-5">
+
+            <a href="{% url 'c7_motors:articles' %}" class="c7-articles-btn">
+                {% trans "More Articles" %}
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- JavaScript Libraries -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+<!-- Template Javascript -->
+<script src="{% static 'js/jquery.nice-select.min.js' %}"></script>
+<script src="{% static 'js/main3.js'%}"></script>
+
 {% endblock %}
