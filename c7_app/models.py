@@ -1,15 +1,12 @@
 #models.py
 from django.db import models
-from xml.parsers.expat import model
 from django.db import models
-from django.contrib.auth.models import User
-import uuid
+from django.contrib.auth.models import User , AbstractUser
 import os
 import zipfile
 from django.core.files.base import ContentFile
 from django.db.models.signals import post_save
 from django.dispatch import receiver
-from django.contrib import messages
 from simple_history.models import HistoricalRecords
 from django.utils.text import slugify
 # Create your models here
@@ -89,6 +86,7 @@ class Car(models.Model):
     model_year = models.IntegerField(null=True, blank=True, db_index=True)
     mileage = models.IntegerField(null=True, blank=True)
     cash_price = models.IntegerField(null=True,blank=True)
+
     specification = models.CharField(max_length=50,null=True, blank=True)
     horsepower = models.CharField(max_length=40 , null=True, blank=True)
     engine_capacity = models.CharField(max_length=40 , null=True, blank=True)
