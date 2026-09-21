@@ -21,7 +21,7 @@ creds_b64 = os.getenv("GOOGLE_CREDENTIALS_B64")
 
 if creds_b64:
     path = "c7_motors/credentials/sheets.json"
-    os.makedirs(os.path.dirname(path), exist_ok=True)  # Ensure folder exists
+    os.makedirs(os.path.dirname(path), exist_ok=True)  
     with open(path, "wb") as f:
         f.write(base64.b64decode(creds_b64))
     os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = path
@@ -46,6 +46,7 @@ ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 # Application definition
 
 INSTALLED_APPS = [
+    'rest_framework',
     'modeltranslation',
     'simple_history',
     'jazzmin',
@@ -55,9 +56,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'rest_framework',
     'c7_motors',
     'c7_app.apps.C7AppConfig',
+    'ai_api.apps.AiApiConfig',
     'compressor'
 ]
 
@@ -73,7 +74,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'c7_app.middleware.exception_middleware.ExceptionMiddleware',
+  #  'c7_app.middleware.exception_middleware.ExceptionMiddleware',
 ]
 
 ROOT_URLCONF = 'c7_motors.urls'
@@ -184,8 +185,3 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MEDIA_URL='/media/'
 MEDIA_ROOT= os.path.join(BASE_DIR , 'media')   
-
-#Payment By STRIPE
-STRIPE_PUBLIC_KEY = "pk_test_51PaI022KAcGaNCQ2d8dcAxyj84HdQhBhhGZQ4chI4KSfjYkFZy7S8qIEPjdXv4rkhCzQTSqIcIAlUVKiXZHYWjS000NHd5eImc"
-STRIPE_SECRET_KEY ="sk_test_51PaI022KAcGaNCQ2zxyLLDug4axW1o3D0coeBs0LzlcTWi5TljeppgPuaJXU18veEEF4RloZCEd8ThPTGV1jxJUd00TOd9WmIX"
-STRIPE_WEBHOOK_SECRET = 'whsec_28lNE5a1wJIeYjCK41OQkEO01ZfKCSdL'

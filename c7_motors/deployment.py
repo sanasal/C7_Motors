@@ -32,6 +32,7 @@ SETTINGS_PATH = os.path.dirname(os.path.dirname(__file__))  # MS ADDED
 Temp_Path = os.path.realpath('.')  # MS ADDED
 
 INSTALLED_APPS = [
+    'rest_framework',
     'modeltranslation',
 
     'simple_history',
@@ -48,6 +49,7 @@ INSTALLED_APPS = [
     'compressor',
     'c7_motors',
     'c7_app.apps.C7AppConfig',
+    'ai_api.apps.AiApiConfig',
 ]
 
 
