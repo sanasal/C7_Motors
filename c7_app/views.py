@@ -241,13 +241,13 @@ def financing(request , car_slug = None):
     car_price = None
 
     if car_slug:
-        car_price = Car.objects.values_list('ramadan_price', flat=True).get(slug=car_slug)
+        car_price = Car.objects.values_list('cash_price', flat=True).get(slug=car_slug)
 
     if request.method == 'POST':
         try:
             data = json.loads(request.body)
             if car_slug:
-                car_price = Car.objects.values_list('ramadan_price', flat=True).get(slug=car_slug)
+                car_price = Car.objects.values_list('cash_price', flat=True).get(slug=car_slug)
             else:  
                 car_price = float(data.get('car_price', 0))
             downpayment = float(data.get('downpayment', 0))

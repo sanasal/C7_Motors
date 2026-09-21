@@ -20,7 +20,7 @@ sitemaps = {
 }
 
 urlpatterns = [
-    path('admin/', custom_admin_site.urls),
+    path('C7-Motors-Admin-Site/', custom_admin_site.urls),
 
     path(
         "sitemap.xml",
@@ -40,6 +40,7 @@ urlpatterns = [
     path('i18n/', include('django.conf.urls.i18n')),
 
     path('', include('c7_app.urls')),
+    path('api/v1/webhooks/ai/' , include('ai_api.urls')),
 ]
 
 custom_admin_site.index_title = "C7 Motors"
