@@ -18,27 +18,33 @@
 })(jQuery);
 
 function toggleReadMore(button) {
-    const cardBody = button.closest('.card-body');
 
-    if (!cardBody) {
-        console.error('Card body not found');
+    const article = button.closest('.c7-article-content');
+
+    if (!article) {
         return;
     }
 
-    const description = cardBody.querySelector('.description');
-    const moreText = cardBody.querySelector('.more-text');
+    const moreText = article.querySelector('.more-text');
 
-    if (!description || !moreText) {
-        console.error('Description or more text not found');
+    if (!moreText) {
         return;
     }
 
-    moreText.classList.toggle('show');
-    description.classList.toggle('expanded');
+    const isOpen = moreText.classList.contains('show');
 
-    button.textContent = moreText.classList.contains('show')
-        ? button.getAttribute('data-less-text')
-        : button.getAttribute('data-more-text');
+    if (isOpen) {
+        moreText.classList.remove('show');
+
+        button.textContent =
+            button.getAttribute('data-more-text');
+
+    } else {
+        moreText.classList.add('show');
+
+        button.textContent =
+            button.getAttribute('data-less-text');
+    }
 }
 
 

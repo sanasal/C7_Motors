@@ -68,47 +68,6 @@
 
 
 /* =====================================================
-   READ MORE / READ LESS
-   ===================================================== */
-
-function toggleReadMore(button) {
-
-    // Find ONLY the article containing the clicked button
-    const articleContent = button.closest('.c7-article-content');
-
-    if (!articleContent) {
-        return;
-    }
-
-    // Find the "more text" ONLY inside this article
-    const moreText = articleContent.querySelector('.more-text');
-
-    if (!moreText) {
-        return;
-    }
-
-    const isOpen = moreText.classList.contains('show');
-
-    if (isOpen) {
-
-        // Close this article
-        moreText.classList.remove('show');
-
-        button.textContent =
-            button.getAttribute('data-more-text') || 'Read More';
-
-    } else {
-
-        // Open this article
-        moreText.classList.add('show');
-
-        button.textContent =
-            button.getAttribute('data-less-text') || 'Read Less';
-    }
-}
-
-
-/* =====================================================
    CSRF COOKIE
    ===================================================== */
 
