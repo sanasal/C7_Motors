@@ -1788,3 +1788,60 @@ input[type="radio"]:checked + .c7-pill {
     }
 
 }
+
+/* ===================================================
+   C7 TARGETED FIXES
+   - Keep Nice Select dropdown fully visible
+   - Keep inventory cards balanced
+   - Prevent a single filtered car from becoming oversized
+=================================================== */
+
+/* Open the select list upward so it is not clipped by the hero carousel. */
+.hero__tab__form .nice-select.open .list {
+    top: auto;
+    bottom: calc(100% + 8px);
+    transform-origin: 50% 100%;
+    z-index: 99999;
+}
+
+/* Keep all inventory cards equal in height within the same row. */
+.c7-grid {
+    align-items: stretch;
+}
+
+.c7-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.c7-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.c7-buttons {
+    margin-top: auto;
+}
+
+/* When filtering leaves only one car, keep the card at a normal size. */
+.c7-grid:has(.c7-card:only-child) {
+    grid-template-columns: minmax(0, 520px);
+    justify-content: center;
+}
+
+@media (max-width: 1200px) and (min-width: 769px) {
+    .c7-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .c7-grid:has(.c7-card:only-child) {
+        grid-template-columns: minmax(0, 520px);
+    }
+}
+
+@media (max-width: 768px) {
+    .c7-grid:has(.c7-card:only-child) {
+        grid-template-columns: 1fr;
+    }
+}
