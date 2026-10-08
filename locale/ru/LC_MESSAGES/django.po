@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-08 20:15+0300\n"
+"POT-Creation-Date: 2026-10-08 23:03+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,6 +21,7 @@ msgstr ""
 "(n%100>=11 && n%100<=14)? 2 : 3);\n"
 
 #: .\c7_motors\deployment.py:130 .\c7_motors\settings.py:159
+#: .\templates\financing.html:223
 msgid "English"
 msgstr "English"
 
@@ -32,132 +33,133 @@ msgstr "العربية"
 msgid "Русский"
 msgstr "Русский"
 
-#: .\templates\about.html:10
+#: .\templates\about.html:6
 msgid "About C7 Motors - Your Trusted Partner in Quality Used Cars"
-msgstr "О компании C7 Motors — ваш надежный партнер по подержанным авто премиум-качества"
+msgstr "О C7 Motors — ваш надежный партнер в выборе качественных подержанных автомобилей"
 
-#: .\templates\about.html:11
+#: .\templates\about.html:7
 msgid ""
 "Learn about C7 Motors, our mission, vision, and commitment to providing top-"
 "quality used cars. With years of experience, we strive to make car ownership "
 "accessible and enjoyable for everyone."
 msgstr ""
-"Узнайте больше о C7 Motors, нашей миссии, видении и стремлении предлагать лучшую автотехнику с пробегом. Многолетний опыт позволяет нам делать покупку автомобиля простой, доступной и приятной для каждого."
+"Узнайте больше о C7 Motors, нашей миссии, видении и стремлении предоставлять подержанные автомобили высочайшего качества. Благодаря многолетнему опыту мы делаем покупку автомобиля простой и приятной для каждого."
 
-#: .\templates\about.html:12
+#: .\templates\about.html:8
 msgid ""
 "about C7 Motors, used car dealership, reliable used cars, trusted car dealers"
 msgstr ""
-"о C7 Motors, автосалон подержанных авто, надежные авто с пробегом, проверенные автодилеры"
+"о C7 Motors, автосалон подержанных авто, надежные авто с пробегом, проверенные дилеры"
 
-#: .\templates\about.html:21
+#: .\templates\about.html:16
 msgid "About Us"
 msgstr "О нас"
 
-#: .\templates\about.html:23 .\templates\base.html:113
-#: .\templates\contact_us.html:21
+#: .\templates\about.html:18 .\templates\articles.html:540
+#: .\templates\base.html:113 .\templates\contact_us.html:21
+#: .\templates\inventory.html:27
 msgid "Home"
 msgstr "Главная"
 
-#: .\templates\about.html:24
+#: .\templates\about.html:19
 msgid "contact us"
 msgstr "связаться с нами"
 
-#: .\templates\about.html:25 .\templates\about.html:38
+#: .\templates\about.html:20 .\templates\about.html:33
 #: .\templates\base.html:118 .\templates\base.html:192
 msgid "About"
-msgstr "О нас"
+msgstr "О компании"
 
-#: .\templates\about.html:38 .\templates\base.html:228
+#: .\templates\about.html:33 .\templates\base.html:228
 msgid "C7 Motors"
 msgstr "C7 Motors"
 
-#: .\templates\about.html:40
+#: .\templates\about.html:35
 msgid ""
 "“Experience the joy of owning a quality used car with C7 Motors. From family-"
 "friendly SUVs to stylish sedans, we provide vehicles that suit every "
 "lifestyle and budget”"
 msgstr ""
-"«Испытайте радость владения качественным автомобилем с пробегом вместе с C7 Motors. От семейных внедорожников до стильных седанов — мы подберем автомобиль под любой образ жизни и бюджет»"
+"«Испытайте радость от владения качественным автомобилем с пробегом от C7 Motors. От семейных внедорожников до стильных седанов — у нас есть автомобили для любого стиля жизни и бюджета»"
 
-#: .\templates\about.html:47 .\templates\about.html:58
+#: .\templates\about.html:42 .\templates\about.html:53
 msgid "Icon"
 msgstr "Иконка"
 
-#: .\templates\about.html:49
+#: .\templates\about.html:44
 msgid "Our Mision"
 msgstr "Наша миссия"
 
-#: .\templates\about.html:51
+#: .\templates\about.html:46
 msgid ""
 "At C7 Motors, we aim to make owning a car simple and accessible for "
 "everyone. By offering a diverse selection of high-quality used vehicles with "
 "cash or installment payment options, we ensure your car-buying journey is "
 "stress-free and rewarding."
 msgstr ""
-"В C7 Motors мы стремимся сделать покупку автомобиля простой и доступной. Широкий выбор проверенных авто с пробегом, возможность оплаты наличными или в рассрочку гарантируют комфортный и выигрышный процесс покупки."
+"В C7 Motors мы стремимся сделать владение автомобилем простым и доступным для каждого. Предлагая широкий выбор качественных авто с пробегом за наличный расчет или в рассрочку, мы гарантируем комфортный и приятный процесс покупки."
 
-#: .\templates\about.html:60
+#: .\templates\about.html:55
 msgid "Our Vision"
 msgstr "Наше видение"
 
-#: .\templates\about.html:62
+#: .\templates\about.html:57
 msgid ""
 "To be the trusted choice for used car sales, setting industry standards with "
 "our commitment to quality, transparency, and customer satisfaction."
 msgstr ""
-"Стать самым надежным выбором на рынке автомобилей с пробегом, задавая стандарты качества, прозрачности и высокого уровня обслуживания клиентов."
+"Стать самым надежным выбором на рынке автомобилей с пробегом, задавая высокие стандарты качества, прозрачности и заботы о клиентах."
 
-#: .\templates\about.html:68
+#: .\templates\about.html:63
 msgid "Customer Commitment"
 msgstr "Обязательства перед клиентами"
 
-#: .\templates\about.html:70
+#: .\templates\about.html:65
 msgid "When you choose C7 Motors, you can expect:"
 msgstr "Выбирая C7 Motors, вы получаете:"
 
-#: .\templates\about.html:72
+#: .\templates\about.html:67
 msgid ""
 "Reliable Quality: Every used car is carefully inspected and certified for "
 "performance and safety."
 msgstr ""
-"Надежное качество: каждый автомобиль проходит тщательную техническую проверку и сертификацию безопасности."
+"Надежное качество: каждый автомобиль с пробегом проходит тщательную проверку и сертификацию на предмет исправности и безопасности."
 
-#: .\templates\about.html:74
+#: .\templates\about.html:69
 msgid ""
 "Flexible Payment Options: Whether you prefer to pay upfront in cash or "
 "spread the cost with installment payments, we've got you covered."
 msgstr ""
-"Гибкие условия оплаты: покупка наличными или удобные программы рассрочки — мы подберем оптимальный вариант."
+"Гибкие варианты оплаты: вы можете оплатить покупку сразу наличными или воспользоваться удобной рассрочкой."
 
-#: .\templates\about.html:76
+#: .\templates\about.html:71
 msgid "Pricing: No hidden fees—what you see is what you pay."
-msgstr "Честные цены: никаких скрытых комиссий — вы платите ровно столько, сколько указано."
+msgstr "Прозрачные цены: никаких скрытых комиссий — вы платите ровно столько, сколько видите."
 
-#: .\templates\about.html:78
+#: .\templates\about.html:73
 msgid ""
 "Dedicated Support: Our team is here to help at every stage, from selecting "
 "your car to finalizing payment."
 msgstr ""
-"Персональная поддержка: наша команда сопровождает вас на всех этапах — от выбора модели до оформления сделки."
+"Персональная поддержка: наша команда готова помочь вам на каждом этапе — от выбора авто до оформления платежа."
 
-#: .\templates\about.html:84
+#: .\templates\about.html:79
 msgid "Years Of Experience"
 msgstr "Лет опыта"
 
-#: .\templates\about.html:89
+#: .\templates\about.html:84
 msgid "Great Team"
 msgstr "Отличная команда"
 
-#: .\templates\about.html:90
+#: .\templates\about.html:85
 msgid "Best Quality"
-msgstr "Высшее качество"
+msgstr "Лучшее качество"
 
-#: .\templates\about.html:91
+#: .\templates\about.html:86
 msgid "Fast Services"
 msgstr "Быстрое обслуживание"
 
-#: .\templates\about.html:100
+#: .\templates\about.html:95
 msgid "Red Porsche"
 msgstr "Красный Porsche"
 
@@ -170,7 +172,20 @@ msgid ""
 "Luxury car articles, UAE driving tips, maintenance guides and automotive "
 "insights from C7 Motors."
 msgstr ""
-"Статьи о премиум-авто, советы по вождению в ОАЭ, руководства по обслуживанию и обзоры авторынка от C7 Motors."
+"Статьи о премиальных авто, советы по вождению в ОАЭ, руководства по обслуживанию и экспертные обзоры от C7 Motors."
+
+#: .\templates\articles.html:535 .\templates\articles.html:546
+#: .\templates\base.html:133 .\templates\home.html:622
+msgid "Articles"
+msgstr "Статьи"
+
+#: .\templates\articles.html:569
+msgid "Automotive"
+msgstr "Автомобильный"
+
+#: .\templates\articles.html:570
+msgid "Insights"
+msgstr "Обзор"
 
 #: .\templates\articles.html:576
 msgid ""
@@ -178,7 +193,11 @@ msgid ""
 "luxury car ownership tips and UAE driving insights to maintenance guides and "
 "industry trends."
 msgstr ""
-"Эксклюзивный автомобильный контент от команды C7 Motors: от советов по эксплуатации люксовых авто и особенностей вождения в ОАЭ до руководств по ТО и трендов индустрии."
+"Откройте для себя экспертные материалы от команды C7 Motors: от советов по эксплуатации премиальных авто и особенностей вождения в ОАЭ до руководств по техобслуживанию и трендов индустрии."
+
+#: .\templates\articles.html:600 .\templates\home.html:648
+msgid "Tips"
+msgstr "Советы"
 
 #: .\templates\articles.html:636 .\templates\articles.html:642
 #: .\templates\car_details.html:325 .\templates\car_details.html:328
@@ -201,15 +220,15 @@ msgstr "Загрузка..."
 
 #: .\templates\base.html:84 .\templates\base.html:212
 msgid "C7 Motors TikTok Account"
-msgstr "Аккаунт C7 Motors в TikTok"
+msgstr "C7 Motors в TikTok"
 
 #: .\templates\base.html:85 .\templates\base.html:213
 msgid "C7 Motors Instgram Account"
-msgstr "Аккаунт C7 Motors в Instagram"
+msgstr "C7 Motors в Instagram"
 
 #: .\templates\base.html:86 .\templates\base.html:214
 msgid "C7 Motors Facebook Account"
-msgstr "Аккаунт C7 Motors в Facebook"
+msgstr "C7 Motors в Facebook"
 
 #: .\templates\base.html:100
 msgid "C7 Motors company logo"
@@ -217,20 +236,17 @@ msgstr "Логотип компании C7 Motors"
 
 #: .\templates\base.html:104
 msgid "navbar button"
-msgstr "Кнопка меню"
+msgstr "кнопка меню"
 
 #: .\templates\base.html:123 .\templates\base.html:194
 msgid "Financing"
 msgstr "Автокредитование"
 
 #: .\templates\base.html:128 .\templates\base.html:193
-#: .\templates\home.html:294
+#: .\templates\home.html:294 .\templates\inventory.html:24
+#: .\templates\inventory.html:29
 msgid "Inventory"
-msgstr "Каталог авто"
-
-#: .\templates\base.html:133 .\templates\home.html:622
-msgid "Articles"
-msgstr "Статьи"
+msgstr "Каталог"
 
 #: .\templates\base.html:138 .\templates\contact_us.html:23
 msgid "Contact"
@@ -253,7 +269,7 @@ msgid ""
 "We are open to serve you 24/7 with extended showroom hours from 11 AM to 10 "
 "PM every day"
 msgstr ""
-"Мы на связи 24/7. Часы работы автосалона: ежедневно с 11:00 до 22:00"
+"Мы работаем для вас 24/7, а наш автосалон открыт ежедневно с 11:00 до 22:00"
 
 #: .\templates\base.html:207
 msgid "Contact Info"
@@ -281,18 +297,18 @@ msgstr "на продажу | C7 Motors"
 
 #: .\templates\car_details.html:7
 msgid "Buy a used"
-msgstr "Купить подержанный"
+msgstr "Купить б/у"
 
 #: .\templates\car_details.html:7
 msgid ""
 "in excellent condition. Low mileage, affordable price, and great financing "
 "options available. Contact us today!"
 msgstr ""
-"в отличном состоянии. Небольшой пробег, выгодная цена и отличные условия автокредитования. Свяжитесь с нами сегодня!"
+"в отличном состоянии. Небольшой пробег, доступная цена и отличные условия автокредитования. Свяжитесь с нами сегодня!"
 
 #: .\templates\car_details.html:8
 msgid "for sale, buy used"
-msgstr "продажа, купить авто с пробегом"
+msgstr "на продажу, купить б/у"
 
 #: .\templates\car_details.html:8
 msgid ", best price"
@@ -312,6 +328,10 @@ msgstr "Вперед"
 
 #: .\templates\car_details.html:184 .\templates\car_details.html:209
 #: .\templates\car_details.html:281 .\templates\car_details.html:282
+#: .\templates\financing.html:40 .\templates\financing.html:50
+#: .\templates\financing.html:88 .\templates\financing.html:93
+#: .\templates\financing.html:99 .\templates\financing.html:104
+#: .\templates\financing.html:114
 msgid "AED"
 msgstr "AED"
 
@@ -369,7 +389,7 @@ msgstr "Написать в WhatsApp"
 
 #: .\templates\car_details.html:220 .\templates\car_details.html:296
 msgid "Calculate Payment"
-msgstr "Рассчитать платеж"
+msgstr "Рассчитать кредит"
 
 #: .\templates\car_details.html:263
 msgid "Mileage:"
@@ -393,7 +413,7 @@ msgstr "Коробка передач:"
 
 #: .\templates\car_details.html:267
 msgid "Horsepower:"
-msgstr "Мощность двигателя:"
+msgstr "Мощность:"
 
 #: .\templates\car_details.html:268
 msgid "Spec:"
@@ -417,7 +437,7 @@ msgstr "Цена:"
 
 #: .\templates\car_details.html:282
 msgid "Installment:"
-msgstr "Ежемесячный платеж:"
+msgstr "Платеж:"
 
 #: .\templates\car_details.html:335
 msgid "Technical Features"
@@ -429,7 +449,7 @@ msgstr "Комфорт и удобства"
 
 #: .\templates\car_details.html:374
 msgid "Driver Assistance & Safety"
-msgstr "Системы помощи водителю и безопасность"
+msgstr "Системы помощи и безопасность"
 
 #: .\templates\contact_us.html:9
 msgid "Contact C7 Motors - Get in Touch with Us Today"
@@ -440,14 +460,14 @@ msgid ""
 "Have questions or need assistance? Contact C7 Motors through phone or email. "
 "Our team is ready to help you with all your used car needs."
 msgstr ""
-"Есть вопросы или нужна помощь? Свяжитесь с C7 Motors по телефону или электронной почте. Наша команда готова помочь вам по любым вопросам."
+"Есть вопросы или нужна помощь? Свяжитесь с C7 Motors по телефону или эл. почте. Наша команда готова помочь вам по любым вопросам."
 
 #: .\templates\contact_us.html:11
 msgid ""
 "contact C7 Motors, car dealership contact, used car inquiries, support for "
 "used car buyers"
 msgstr ""
-"связаться с C7 Motors, контакты автосалона, вопросы по подержанным авто, поддержка покупателей"
+"контакты C7 Motors, связаться с автосалоном, вопросы по б/у авто, поддержка покупателей"
 
 #: .\templates\contact_us.html:19 .\templates\contact_us.html:36
 msgid "Contact Us"
@@ -462,7 +482,7 @@ msgid ""
 "Feel free to reach out to us anytime; we're here to assist you with any "
 "questions, concerns, or inquiries you may have."
 msgstr ""
-"Связывайтесь с нами в любое удобное время. Мы с радостью ответим на все ваши вопросы и предоставим нужную информацию."
+"Обращайтесь к нам в любое время. Мы с радостью ответим на все ваши вопросы и предоставим необходимую информацию."
 
 #: .\templates\contact_us.html:49
 msgid "Send Your Message"
@@ -508,11 +528,19 @@ msgstr "Написать нам"
 msgid "Phone"
 msgstr "Телефон"
 
-#: .\templates\error.html:10
+#: .\templates\error.html:10 .\templates\error.html:38
 msgid "Error"
 msgstr "Ошибка"
 
-#: .\templates\error.html:47
+#: .\templates\error.html:39
+msgid "Something went wrong"
+msgstr "Что-то пошло не так"
+
+#: .\templates\error.html:40
+msgid "An unexpected error occurred."
+msgstr "Произошла непредвиденная ошибка."
+
+#: .\templates\error.html:51
 msgid "Go Back To Home"
 msgstr "Вернуться на главную"
 
@@ -527,14 +555,54 @@ msgid ""
 "selection of well-maintained vehicles with flexible financing options. "
 "Explore now!"
 msgstr ""
-"Надежные автомобили с пробегом по выгодным ценам. Большой выбор проверенных авто и гибкие программы кредитования. Выберите свой автомобиль прямо сейчас!"
+"Большой выбор качественных автомобилей с пробегом по выгодным ценам. Гибкие условия кредитования и рассрочки. Выберите свой авто прямо сейчас!"
 
 #: .\templates\financing.html:9 .\templates\home.html:11
 msgid ""
 "c7 motors , used cars for sale, buy a used car, best used car prices, second-"
 "hand cars, pre-owned vehicles, used cars in Dubai"
 msgstr ""
-"c7 motors, авто с пробегом дубай, купить подержанное авто, цены на авто с пробегом, автомобили в дубае"
+"c7 motors, авто с пробегом, купить б/у авто, цены на б/у авто, автомобили с пробегом в Дубае"
+
+#: .\templates\financing.html:20
+msgid "Car Financing"
+msgstr "Автокредитование"
+
+#: .\templates\financing.html:24
+msgid "Everything You Need to Know"
+msgstr "Все, что вам нужно знать"
+
+#: .\templates\financing.html:38 .\templates\financing.html:91
+msgid "Car Price"
+msgstr "Стоимость авто"
+
+#: .\templates\financing.html:46 .\templates\financing.html:98
+msgid "Down Payment"
+msgstr "Первоначальный взнос"
+
+#: .\templates\financing.html:65
+msgid "Interest Rate"
+msgstr "Процентная ставка"
+
+#: .\templates\financing.html:73 .\templates\financing.html:108
+msgid "Loan Period"
+msgstr "Срок кредита"
+
+#: .\templates\financing.html:87
+msgid "Monthly Payment"
+msgstr "Ежемесячный платеж"
+
+#: .\templates\financing.html:103
+msgid "Total Loan Amount"
+msgstr "Общая сумма кредита"
+
+#: .\templates\financing.html:109
+msgid "Years"
+msgstr "Лет"
+
+#: .\templates\financing.html:113
+msgid "Total interest"
+msgstr "Общая сумма процентов"
 
 #: .\templates\financing.html:132
 msgid "Zero Down Payment"
@@ -545,39 +613,39 @@ msgid ""
 "One of the standout features of car financing in Dubai is the 'Zero Down "
 "Payment' option,"
 msgstr ""
-"Одно из главных преимуществ автокредитования в Дубае — опция «Без первоначального взноса»,"
+"Одной из главных особенностей автокредитования в Дубае является опция «Без первоначального взноса»,"
 
 #: .\templates\financing.html:135
 msgid ""
 "where qualified applicants can get approval without needing to pay anything "
 "upfront"
 msgstr ""
-"позволяющая получить одобрение банка без необходимости вносить аванс."
+"позволяющая клиентам получить одобрение без авансовых платежей."
 
 #: .\templates\financing.html:136
 msgid ""
 "This is ideal for first-time buyers or anyone who prefers to maintain "
 "liquidity,"
 msgstr ""
-"Это идеальное решение для первой покупки или для тех, кто предпочитает сохранять ликвидность средств."
+"Это идеальное решение для покупателей, желающих сохранить финансовую гибкость."
 
 #: .\templates\financing.html:137
 msgid ""
 "At C7 Motors, we've partnered with multiple leading banks in the UAE to "
 "offer our"
 msgstr ""
-"В C7 Motors мы сотрудничаем с ведущими банками ОАЭ, чтобы предложить нашим"
+"В C7 Motors мы сотрудничаем с ведущими банками ОАЭ,"
 
 #: .\templates\financing.html:138
 msgid ""
 "customers highly competitive interest rates, fast approvals, and a smooth, "
 "hassle-free experience."
 msgstr ""
-"клиентам выгодные процентные ставки, быстрое одобрение и комфортный процесс оформления."
+"чтобы предложить вам выгодные процентные ставки, быстрое одобрение и комфортный процесс оформления."
 
 #: .\templates\financing.html:151
 msgid "Used Car Financing"
-msgstr "Кредит на авто с пробегом"
+msgstr "Кредитование авто с пробегом"
 
 #: .\templates\financing.html:153
 msgid "Car financing is not only limited to brand-new vehicles."
@@ -585,21 +653,21 @@ msgstr "Автокредитование доступно не только дл
 
 #: .\templates\financing.html:154
 msgid "regulations and bank policies, certified used cars are also eligible"
-msgstr "Согласно правилам и политике банков, сертифицированные авто с пробегом также подходят"
+msgstr "Согласно правилам банков, сертифицированные авто с пробегом также подходят"
 
 #: .\templates\financing.html:155
 msgid ""
 "for full or partial financing—depending on the car's age, condition, and "
 "valuation"
 msgstr ""
-"для полного или частичного финансирования — в зависимости от года выпуска, состояния и оценки автомобиля."
+"для полного или частичного финансирования в зависимости от возраста, состояния и оценки авто."
 
 #: .\templates\financing.html:156
 msgid ""
 "Most banks provide financing terms ranging from 12 to 60 months, and your "
 "monthly installment"
 msgstr ""
-"Большинство банков предлагают кредитование на срок от 12 до 60 месяцев. Ежемесячный платеж"
+"Большинство банков предлагают сроки от 12 до 60 месяцев, а ваш платеж"
 
 #: .\templates\financing.html:157
 msgid "can be calculated easily using our in-house Financing Calculator below."
@@ -607,35 +675,35 @@ msgstr "можно легко рассчитать с помощью нашег�
 
 #: .\templates\financing.html:169
 msgid "Financing Journey Starts Here"
-msgstr "Ваш путь к автокредиту начинается здесь"
+msgstr "Оформление кредита начинается здесь"
 
 #: .\templates\financing.html:171
 msgid ""
 "Whether you're looking for a luxury sedan, SUV, or even an electric or "
 "hybrid vehicle,"
 msgstr ""
-"Ищете ли вы роскошный седан, внедорожник, электромобиль или гибрид —"
+"Ищете ли вы премиальный седан, внедорожник или гибридный/электромобиль —"
 
 #: .\templates\financing.html:172
 msgid ""
 "our sales and financing advisors are ready to guide you through every step—"
 "from"
 msgstr ""
-"наши кредитные специалисты помогут вам на каждом этапе — от"
+"наши специалисты готовы помочь вам на каждом этапе:"
 
 #: .\templates\financing.html:173
 msgid ""
 "vehicle selection to loan approval. Below you'll find everything you need to "
 "get started,"
 msgstr ""
-"подбора авто до получения одобрения. Ниже вы найдете всё необходимое для старта:"
+"от выбора машины до одобрения заявки. Ниже вы найдете всё необходимое,"
 
 #: .\templates\financing.html:174
 msgid ""
 "including the required documents, a financing calculator, and a quick "
 "application form"
 msgstr ""
-"список документов, кредитный калькулятор и форму быстрой подачи заявки."
+"включая список документов, калькулятор и форму быстрой заявки."
 
 #: .\templates\financing.html:188
 msgid "Quick Financing Request"
@@ -645,6 +713,10 @@ msgstr "Быстрая заявка на кредит"
 msgid "Car Interested In"
 msgstr "Интересующий автомобиль"
 
+#: .\templates\financing.html:203
+msgid "e.g. John Doe"
+msgstr "например, Иван Иванов"
+
 #: .\templates\financing.html:207
 msgid "Phone Number"
 msgstr "Номер телефона"
@@ -653,9 +725,21 @@ msgstr "Номер телефона"
 msgid "Payment Method"
 msgstr "Способ оплаты"
 
+#: .\templates\financing.html:214
+msgid "Cash"
+msgstr "Наличные"
+
+#: .\templates\financing.html:215
+msgid "Bank Finance"
+msgstr "Банковский кредит"
+
 #: .\templates\financing.html:220
 msgid "Preferred Language"
-msgstr "Предпочтительный язык"
+msgstr "Предпочитаемый язык"
+
+#: .\templates\financing.html:222
+msgid "Arabic"
+msgstr "Арабский"
 
 #: .\templates\financing.html:228
 msgid "Submit Request"
@@ -663,7 +747,7 @@ msgstr "Отправить заявку"
 
 #: .\templates\financing.html:236
 msgid "Basic Requirements for Car Financing in the UAE"
-msgstr "Основные требования для автокредита в ОАЭ"
+msgstr "Основные требования для автокредитования в ОАЭ"
 
 #: .\templates\financing.html:240
 msgid "Emirates ID (UAE Nationals) or Passport & Visa Copy (Expats)"
@@ -671,7 +755,7 @@ msgstr "Emirates ID (для граждан ОАЭ) или копия паспо�
 
 #: .\templates\financing.html:241
 msgid "Valid UAE Driving License"
-msgstr "Действующие водительские права ОАЭ"
+msgstr "Действующее водительское удостоверение ОАЭ"
 
 #: .\templates\financing.html:242
 msgid "Salary Certificate or 3–6 months Bank Statement"
@@ -683,7 +767,7 @@ msgstr "Минимальный ежемесячный доход: 5 000 AED"
 
 #: .\templates\financing.html:244
 msgid "Car should be less than 10 years old (most banks)"
-msgstr "Возраст автомобиля не старше 10 лет (требование большинства банков)"
+msgstr "Возраст автомобиля не должен превышать 10 лет (требование большинства банков)"
 
 #: .\templates\financing.html:261
 msgid "Frequently Asked Questions"
@@ -691,18 +775,18 @@ msgstr "Часто задаваемые вопросы"
 
 #: .\templates\financing.html:271
 msgid "Can I finance a used car in Dubai?"
-msgstr "Можно ли оформить кредит на подержанный автомобиль в Дубае?"
+msgstr "Можно ли взять в кредит подержанный автомобиль в Дубае?"
 
 #: .\templates\financing.html:276
 msgid ""
 "Yes, many banks offer financing options for used cars up to a certain age, "
 "typically 8–10 years depending on the car's condition and value."
 msgstr ""
-"Да, многие банки предлагают программы финансирования подержанных авто возрастом обычно до 8–10 лет, в зависимости от состояния и стоимости машины."
+"Да, многие банки финансируют покупку б/у авто возрастом до 8–10 лет в зависимости от состояния и оценки машины."
 
 #: .\templates\financing.html:284
 msgid "Is it possible to get financing with no down payment?"
-msgstr "Можно ли получить кредит без первоначального взноса?"
+msgstr "Возможно ли получить кредит без первоначального взноса?"
 
 #: .\templates\financing.html:289
 #, python-format
@@ -718,33 +802,33 @@ msgstr "Сколько времени занимает одобрение кре
 
 #: .\templates\financing.html:302
 msgid "Typically, it takes 24 to 48 hours once all documents are submitted."
-msgstr "Обычно процесс занимает от 24 до 48 часов с момента предоставления всех документов."
+msgstr "Обычно процесс занимает от 24 до 48 часов с момента подачи всех документов."
 
 #: .\templates\financing.html:310
 msgid "What if I have an existing loan or credit card?"
-msgstr "Что, если у меня уже есть действующий кредит или кредитная карта?"
+msgstr "Что делать, если у меня уже есть действующий кредит или кредитная карта?"
 
 #: .\templates\financing.html:315
 msgid ""
 "That's not a problem. Banks will evaluate your Debt-to-Income ratio (DTI) to "
 "determine your eligibility."
 msgstr ""
-"Это не проблема. Банки оценивают соотношение ваших долговых обязательств к доходу (DTI) для определения лимита."
+"Это не проблема. Банки оценивают соотношение ваших долгов к доходу (DTI) для принятия решения."
 
 #: .\templates\financing.html:323
 msgid "Can I use my current car as a trade-in?"
-msgstr "Могу ли я сдать свой текущий автомобиль в Trade-In?"
+msgstr "Могу ли я сдать свой старый автомобиль в trade-in?"
 
 #: .\templates\financing.html:328
 msgid ""
 "Yes. We offer trade-in evaluations, and the value can be used as part of "
 "your down payment."
 msgstr ""
-"Да. Мы проводим оценку вашего авто по программе Trade-In, и его стоимость может быть засчитана в качестве первого взноса."
+"Да. Мы проводим оценку trade-in, и стоимость вашего авто может зайти в счет первоначального взноса."
 
 #: .\templates\financing.html:336
 msgid "What interest rates should I expect?"
-msgstr "На какие процентные ставки стоит рассчитывать?"
+msgstr "На какую процентную ставку я могу рассчитывать?"
 
 #: .\templates\financing.html:341
 #, python-format
@@ -752,22 +836,119 @@ msgid ""
 "Rates vary by bank, but typically range from 2.5%% to 4.5%% annually for "
 "qualified applicants."
 msgstr ""
-"Ставки зависят от банка, но обычно составляют от 2.5%% до 4.5%% годовых для квалифицированных заявителей."
+"Ставки зависят от банка, но обычно составляют от 2.5%% до 4.5%% годовых при соответствии требованиям."
 
 #: .\templates\financing.html:349
 msgid "Do you assist with the bank application?"
-msgstr "Помогаете ли вы в подаче заявки в банк?"
+msgstr "Помогаете ли вы с подачей заявки в банк?"
 
 #: .\templates\financing.html:354
 msgid ""
 "Yes, our team handles the entire process on your behalf—saving you time and "
 "paperwork."
 msgstr ""
-"Да, наша команда берет на себя весь процесс оформления, экономя ваше время и избавив от бумажной волокиты."
+"Да, наша команда возьмет на себя весь процесс оформления, сэкономив ваше время."
 
 #: .\templates\home.html:7 .\templates\home.html:20
 msgid "C7 Motors | Used Cars for Sale at the Best Prices"
-msgstr "C7 Motors | Продажа авто с пробегом по лучшим ценам"
+msgstr "C7 Motors | Продажа автомобилей с пробегом по лучшим ценам"
+
+#: .\templates\home.html:68
+msgid "DRIVE LUXURY. DRIVE CONFIDENCE."
+msgstr "УПРАВЛЯЙ РОСКОШЬЮ. ВОДИ С УВЕРЕННОСТЬЮ."
+
+#: .\templates\home.html:74
+msgid "Finest Used Cars"
+msgstr "Лучшие автомобили с пробегом"
+
+#: .\templates\home.html:75
+msgid "In Dubai"
+msgstr "В Дубае"
+
+#: .\templates\home.html:81
+msgid "Explore our premium collection of luxury used cars in Dubai."
+msgstr "Откройте для себя коллекцию премиальных автомобилей с пробегом в Дубае."
+
+#: .\templates\home.html:82
+msgid "Exceptional performance, elegance, and unbeatable value."
+msgstr "Превосходная динамика, элегантность и выгодные цены."
+
+#: .\templates\home.html:99
+msgid "Find Your Dream Car"
+msgstr "Найдите автомобиль мечты"
+
+#: .\templates\home.html:110
+msgid "Year"
+msgstr "Год"
+
+#: .\templates\home.html:115
+msgid "Select Year"
+msgstr "Выберите год"
+
+#: .\templates\home.html:134
+msgid "Brand"
+msgstr "Марка"
+
+#: .\templates\home.html:139
+msgid "Select Brand"
+msgstr "Выберите марку"
+
+#: .\templates\home.html:158 .\templates\inventory.html:186
+#: .\templates\inventory.html:372
+msgid "Body Style"
+msgstr "Тип кузова"
+
+#: .\templates\home.html:163
+msgid "Select Body Style"
+msgstr "Выберите тип кузова"
+
+#: .\templates\home.html:166
+msgid "SUV"
+msgstr "Внедорожник"
+
+#: .\templates\home.html:167
+msgid "Sedan"
+msgstr "Седан"
+
+#: .\templates\home.html:168
+msgid "Hybrid"
+msgstr "Гибрид"
+
+#: .\templates\home.html:169
+msgid "Electric"
+msgstr "Электромобиль"
+
+#: .\templates\home.html:170
+msgid "Coupe"
+msgstr "Купе"
+
+#: .\templates\home.html:171
+msgid "Hatchback"
+msgstr "Хэтчбек"
+
+#: .\templates\home.html:181
+msgid "Price"
+msgstr "Цена"
+
+#: .\templates\home.html:187
+msgid "UAE"
+msgstr "ОАЭ"
+
+#: .\templates\home.html:193
+msgid "From"
+msgstr "От"
+
+#: .\templates\home.html:199
+msgid "Upto"
+msgstr "До"
+
+#: .\templates\home.html:206
+msgid "Apply"
+msgstr "Применить"
+
+#: .\templates\home.html:219
+msgid "Search Cars"
+msgstr "Найти автомобиль"
 
 #: .\templates\home.html:261
 msgid "Bentley logo"
@@ -829,6 +1010,114 @@ msgstr "Логотип Tesla"
 msgid "Cars"
 msgstr "Автомобили"
 
+#: .\templates\home.html:320
+msgid "All"
+msgstr "Все"
+
+#: .\templates\home.html:411
+msgid "Sold Out"
+msgstr "Продано"
+
+#: .\templates\home.html:443
+msgid "See All Cars"
+msgstr "Посмотреть все авто"
+
+#: .\templates\home.html:474
+msgid "DRIVEN BY TRUST. FOCUSED ON YOU."
+msgstr "ОСНОВАНО НА ДОВЕРИИ. С ЗАБОТОЙ О ВАС."
+
+#: .\templates\home.html:482
+msgid "Based in Dubai, we specialize in offering high-quality"
+msgstr "Наш автосалон в Дубае предлагает исключительно качественные"
+
+#: .\templates\home.html:483
+msgid "used cars that go through rigorous inspections to ensure"
+msgstr "автомобили с пробегом, прошедшие детальную проверку для обеспечения"
+
+#: .\templates\home.html:484
+msgid "safety, performance, and value."
+msgstr "безопасности, надежности и выгодной цены."
+
+#: .\templates\home.html:488
+msgid "Our dedicated team is committed to providing transparent"
+msgstr "Наша команда стремится обеспечить прозрачное"
+
+#: .\templates\home.html:489
+msgid "pricing, honest advice, and flexible payment options"
+msgstr "ценообразование, честные рекомендации и гибкие условия оплаты,"
+
+#: .\templates\home.html:490
+msgid "tailored to suit each customer’s needs."
+msgstr "подобранные под потребности каждого клиента."
+
+#: .\templates\home.html:494
+msgid "We understand that buying a car is more than just a"
+msgstr "Мы понимаем, что покупка автомобиля — это не просто"
+
+#: .\templates\home.html:495
+msgid "transaction — it’s an experience."
+msgstr "сделка, а важный шаг и яркие эмоции."
+
+#: .\templates\home.html:499
+msgid "More About Us"
+msgstr "Узнать больше о нас"
+
+#: .\templates\home.html:519
+msgid "PREMIUM"
+msgstr "ПРЕМИАЛЬНОЕ"
+
+#: .\templates\home.html:520
+msgid "QUALITY"
+msgstr "КАЧЕСТВО"
+
+#: .\templates\home.html:532
+msgid "TRUSTED"
+msgstr "НАДЕЖНЫЙ"
+
+#: .\templates\home.html:533
+msgid "SERVICE"
+msgstr "СЕРВИС"
+
+#: .\templates\home.html:545
+msgid "DEDICATED"
+msgstr "ПЕРСОНАЛЬНАЯ"
+
+#: .\templates\home.html:546
+msgid "SUPPORT"
+msgstr "ПОДДЕРЖКА"
+
+#: .\templates\home.html:566
+msgid "Rigorous Inspections"
+msgstr "Строгий контроль качества"
+
+#: .\templates\home.html:567
+msgid "Every car is thoroughly checked for your safety."
+msgstr "Каждый автомобиль тщательно проверяется ради вашей безопасности."
+
+#: .\templates\home.html:577
+msgid "Transparent Pricing"
+msgstr "Прозрачные цены"
+
+#: .\templates\home.html:578
+msgid "No hidden fees, only honest and fair deals."
+msgstr "Никаких скрытых комиссий, только честные условия."
+
+#: .\templates\home.html:588
+msgid "Trusted by Thousands"
+msgstr "Доверие тысяч клиентов"
+
+#: .\templates\home.html:589
+msgid "Years of experience and happy customers."
+msgstr "Многолетний опыт и довольные покупатели."
+
+#: .\templates\home.html:599
+msgid "Dedicated Support"
+msgstr "Забота о клиенте"
+
+#: .\templates\home.html:600
+msgid "We’re here to assist you at every step."
+msgstr "Мы готовы помочь вам на каждом этапе."
+
 #: .\templates\home.html:626
 msgid ""
 "All the articles on this page are written by our dedicated team at C7 Motors "
@@ -836,16 +1125,36 @@ msgid ""
 "in the UAE. From expert tips to the latest trends, everything here is "
 "crafted to support your journey on the road"
 msgstr ""
-"Все статьи подготовлены командой C7 Motors, чтобы вы чувствовали себя уверенно в вопросах владения авто в ОАЭ. От экспертных советов до актуальных трендов — всё для вашего комфорта на дорогах."
+"Все статьи подготовлены экспертами C7 Motors, чтобы помочь вам уверенно ориентироваться в вопросах покупки и владения авто в ОАЭ: от полезных советов до свежих трендов рынка."
 
 #: .\templates\home.html:645
 msgid "Article Image"
 msgstr "Изображение статьи"
 
-#: .\templates\home.html:648
-msgid "Tips"
-msgstr "Советы"
-
 #: .\templates\home.html:696
 msgid "More Articles"
 msgstr "Больше статей"
+
+#: .\templates\inventory.html:51 .\templates\inventory.html:251
+msgid "Filter Cars"
+msgstr "Фильтр автомобилей"
+
+#: .\templates\inventory.html:76 .\templates\inventory.html:289
+msgid "Brands"
+msgstr "Марки"
+
+#: .\templates\inventory.html:108 .\templates\inventory.html:313
+msgid "Models"
+msgstr "Модели"
+
+#: .\templates\inventory.html:154 .\templates\inventory.html:348
+msgid "Model Year"
+msgstr "Год выпуска"
+
+#: .\templates\inventory.html:218 .\templates\inventory.html:396
+msgid "Search"
+msgstr "Поиск"
+
+#: .\templates\inventory.html:231 .\templates\inventory.html:412
+msgid "Reset"
+msgstr "Сбросить"

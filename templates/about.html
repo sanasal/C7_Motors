@@ -1,20 +1,15 @@
 {% extends 'base.html'%}
-{% block content %}
 {% load static %}
 {% load i18n %}
 
-<!DOCTYPE html>
-<html lang="{{ LANGUAGE_CODE }}">
-
-    <head>
+{% block meta %}
         <title>{% trans "About C7 Motors - Your Trusted Partner in Quality Used Cars" %}</title>
         <meta name="description" content="{% trans 'Learn about C7 Motors, our mission, vision, and commitment to providing top-quality used cars. With years of experience, we strive to make car ownership accessible and enjoyable for everyone.' %}" />
         <meta name="keywords" content="{% trans 'about C7 Motors, used car dealership, reliable used cars, trusted car dealers' %}" />
         <link rel="stylesheet" href="{% static 'css/about.css'%}">
-    </head>
+{% endblock %}
 
-    <body>
-
+{% block content %}
         <!-- Header Start -->
         <div class="container-fluid bg-breadcrumb bg-about">
             <div class="container py-5" style="max-width: 900px;">
@@ -105,8 +100,4 @@
             </div>
         </div>
         <!-- About End -->
-    </body>
-
-</html>
-
 {% endblock %}

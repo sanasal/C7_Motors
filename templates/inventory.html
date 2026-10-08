@@ -21,12 +21,12 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 
         <div class="container">
 
-            <h1>Inventory</h1>
+            <h1>{% trans 'Inventory' %}</h1>
 
             <div class="breadcrumb-box">
-                <a href="/">Home</a>
+                <a href="/">{% trans 'Home' %}</a>
                 <span>/</span>
-                <span>Inventory</span>
+                <span>{% trans 'Inventory' %}</span>
             </div>
 
         </div>
@@ -48,7 +48,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 
             <i class="fa-solid fa-sliders"></i>
 
-            Filter Cars
+            {% trans 'Filter Cars' %}
 
         </button>
 
@@ -73,7 +73,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
         <select name="brand" class="select-list-item">
 
             <option value="">
-                Brands
+                {% trans 'Brands' %}
             </option>
 
             {% for brand in brands %}
@@ -105,7 +105,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
         <select name="model">
 
             <option value="">
-                Models
+                {% trans 'Models' %}
             </option>
 
             {% for model in models %}
@@ -151,7 +151,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
         <select name="year_from">
 
             <option value="">
-                Model Year
+                {% trans 'Model Year' %}
             </option>
 
             {% for year in years %}
@@ -183,7 +183,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
         <select name="body_style">
 
             <option value="">
-                Body Style
+                {% trans 'Body Style' %}
             </option>
 
             {% for value, label in type_choices %}
@@ -215,7 +215,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 
         <i class="fa-solid fa-magnifying-glass"></i>
 
-        Search
+        {% trans 'Search' %}
 
     </button>
 
@@ -228,7 +228,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 
                 <i class="fa-solid fa-rotate-right"></i>
 
-                Reset
+                {% trans 'Reset' %}
 
             </a>
 
@@ -248,7 +248,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
                 <div class="mobile-filter-header">
 
                     <h3>
-                        Filter Cars
+                        {% trans 'Filter Cars' %}
                     </h3>
 
     <button
@@ -286,7 +286,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
                         <select name="brand">
 
                             <option value="">
-                                Brands
+                                {% trans 'Brands' %}
                             </option>
 
                             {% for brand in brands %}
@@ -310,7 +310,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
                         <select name="model">
 
                             <option value="">
-                                Models
+                                {% trans 'Models' %}
                             </option>
 
                             {% for model in models %}
@@ -345,7 +345,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
                         <select name="year_from">
 
                             <option value="">
-                                Model Year
+                                {% trans 'Model Year' %}
                             </option>
 
                             {% for year in years %}
@@ -369,7 +369,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
                         <select name="body_style">
 
                             <option value="">
-                                Body Style
+                                {% trans 'Body Style' %}
                             </option>
 
                             {% for value, label in type_choices %}
@@ -393,7 +393,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 
                         <i class="fa-solid fa-magnifying-glass"></i>
 
-                        Search
+                        {% trans 'Search' %}
 
                     </button>
 
@@ -409,7 +409,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 
         <i class="fa-solid fa-rotate-right"></i>
 
-        Reset
+        {% trans 'Reset' %}
 
                     </a>
 

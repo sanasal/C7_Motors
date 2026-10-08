@@ -17,11 +17,11 @@
         <div class="finance-overlay">
 
             <h1>
-                Car Financing
+                {% trans "Car Financing" %}
             </h1>
 
             <p>
-                Everything You Need to Know
+                {% trans "Everything You Need to Know" %}
             </p>
 
         </div>
@@ -35,19 +35,19 @@
                     <!-- LEFT SIDE -->
                     <div class="col-lg-6">
                         <!-- Car Price -->
-                        <label class="calc-label">Car Price</label>
+                        <label class="calc-label">{% trans "Car Price" %}</label>
                         <div class="calc-input-box mb-2">
-                            <span>AED</span>
+                            <span>{% trans "AED" %}</span>
                             <input type="number" id="car_price" value="{{ car_price|default_if_none:10000 }}">
                         </div>
                         <input type="range" id="price_slider" min="10000" max="1500000" value="{{ car_price|default_if_none:10000 }}" class="calc-slider">
 
                         <!-- Down Payment -->
-                        <label class="calc-label mt-4">Down Payment</label>
+                        <label class="calc-label mt-4">{% trans "Down Payment" %}</label>
                         <div class="row g-2 mb-2">
                             <div class="col-8">
                                 <div class="calc-input-box">
-                                <span>AED</span>
+                                <span>{% trans "AED" %}</span>
                                     <input type="number" id="downpayment" value="8400">
                                 </div>
                             </div>
@@ -62,7 +62,7 @@
                         <input type="range" id="down_slider" min="0" max="50" value="20" class="calc-slider">
 
                         <!-- Interest Rate -->
-                        <label class="calc-label mt-4">Interest Rate</label>
+                        <label class="calc-label mt-4">{% trans "Interest Rate" %}</label>
                         <div class="calc-input-box mb-2">
                             <input type="number" id="interest_rate" value="2.79">
                             <span>%</span>
@@ -70,7 +70,7 @@
                         <input type="range" id="interest_slider" min="1" max="10" value="2.79" step="0.01" class="calc-slider">
 
                         <!-- Loan Period -->
-                        <label class="calc-label mt-4">Loan Period</label>
+                        <label class="calc-label mt-4">{% trans "Loan Period" %}</label>
                         <div class="d-flex gap-2 flex-wrap mt-2">
                             <button class="period-btn active" data-value="1">1</button>
                             <button class="period-btn" data-value="2">2</button>
@@ -84,34 +84,34 @@
                     <!-- RIGHT SIDE SUMMARY -->
                     <div class="col-lg-6">
                         <div class="summary-box">
-                            <p class="summary-title">Monthly Payment</p>
-                            <h1 class="summary-amount" id="monthly_payment">AED 638</h1>
+                            <p class="summary-title">{% trans "Monthly Payment" %}</p>
+                            <h1 class="summary-amount" id="monthly_payment">{% trans "AED" %} 638</h1>
 
                             <div class="summary-row">
-                                <span>Car Price</span>
+                                <span>{% trans "Car Price" %}</span>
                                 <strong id="s_car_price">
-                                    AED {{ car_price|default_if_none:10000 }}
+                                    {% trans "AED" %} {{ car_price|default_if_none:10000 }}
                                 </strong>
                             </div>
 
                             <div class="summary-row">
-                                <span>Down Payment</span>
-                                <strong id="s_downpayment">AED 0 / 0%</strong>
+                                <span>{% trans "Down Payment" %}</span>
+                                <strong id="s_downpayment">{% trans "AED" %} 0 / 0%</strong>
                             </div>
 
                             <div class="summary-row">
-                                <span>Total Loan Amount</span>
-                                <strong id="s_loan_amount">AED 0</strong>
+                                <span>{% trans "Total Loan Amount" %}</span>
+                                <strong id="s_loan_amount">{% trans "AED" %} 0</strong>
                             </div>
 
                             <div class="summary-row">
-                                <span>Loan Period</span>
-                                <strong id="s_period">0 Years</strong>
+                                <span>{% trans "Loan Period" %}</span>
+                                <strong id="s_period">0 {% trans "Years" %}</strong>
                             </div>
 
                             <div class="summary-row">
-                                <span>Total interest</span>
-                                <strong id="s_interest">AED 0</strong>
+                                <span>{% trans "Total interest" %}</span>
+                                <strong id="s_interest">{% trans "AED" %} 0</strong>
                             </div>
                         </div>
                     </div>
@@ -200,7 +200,7 @@
 
                                 <div class="mb-2">
                                     <label class="form-label fw-semibold large">{% trans "Name" %}</label>
-                                    <input type="text" class="form-control form-control-sm" placeholder="e.g. John Doe">
+                                    <input type="text" class="form-control form-control-sm" placeholder="{% trans 'e.g. John Doe' %}">
                                 </div>
 
                                 <div class="mb-2">
@@ -211,16 +211,16 @@
                                 <div class="mb-2">
                                     <label class="form-label fw-semibold large">{% trans "Payment Method" %}</label>
                                     <select class="form-select form-select-sm">
-                                        <option>Cash</option>
-                                        <option>Bank Finance</option>
+                                        <option>{% trans "Cash" %}</option>
+                                        <option>{% trans "Bank Finance" %}</option>
                                     </select>
                                 </div>
 
                                 <div class="mb-3">
                                     <label class="form-label fw-semibold large">{% trans "Preferred Language" %}</label>
                                     <select class="form-select form-select-sm">
-                                        <option>Arabic</option>
-                                        <option>English</option>
+                                        <option>{% trans "Arabic" %}</option>
+                                        <option>{% trans "English" %}</option>
                                     </select>
                                 </div>
 

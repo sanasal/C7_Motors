@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-08 20:15+0300\n"
+"POT-Creation-Date: 2026-10-08 23:03+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,8 +20,9 @@ msgstr ""
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 
 #: .\c7_motors\deployment.py:130 .\c7_motors\settings.py:159
+#: .\templates\financing.html:223
 msgid "English"
-msgstr "English"
+msgstr "الإنجليزية"
 
 #: .\c7_motors\deployment.py:131 .\c7_motors\settings.py:160
 msgid "العربية"
@@ -29,147 +30,161 @@ msgstr "العربية"
 
 #: .\c7_motors\deployment.py:132 .\c7_motors\settings.py:161
 msgid "Русский"
-msgstr "Русский"
+msgstr "الروسية"
 
-#: .\templates\about.html:10
+#: .\templates\about.html:6
 msgid "About C7 Motors - Your Trusted Partner in Quality Used Cars"
-msgstr "عن سي 7 موتورز - شريكك الموثوق للسيارات المستعملة ذات الجودة العالية"
+msgstr "عن C7 Motors - شريكك الموثوق للسيارات المستعملة ذات الجودة العالية"
 
-#: .\templates\about.html:11
+#: .\templates\about.html:7
 msgid ""
 "Learn about C7 Motors, our mission, vision, and commitment to providing top-"
 "quality used cars. With years of experience, we strive to make car ownership "
 "accessible and enjoyable for everyone."
 msgstr ""
-"تعرّف على سي 7 موتورز، مهمتنا، رؤيتنا، والتزامنا بتوفير أفضل السيارات المستعملة. بفضل سنوات خبرتنا، نسعى لجعْل امتلاك السيارات أمراً سهلاً وممتعاً للجميع."
+"تعرّف على C7 Motors، ورسالتنا، ورؤيتنا، والتزامنا بتقديم أفضل السيارات المستعملة ذات الجودة العالية. بفضل سنوات خبرتنا، نسعى لجعل امتلاك السيارات سهلاً وممتعاً للجميع."
 
-#: .\templates\about.html:12
+#: .\templates\about.html:8
 msgid ""
 "about C7 Motors, used car dealership, reliable used cars, trusted car dealers"
 msgstr ""
-"عن سي 7 موتورز, معرض سيارات مستعملة, سيارات مستعملة موثوقة, تجار سيارات موثوقون"
+"عن C7 Motors, معرض سيارات مستعملة, سيارات مستعملة موثوقة, تجار سيارات موثوقون"
 
-#: .\templates\about.html:21
+#: .\templates\about.html:16
 msgid "About Us"
 msgstr "من نحن"
 
-#: .\templates\about.html:23 .\templates\base.html:113
-#: .\templates\contact_us.html:21
+#: .\templates\about.html:18 .\templates\articles.html:540
+#: .\templates\base.html:113 .\templates\contact_us.html:21
+#: .\templates\inventory.html:27
 msgid "Home"
 msgstr "الرئيسية"
 
-#: .\templates\about.html:24
+#: .\templates\about.html:19
 msgid "contact us"
 msgstr "تواصل معنا"
 
-#: .\templates\about.html:25 .\templates\about.html:38
+#: .\templates\about.html:20 .\templates\about.html:33
 #: .\templates\base.html:118 .\templates\base.html:192
 msgid "About"
 msgstr "من نحن"
 
-#: .\templates\about.html:38 .\templates\base.html:228
+#: .\templates\about.html:33 .\templates\base.html:228
 msgid "C7 Motors"
-msgstr "سي 7 موتورز"
+msgstr "C7 Motors"
 
-#: .\templates\about.html:40
+#: .\templates\about.html:35
 msgid ""
 "“Experience the joy of owning a quality used car with C7 Motors. From family-"
 "friendly SUVs to stylish sedans, we provide vehicles that suit every "
 "lifestyle and budget”"
 msgstr ""
-"“استمتع بتجربة امتلاك سيارة مستعملة ذات جودة عالية مع سي 7 موتورز. من السيارات العائلية متعددة الاستخدامات إلى السيدان الأنيقة، نقدم مركبات تناسب كل أسلوب حياة وميزانية”"
+"“استمتع بمتعة امتلاك سيارة مستعملة عالية الجودة مع C7 Motors. من السيارات العائلية الرياضية متعددة الاستخدامات إلى السيارات السيدان الأنيقة، نوفر مركبات تناسب كل أسلوب حياة وميزانية”"
 
-#: .\templates\about.html:47 .\templates\about.html:58
+#: .\templates\about.html:42 .\templates\about.html:53
 msgid "Icon"
 msgstr "أيقونة"
 
-#: .\templates\about.html:49
+#: .\templates\about.html:44
 msgid "Our Mision"
-msgstr "مهمتنا"
+msgstr "رسالتنا"
 
-#: .\templates\about.html:51
+#: .\templates\about.html:46
 msgid ""
 "At C7 Motors, we aim to make owning a car simple and accessible for "
 "everyone. By offering a diverse selection of high-quality used vehicles with "
 "cash or installment payment options, we ensure your car-buying journey is "
 "stress-free and rewarding."
 msgstr ""
-"في سي 7 موتورز، نهدف إلى جعل امتلاك سيارة أمرًا بسيطًا ومتاحًا للجميع. من خلال تقديم تشكيلة متنوعة من السيارات المستعملة عالية الجودة مع خيارات الدفع نقداً أو بالتقسيط، نضمن لك رحلة شراء سيارة خالية من التوتر ومجزية."
+"في C7 Motors، نهدف إلى جعل امتلاك سيارة أمراً بسيطاً ومتاحاً للجميع. من خلال تقديم تشكيلة متنوعة من السيارات المستعملة عالية الجودة مع خيارات الدفع نقداً أو بالتقسيط، نضمن لك رحلة شراء خالية من التوتر ومجزية."
 
-#: .\templates\about.html:60
+#: .\templates\about.html:55
 msgid "Our Vision"
 msgstr "رؤيتنا"
 
-#: .\templates\about.html:62
+#: .\templates\about.html:57
 msgid ""
 "To be the trusted choice for used car sales, setting industry standards with "
 "our commitment to quality, transparency, and customer satisfaction."
 msgstr ""
-"أن نكون الخيار الموثوق لشراء السيارات المستعملة، وأن نضع معايير جديدة في هذا المجال من خلال التزامنا بالجودة، الشفافية، ورضا العملاء."
+"أن نكون الخيار الموثوق لشراء السيارات المستعملة، ونضع معايير جديدة في هذا المجال بفضل التزامنا بالجودة والشفافية ورضا العملاء."
 
-#: .\templates\about.html:68
+#: .\templates\about.html:63
 msgid "Customer Commitment"
 msgstr "التزامنا تجاه العملاء"
 
-#: .\templates\about.html:70
+#: .\templates\about.html:65
 msgid "When you choose C7 Motors, you can expect:"
-msgstr "عندما تختار سي 7 موتورز، يمكنك أن تتوقع:"
+msgstr "عندما تختار C7 Motors، يمكنك توقع:"
 
-#: .\templates\about.html:72
+#: .\templates\about.html:67
 msgid ""
 "Reliable Quality: Every used car is carefully inspected and certified for "
 "performance and safety."
 msgstr ""
-"جودة موثوقة: يخضع كل معروض من السيارات المستعملة للفحص الدقيق والاعتماد لضمان الأداء والسلامة."
+"جودة موثوقة: تخضع كل سيارة مستعملة لفحص دقيق ومعتمد لضمان الأداء والسلامة."
 
-#: .\templates\about.html:74
+#: .\templates\about.html:69
 msgid ""
 "Flexible Payment Options: Whether you prefer to pay upfront in cash or "
 "spread the cost with installment payments, we've got you covered."
 msgstr ""
-"خيارات دفع مرنة: سواء كنت تفضل الدفع النقدي المباشر أو تقسيط المبلغ على دفعات، فنحن نوفر لك الخيار المناسب."
+"خيارات دفع مرنة: سواء كنت تفضل الدفع نقداً أو تقسيط التكلفة على دفعات، فنحن نوفر لك الخيار المناسب."
 
-#: .\templates\about.html:76
+#: .\templates\about.html:71
 msgid "Pricing: No hidden fees—what you see is what you pay."
-msgstr "الأسعار: لا توجد رسوم خفية — السعر الذي تراه هو ما تدفعه."
+msgstr "الأسعار: لا توجد رسوم خفية — السعر المعروض هو ما تدفعه فقط."
 
-#: .\templates\about.html:78
+#: .\templates\about.html:73
 msgid ""
 "Dedicated Support: Our team is here to help at every stage, from selecting "
 "your car to finalizing payment."
 msgstr ""
-"دعم متخصص: فريقنا هنا لمساعدتك في كل مرحلة، بدءًا من اختيار سيارتك وحتى إتمام عملية الدفع."
+"دعم مخصص: فريقنا هنا لمساعدتك في كل مرحلة، بدءاً من اختيار سيارتك وحتى إتمام الدفع."
 
-#: .\templates\about.html:84
+#: .\templates\about.html:79
 msgid "Years Of Experience"
 msgstr "سنوات من الخبرة"
 
-#: .\templates\about.html:89
+#: .\templates\about.html:84
 msgid "Great Team"
-msgstr "فريق عمل متميز"
+msgstr "فريق عمل رائع"
 
-#: .\templates\about.html:90
+#: .\templates\about.html:85
 msgid "Best Quality"
 msgstr "أفضل جودة"
 
-#: .\templates\about.html:91
+#: .\templates\about.html:86
 msgid "Fast Services"
 msgstr "خدمات سريعة"
 
-#: .\templates\about.html:100
+#: .\templates\about.html:95
 msgid "Red Porsche"
 msgstr "بورشه حمراء"
 
 #: .\templates\articles.html:7
 msgid "Car Tips & Articles | C7 Motors"
-msgstr "نصائح ومقالات عن السيارات | سي 7 موتورز"
+msgstr "نصائح المقالات والسيارات | C7 Motors"
 
 #: .\templates\articles.html:11
 msgid ""
 "Luxury car articles, UAE driving tips, maintenance guides and automotive "
 "insights from C7 Motors."
 msgstr ""
-"مقالات عن السيارات الفاخرة، نصائح القيادة في الإمارات، أدلة الصيانة ومعلومات شاملة عن عالم السيارات من سي 7 موتورز."
+"مقالات عن السيارات الفاخرة، نصائح القيادة في الإمارات، أدلة الصيانة ورؤى حول عالم السيارات من C7 Motors."
+
+#: .\templates\articles.html:535 .\templates\articles.html:546
+#: .\templates\base.html:133 .\templates\home.html:622
+msgid "Articles"
+msgstr "المقالات"
+
+#: .\templates\articles.html:569
+msgid "Automotive"
+msgstr "عالم السيارات"
+
+#: .\templates\articles.html:570
+msgid "Insights"
+msgstr "رؤى ومعلومات"
 
 #: .\templates\articles.html:576
 msgid ""
@@ -177,7 +192,11 @@ msgid ""
 "luxury car ownership tips and UAE driving insights to maintenance guides and "
 "industry trends."
 msgstr ""
-"اكتشف محتوى سيارات متميز تم إعداده بواسطة فريق سي 7 موتورز — من نصائح امتلاك السيارات الفاخرة وإرشادات القيادة في الإمارات إلى أدلة الصيانة وأحدث اتجاهات السوق."
+"اكتشف محتوى متميزاً في عالم السيارات أعده فريق C7 Motors — بدءاً من نصائح اقتناء السيارات الفاخرة ورؤى القيادة في الإمارات، وصولاً إلى أدلة الصيانة وأحدث اتجاهات السوق."
+
+#: .\templates\articles.html:600 .\templates\home.html:648
+msgid "Tips"
+msgstr "نصائح"
 
 #: .\templates\articles.html:636 .\templates\articles.html:642
 #: .\templates\car_details.html:325 .\templates\car_details.html:328
@@ -188,11 +207,11 @@ msgstr "اقرأ المزيد"
 #: .\templates\articles.html:638 .\templates\car_details.html:326
 #: .\templates\home.html:675
 msgid "Read Less"
-msgstr "قراءة أقل"
+msgstr "عرض أقل"
 
 #: .\templates\base.html:32
 msgid "C7 Motors Team"
-msgstr "فريق سي 7 موتورز"
+msgstr "فريق C7 Motors"
 
 #: .\templates\base.html:67
 msgid "Loading..."
@@ -200,36 +219,33 @@ msgstr "جاري التحميل..."
 
 #: .\templates\base.html:84 .\templates\base.html:212
 msgid "C7 Motors TikTok Account"
-msgstr "حساب تيك توك لـ سي 7 موتورز"
+msgstr "حساب C7 Motors على تيك توك"
 
 #: .\templates\base.html:85 .\templates\base.html:213
 msgid "C7 Motors Instgram Account"
-msgstr "حساب إنستغرام لـ سي 7 موتورز"
+msgstr "حساب C7 Motors على إنستغرام"
 
 #: .\templates\base.html:86 .\templates\base.html:214
 msgid "C7 Motors Facebook Account"
-msgstr "حساب فيسبوك لـ سي 7 موتورز"
+msgstr "حساب C7 Motors على فيسبوك"
 
 #: .\templates\base.html:100
 msgid "C7 Motors company logo"
-msgstr "شعار شركة سي 7 موتورز"
+msgstr "شعار شركة C7 Motors"
 
 #: .\templates\base.html:104
 msgid "navbar button"
-msgstr "زر شريط التنقل"
+msgstr "زر القائمة"
 
 #: .\templates\base.html:123 .\templates\base.html:194
 msgid "Financing"
 msgstr "التمويل"
 
 #: .\templates\base.html:128 .\templates\base.html:193
-#: .\templates\home.html:294
+#: .\templates\home.html:294 .\templates\inventory.html:24
+#: .\templates\inventory.html:29
 msgid "Inventory"
 msgstr "المخزون"
-
-#: .\templates\base.html:133 .\templates\home.html:622
-msgid "Articles"
-msgstr "المقالات"
 
 #: .\templates\base.html:138 .\templates\contact_us.html:23
 msgid "Contact"
@@ -237,7 +253,7 @@ msgstr "اتصل بنا"
 
 #: .\templates\base.html:185
 msgid "C7 Logo"
-msgstr "شعار سي 7"
+msgstr "شعار C7"
 
 #: .\templates\base.html:191
 msgid "Quick Links"
@@ -252,7 +268,7 @@ msgid ""
 "We are open to serve you 24/7 with extended showroom hours from 11 AM to 10 "
 "PM every day"
 msgstr ""
-"نحن بخدمتك على مدار الساعة طوال أيام الأسبوع، مع ساعات عمل للمعرض من 11 صباحاً حتى 10 مساءً يومياً."
+"نحن بجانبك لخدمتك 24/7، مع ساعات عمل المعرض من 11 صباحاً حتى 10 مساءً يومياً"
 
 #: .\templates\base.html:207
 msgid "Contact Info"
@@ -260,7 +276,7 @@ msgstr "معلومات الاتصال"
 
 #: .\templates\base.html:208
 msgid "18th St -Al Quoz Industrial Area 1 - Dubai - United Arab Emirates"
-msgstr "شارع 18 - منطقة القوز الصناعية 1 - دبي - الإمارات العربية المتحدة"
+msgstr "شارع 18 - القوز المنطقة الصناعية 1 - دبي - الإمارات العربية المتحدة"
 
 #: .\templates\base.html:228
 msgid "All right reserved."
@@ -268,7 +284,7 @@ msgstr "جميع الحقوق محفوظة."
 
 #: .\templates\base.html:231
 msgid "Designed & Developed By "
-msgstr "تصميم وتطوير بواسطة "
+msgstr "تم التصميم والتطوير بواسطة "
 
 #: .\templates\base.html:240
 msgid "Contact Via Whatsapp"
@@ -276,22 +292,22 @@ msgstr "تواصل عبر واتساب"
 
 #: .\templates\car_details.html:6
 msgid "for Sale | C7 Motors"
-msgstr "للبيع | سي 7 موتورز"
+msgstr "للبيع | C7 Motors"
 
 #: .\templates\car_details.html:7
 msgid "Buy a used"
-msgstr "اشترِ سيارة مستعملة من نوع"
+msgstr "اشترِ سيارة مستعملة"
 
 #: .\templates\car_details.html:7
 msgid ""
 "in excellent condition. Low mileage, affordable price, and great financing "
 "options available. Contact us today!"
 msgstr ""
-"بحالة ممتازة. قطع مسافة قليلة، سعر مناسب، وخيارات تمويل ممتازة متاحة. تواصل معنا اليوم!"
+"بحالة ممتازة. ممشى قليل، سعر مناسب، وخيارات تمويل رائعة متاحة. تواصل معنا اليوم!"
 
 #: .\templates\car_details.html:8
 msgid "for sale, buy used"
-msgstr "للبيع، شراء سيارة مستعملة"
+msgstr "للبيع، شراء مستعمل"
 
 #: .\templates\car_details.html:8
 msgid ", best price"
@@ -299,7 +315,7 @@ msgstr "، أفضل سعر"
 
 #: .\templates\car_details.html:8
 msgid ", low mileage"
-msgstr "، عدد كيلومترات قليل"
+msgstr "، ممشى قليل"
 
 #: .\templates\car_details.html:173
 msgid "Previous"
@@ -311,6 +327,10 @@ msgstr "التالي"
 
 #: .\templates\car_details.html:184 .\templates\car_details.html:209
 #: .\templates\car_details.html:281 .\templates\car_details.html:282
+#: .\templates\financing.html:40 .\templates\financing.html:50
+#: .\templates\financing.html:88 .\templates\financing.html:93
+#: .\templates\financing.html:99 .\templates\financing.html:104
+#: .\templates\financing.html:114
 msgid "AED"
 msgstr "درهم"
 
@@ -324,11 +344,11 @@ msgstr "نظرة عامة على السيارة"
 
 #: .\templates\car_details.html:202 .\templates\car_details.html:361
 msgid "Exterior"
-msgstr "المظهر الخارجي"
+msgstr "التصميم الخارجي"
 
 #: .\templates\car_details.html:203
 msgid "Interior"
-msgstr "المقصورة الداخلية"
+msgstr "التصميم الداخلي"
 
 #: .\templates\car_details.html:204
 msgid "Horsepower"
@@ -360,11 +380,11 @@ msgstr "سي سي"
 
 #: .\templates\car_details.html:209
 msgid "Installment"
-msgstr "القسط الشهري"
+msgstr "القسط"
 
 #: .\templates\car_details.html:216 .\templates\car_details.html:291
 msgid "Chat on WhatsApp"
-msgstr "تحدث عبر واتساب"
+msgstr "المحادثة عبر واتساب"
 
 #: .\templates\car_details.html:220 .\templates\car_details.html:296
 msgid "Calculate Payment"
@@ -380,11 +400,11 @@ msgstr "كم"
 
 #: .\templates\car_details.html:264
 msgid "Exterior:"
-msgstr "اللون الخارجي:"
+msgstr "الخارجية:"
 
 #: .\templates\car_details.html:265
 msgid "Interior:"
-msgstr "اللون الداخلي:"
+msgstr "الداخلية:"
 
 #: .\templates\car_details.html:266
 msgid "Transmission:"
@@ -400,15 +420,15 @@ msgstr "المواصفات:"
 
 #: .\templates\car_details.html:278
 msgid "Seats:"
-msgstr "عدد المقاعد:"
+msgstr "المقاعد:"
 
 #: .\templates\car_details.html:279
 msgid "Cylinders:"
-msgstr "عدد الأسطوانات:"
+msgstr "الأسطوانات:"
 
 #: .\templates\car_details.html:280
 msgid "Engine:"
-msgstr "سعة المحرك:"
+msgstr "المحرك:"
 
 #: .\templates\car_details.html:281
 msgid "Price:"
@@ -416,7 +436,7 @@ msgstr "السعر:"
 
 #: .\templates\car_details.html:282
 msgid "Installment:"
-msgstr "القسط الشهري:"
+msgstr "القسط:"
 
 #: .\templates\car_details.html:335
 msgid "Technical Features"
@@ -432,25 +452,25 @@ msgstr "مساعدة السائق والسلامة"
 
 #: .\templates\contact_us.html:9
 msgid "Contact C7 Motors - Get in Touch with Us Today"
-msgstr "تواصل مع سي 7 موتورز - تواصل معنا اليوم"
+msgstr "تواصل مع C7 Motors - اتصل بنا اليوم"
 
 #: .\templates\contact_us.html:10
 msgid ""
 "Have questions or need assistance? Contact C7 Motors through phone or email. "
 "Our team is ready to help you with all your used car needs."
 msgstr ""
-"هل لديك أسئلة أو تحتاج إلى مساعدة؟ تواصل مع سي 7 موتورز عبر الهاتف أو البريد الإلكتروني. فريقنا مستعد لمساعدتك في كل ما يتعلق بالسيارات المستعملة."
+"هل لديك أسئلة أو تحتاج إلى مساعدة؟ تواصل مع C7 Motors عبر الهاتف أو البريد الإلكتروني. فريقنا مستعد لمساعدتك في كل ما يتعلق بالسيارات المستعملة."
 
 #: .\templates\contact_us.html:11
 msgid ""
 "contact C7 Motors, car dealership contact, used car inquiries, support for "
 "used car buyers"
 msgstr ""
-"التواصل مع سي 7 موتورز, التواصل مع معرض سيارات, استفسارات السيارات المستعملة, دعم مشتري السيارات المستعملة"
+"تواصل مع C7 Motors, الاتصال بمعرض السيارات, استفسارات السيارات المستعملة, دعم مشتري السيارات المستعملة"
 
 #: .\templates\contact_us.html:19 .\templates\contact_us.html:36
 msgid "Contact Us"
-msgstr "اتصل بنا"
+msgstr "تواصل معنا"
 
 #: .\templates\contact_us.html:22
 msgid "about"
@@ -497,27 +517,35 @@ msgstr "فرعنا 01"
 
 #: .\templates\contact_us.html:110
 msgid "18th St - Al Quoz Industrial Area 1 - Dubai - United Arab Emirates"
-msgstr "شارع 18 - منطقة القوز الصناعية 1 - دبي - الإمارات العربية المتحدة"
+msgstr "شارع 18 - القوز المنطقة الصناعية 1 - دبي - الإمارات العربية المتحدة"
 
 #: .\templates\contact_us.html:122
 msgid "Mail Us"
-msgstr "راسلنا بريدياً"
+msgstr "راسلنا عبر البريد الإلكتروني"
 
 #: .\templates\contact_us.html:131
 msgid "Phone"
 msgstr "الهاتف"
 
-#: .\templates\error.html:10
+#: .\templates\error.html:10 .\templates\error.html:38
 msgid "Error"
 msgstr "خطأ"
 
-#: .\templates\error.html:47
+#: .\templates\error.html:39
+msgid "Something went wrong"
+msgstr "حدث خطأ ما"
+
+#: .\templates\error.html:40
+msgid "An unexpected error occurred."
+msgstr "حدث خطأ غير متوقع."
+
+#: .\templates\error.html:51
 msgid "Go Back To Home"
 msgstr "العودة إلى الصفحة الرئيسية"
 
 #: .\templates\financing.html:6
 msgid "Car Financing in Dubai | C7 Motors"
-msgstr "تمويل السيارات في دبي | سي 7 موتورز"
+msgstr "تمويل السيارات في دبي | C7 Motors"
 
 #: .\templates\financing.html:8 .\templates\home.html:9
 #: .\templates\home.html:22
@@ -526,14 +554,54 @@ msgid ""
 "selection of well-maintained vehicles with flexible financing options. "
 "Explore now!"
 msgstr ""
-"اعثر على سيارات مستعملة عالية الجودة للبيع بأسعار تنافسية. تصفح تشكيلتنا الواسعة من السيارات التي تمت صيانتها بعناية مع خيارات تمويل مرنة. استكشف الآن!"
+"اعثر على سيارات مستعملة عالية الجودة للبيع بأسعار تنافسية. تصفح تشكيلتنا الواسعة من السيارات المصانة جيداً مع خيارات تمويل مرنة. استكشف الآن!"
 
 #: .\templates\financing.html:9 .\templates\home.html:11
 msgid ""
 "c7 motors , used cars for sale, buy a used car, best used car prices, second-"
 "hand cars, pre-owned vehicles, used cars in Dubai"
 msgstr ""
-"سي 7 موتورز, سيارات مستعملة للبيع, شراء سيارة مستعملة, أفضل أسعار السيارات المستعملة, سيارات مستعملة في دبي"
+"C7 Motors, سيارات مستعملة للبيع, شراء سيارة مستعملة, أفضل أسعار السيارات المستعملة, سيارات مستعملة في دبي"
+
+#: .\templates\financing.html:20
+msgid "Car Financing"
+msgstr "تمويل السيارات"
+
+#: .\templates\financing.html:24
+msgid "Everything You Need to Know"
+msgstr "كل ما تحتاج إلى معرفته"
+
+#: .\templates\financing.html:38 .\templates\financing.html:91
+msgid "Car Price"
+msgstr "سعر السيارة"
+
+#: .\templates\financing.html:46 .\templates\financing.html:98
+msgid "Down Payment"
+msgstr "الدفعة الأولى"
+
+#: .\templates\financing.html:65
+msgid "Interest Rate"
+msgstr "نسبة الفائدة"
+
+#: .\templates\financing.html:73 .\templates\financing.html:108
+msgid "Loan Period"
+msgstr "مدة القرض"
+
+#: .\templates\financing.html:87
+msgid "Monthly Payment"
+msgstr "القسط الشهرى"
+
+#: .\templates\financing.html:103
+msgid "Total Loan Amount"
+msgstr "إجمالي مبلغ القرض"
+
+#: .\templates\financing.html:109
+msgid "Years"
+msgstr "سنوات"
+
+#: .\templates\financing.html:113
+msgid "Total interest"
+msgstr "إجمالي الفائدة"
 
 #: .\templates\financing.html:132
 msgid "Zero Down Payment"
@@ -544,35 +612,35 @@ msgid ""
 "One of the standout features of car financing in Dubai is the 'Zero Down "
 "Payment' option,"
 msgstr ""
-"إحدى الميزات البارزة لتمويل السيارات في دبي هي خيار 'بدون دفعة أولى'،"
+"تعد الميزة الاستثنائية لتمويل السيارات في دبي هي خيار \"بدون دفعة أولى\"،"
 
 #: .\templates\financing.html:135
 msgid ""
 "where qualified applicants can get approval without needing to pay anything "
 "upfront"
 msgstr ""
-"حيث يمكن للمتقدمين المستوفين للشروط الحصول على الموافقة دون الحاجة لدفع أي مبلغ مقدماً"
+"حيث يمكن للمتقدمين المؤهلين الحصول على الموافقة دون الحاجة لدفع أي مبلغ مقدماً."
 
 #: .\templates\financing.html:136
 msgid ""
 "This is ideal for first-time buyers or anyone who prefers to maintain "
 "liquidity,"
 msgstr ""
-"وهذا الخيار مثالي للمشترين لأول مرة أو لأي شخص يفضل الحفاظ على سيولته النقدية،"
+"يعد هذا الخيار مثالياً للمشترين لأول مرة أو لأي شخص يفضل الحفاظ على السيولة النقدية،"
 
 #: .\templates\financing.html:137
 msgid ""
 "At C7 Motors, we've partnered with multiple leading banks in the UAE to "
 "offer our"
 msgstr ""
-"في سي 7 موتورز، عقدنا شراكات مع العديد من البنوك الرائدة في الإمارات لنقدم لـ"
+"في C7 Motors، عقدنا شراكات مع العديد من البنوك الرائدة في دولة الإمارات لتقديم"
 
 #: .\templates\financing.html:138
 msgid ""
 "customers highly competitive interest rates, fast approvals, and a smooth, "
 "hassle-free experience."
 msgstr ""
-"عملاؤنا أسعار فائدة تنافسية للغاية، وموافقات سريعة، وتجربة سلسة وخالية من المتاعب."
+"أسعار فائدة تنافسية للغاية لعملائنا، وموافقات سريعة، وتجربة سلسة بدون أي متاعب."
 
 #: .\templates\financing.html:151
 msgid "Used Car Financing"
@@ -580,29 +648,29 @@ msgstr "تمويل السيارات المستعملة"
 
 #: .\templates\financing.html:153
 msgid "Car financing is not only limited to brand-new vehicles."
-msgstr "لا يقتصر تمويل السيارات على المركبات الجديدة فقط."
+msgstr "لا يقتصر تمويل السيارات على المركبات الجديدة كلياً فقط."
 
 #: .\templates\financing.html:154
 msgid "regulations and bank policies, certified used cars are also eligible"
-msgstr "اللوائح وسياسات البنوك تجعل السيارات المستعملة المعتمدة مؤهلة أيضاً"
+msgstr "تأهل السيارات المستعملة المعتمدة أيضاً، وذلك وفقاً للوائح وسياسات البنوك"
 
 #: .\templates\financing.html:155
 msgid ""
 "for full or partial financing—depending on the car's age, condition, and "
 "valuation"
 msgstr ""
-"للتمويل الكلي أو الجزئي — اعتماداً على عمر السيارة، حالتها، وتقييمها"
+"للحصول على تمويل كلي أو جزئي — بناءً على عمر السيارة، وحالتها، وتقييمها."
 
 #: .\templates\financing.html:156
 msgid ""
 "Most banks provide financing terms ranging from 12 to 60 months, and your "
 "monthly installment"
 msgstr ""
-"توفر معظم البنوك فترات تمويل تتراوح بين 12 إلى 60 شهراً، وقسطك الشهري"
+"تقدم معظم البنوك شروط تمويل تتراوح بين 12 إلى 60 شهراً، ويمكنك حساب قسطك الشهري"
 
 #: .\templates\financing.html:157
 msgid "can be calculated easily using our in-house Financing Calculator below."
-msgstr "يمكن حسابه بسهولة باستخدام حاسبة التمويل الخاصة بنا أدناه."
+msgstr "بسهولة باستخدام حاسبة التمويل الخاصة بنا أدناه."
 
 #: .\templates\financing.html:169
 msgid "Financing Journey Starts Here"
@@ -620,21 +688,21 @@ msgid ""
 "our sales and financing advisors are ready to guide you through every step—"
 "from"
 msgstr ""
-"مستشارو المبيعات والتمويل لدينا مستعدون لإرشادك خلال كل خطوة — بدءاً من"
+"مستشارو المبيعات والتمويل لدينا مستعدون لإرشادك في كل خطوة — بدءاً من"
 
 #: .\templates\financing.html:173
 msgid ""
 "vehicle selection to loan approval. Below you'll find everything you need to "
 "get started,"
 msgstr ""
-"اختيار المركبة وحتى الموافقة على القرض. أدناه ستجد كل ما تحتاجه للبدء،"
+"اختيار المركبة وحتى موافقة القرض. ستجد أدناه كل ما تحتاجه للبدء،"
 
 #: .\templates\financing.html:174
 msgid ""
 "including the required documents, a financing calculator, and a quick "
 "application form"
 msgstr ""
-"بما في ذلك المستندات المطلوبة، وحاسبة التمويل، ونموذج الطلب السريع"
+"بما في ذلك المستندات المطلوبة، وحاسبة التمويل، ونموذج طلب سريع."
 
 #: .\templates\financing.html:188
 msgid "Quick Financing Request"
@@ -644,6 +712,10 @@ msgstr "طلب تمويل سريع"
 msgid "Car Interested In"
 msgstr "السيارة المطلوبة"
 
+#: .\templates\financing.html:203
+msgid "e.g. John Doe"
+msgstr "مثال: أحمد محمد"
+
 #: .\templates\financing.html:207
 msgid "Phone Number"
 msgstr "رقم الهاتف"
@@ -652,9 +724,21 @@ msgstr "رقم الهاتف"
 msgid "Payment Method"
 msgstr "طريقة الدفع"
 
+#: .\templates\financing.html:214
+msgid "Cash"
+msgstr "نقداً"
+
+#: .\templates\financing.html:215
+msgid "Bank Finance"
+msgstr "تمويل بنكي"
+
 #: .\templates\financing.html:220
 msgid "Preferred Language"
 msgstr "اللغة المفضلة"
+
+#: .\templates\financing.html:222
+msgid "Arabic"
+msgstr "العربية"
 
 #: .\templates\financing.html:228
 msgid "Submit Request"
@@ -666,7 +750,7 @@ msgstr "المتطلبات الأساسية لتمويل السيارات في �
 
 #: .\templates\financing.html:240
 msgid "Emirates ID (UAE Nationals) or Passport & Visa Copy (Expats)"
-msgstr "الهوية الإماراتية (للمواطنين) أو نسخة من الجواز والإقامة (للمقيمين)"
+msgstr "الهوية الإماراتية (لمواطني الإمارات) أو صورة الجواز والإقامة (لمقيمي دولة الإمارات)"
 
 #: .\templates\financing.html:241
 msgid "Valid UAE Driving License"
@@ -674,11 +758,11 @@ msgstr "رخصة قيادة إماراتية سارية المفعول"
 
 #: .\templates\financing.html:242
 msgid "Salary Certificate or 3–6 months Bank Statement"
-msgstr "شهادة راتب أو كشف حساب بنكي لمدة 3 إلى 6 أشهر"
+msgstr "شهادة راتب أو كشف حساب بنكي لآخر 3-6 أشهر"
 
 #: .\templates\financing.html:243
 msgid "Minimum Monthly Salary: 5,000 AED"
-msgstr "الحد الأدنى للراتب الشهري: 5,000 درهم إماراتي"
+msgstr "الحد الأدنى للراتب الشهري: 5,000 درهم"
 
 #: .\templates\financing.html:244
 msgid "Car should be less than 10 years old (most banks)"
@@ -697,7 +781,7 @@ msgid ""
 "Yes, many banks offer financing options for used cars up to a certain age, "
 "typically 8–10 years depending on the car's condition and value."
 msgstr ""
-"نعم، تقدم العديد من البنوك خيارات تمويل للسيارات المستعملة حتى عمر معين، عادةً بين 8 إلى 10 سنوات بناءً على حالة السيارة وقيمتها."
+"نعم، تقدم العديد من البنوك خيارات تمويل للسيارات المستعملة حتى عمر معين، عادةً بين 8 إلى 10 سنوات اعتماداً على حالة السيارة وقيمتها."
 
 #: .\templates\financing.html:284
 msgid "Is it possible to get financing with no down payment?"
@@ -709,15 +793,15 @@ msgid ""
 "Absolutely. If your credit profile is strong and your salary meets the "
 "criteria, we can help you secure a loan with 0%% down payment."
 msgstr ""
-"بالتأكيد. إذا كان سجلك الائتماني قوياً وراتبك يستوفي الشروط، يمكننا مساعدتك في الحصول على قرض بدون دفعة أولى (0%%)."
+"بالتأكيد. إذا كان سجللك الائتماني قوياً وراتبك يطابق الشروط، فيمكننا مساعدتك في الحصول على قرض بدون دفعة أولى (0%%)."
 
 #: .\templates\financing.html:297
 msgid "How long does loan approval take?"
-msgstr "كم تستغرق الموافقة على القرض؟"
+msgstr "كم من الوقت تستغرق موافقة القرض؟"
 
 #: .\templates\financing.html:302
 msgid "Typically, it takes 24 to 48 hours once all documents are submitted."
-msgstr "عادةً ما يستغرق الأمر من 24 إلى 48 ساعة بمجرد تقديم جميع المستندات."
+msgstr "عادةً ما تستغرق من 24 إلى 48 ساعة بمجرد تقديم جميع المستندات المطلوبة."
 
 #: .\templates\financing.html:310
 msgid "What if I have an existing loan or credit card?"
@@ -728,22 +812,22 @@ msgid ""
 "That's not a problem. Banks will evaluate your Debt-to-Income ratio (DTI) to "
 "determine your eligibility."
 msgstr ""
-"هذه ليست مشكلة. تقوم البنوك بتقييم نسبة الدين إلى الدخل (DTI) لتحديد مدى أهليتك."
+"ليست هناك مشكلة. ستقوم البنوك بتقييم نسبة الدين إلى الدخل (DTI) لتحديد مدى استحقاقك."
 
 #: .\templates\financing.html:323
 msgid "Can I use my current car as a trade-in?"
-msgstr "هل يمكنني استخدام سيارتي الحالية كبديل (استبدال)؟"
+msgstr "هل يمكنني استبدال سيارتي الحالية بدفعة أولى؟"
 
 #: .\templates\financing.html:328
 msgid ""
 "Yes. We offer trade-in evaluations, and the value can be used as part of "
 "your down payment."
 msgstr ""
-"نعم. نقدم تقييماً لاستبدال السيارات، ويمكن استخدام قيمتها كجزء من دفعتك الأولى."
+"نعم. نحن نقدم خدمة تقييم الاستبدال، ويمكن استخدام قيمة سيارتك كجزء من الدفعة الأولى."
 
 #: .\templates\financing.html:336
 msgid "What interest rates should I expect?"
-msgstr "ما هي أسعار الفائدة المتوقعة؟"
+msgstr "ما هي نسب الفائدة المتوقعة؟"
 
 #: .\templates\financing.html:341
 #, python-format
@@ -751,22 +835,119 @@ msgid ""
 "Rates vary by bank, but typically range from 2.5%% to 4.5%% annually for "
 "qualified applicants."
 msgstr ""
-"تختلف الأسعار حسب البنك، ولكنها تتراوح عادةً بين 2.5%% و 4.5%% سنوياً للمتقدمين المؤهلين."
+"تختلف النسب حسب البنك، ولكنها تتراوح عادةً بين 2.5%% و 4.5%% سنوياً للمتقدمين المؤهلين."
 
 #: .\templates\financing.html:349
 msgid "Do you assist with the bank application?"
-msgstr "هل تساعدون في تقديم الطلب للبنك؟"
+msgstr "هل تساعدون في تقديم طلب البنك؟"
 
 #: .\templates\financing.html:354
 msgid ""
 "Yes, our team handles the entire process on your behalf—saving you time and "
 "paperwork."
 msgstr ""
-"نعم، يتولى فريقنا العملية بأكملها نيابة عنك — مما يوفر عليك الوقت والمعاملات الورقية."
+"نعم، يتولى فريقنا المعاملة بالكامل نيابة عنك — مما يوفر عليك الوقت والأوراق."
 
 #: .\templates\home.html:7 .\templates\home.html:20
 msgid "C7 Motors | Used Cars for Sale at the Best Prices"
-msgstr "سي 7 موتورز | سيارات مستعملة للبيع بأفضل الأسعار"
+msgstr "C7 Motors | سيارات مستعملة للبيع بأفضل الأسعار"
+
+#: .\templates\home.html:68
+msgid "DRIVE LUXURY. DRIVE CONFIDENCE."
+msgstr "قُد الفخامة. قُد بثقة."
+
+#: .\templates\home.html:74
+msgid "Finest Used Cars"
+msgstr "أرقى السيارات المستعملة"
+
+#: .\templates\home.html:75
+msgid "In Dubai"
+msgstr "في دبي"
+
+#: .\templates\home.html:81
+msgid "Explore our premium collection of luxury used cars in Dubai."
+msgstr "استكشف تشكيلتنا الفاخرة من السيارات المستعملة في دبي."
+
+#: .\templates\home.html:82
+msgid "Exceptional performance, elegance, and unbeatable value."
+msgstr "أداء استثنائي، أناقة، وقيمة لا تُضاهى."
+
+#: .\templates\home.html:99
+msgid "Find Your Dream Car"
+msgstr "اعثر على سيارة أحلامك"
+
+#: .\templates\home.html:110
+msgid "Year"
+msgstr "السنة"
+
+#: .\templates\home.html:115
+msgid "Select Year"
+msgstr "اختر السنة"
+
+#: .\templates\home.html:134
+msgid "Brand"
+msgstr "العلامة التجارية"
+
+#: .\templates\home.html:139
+msgid "Select Brand"
+msgstr "اختر العلامة التجارية"
+
+#: .\templates\home.html:158 .\templates\inventory.html:186
+#: .\templates\inventory.html:372
+msgid "Body Style"
+msgstr "نوع الهيكل"
+
+#: .\templates\home.html:163
+msgid "Select Body Style"
+msgstr "اختر نوع الهيكل"
+
+#: .\templates\home.html:166
+msgid "SUV"
+msgstr "دفع رباعي (SUV)"
+
+#: .\templates\home.html:167
+msgid "Sedan"
+msgstr "سيدان"
+
+#: .\templates\home.html:168
+msgid "Hybrid"
+msgstr "هجين (هايبرد)"
+
+#: .\templates\home.html:169
+msgid "Electric"
+msgstr "كهربائية"
+
+#: .\templates\home.html:170
+msgid "Coupe"
+msgstr "كوبيه"
+
+#: .\templates\home.html:171
+msgid "Hatchback"
+msgstr "هاتشباك"
+
+#: .\templates\home.html:181
+msgid "Price"
+msgstr "السعر"
+
+#: .\templates\home.html:187
+msgid "UAE"
+msgstr "الإمارات"
+
+#: .\templates\home.html:193
+msgid "From"
+msgstr "من"
+
+#: .\templates\home.html:199
+msgid "Upto"
+msgstr "إلى"
+
+#: .\templates\home.html:206
+msgid "Apply"
+msgstr "تطبيق"
+
+#: .\templates\home.html:219
+msgid "Search Cars"
+msgstr "البحث عن سيارات"
 
 #: .\templates\home.html:261
 msgid "Bentley logo"
@@ -828,6 +1009,114 @@ msgstr "شعار تسلا"
 msgid "Cars"
 msgstr "السيارات"
 
+#: .\templates\home.html:320
+msgid "All"
+msgstr "الكل"
+
+#: .\templates\home.html:411
+msgid "Sold Out"
+msgstr "تم البيع"
+
+#: .\templates\home.html:443
+msgid "See All Cars"
+msgstr "عرض كل السيارات"
+
+#: .\templates\home.html:474
+msgid "DRIVEN BY TRUST. FOCUSED ON YOU."
+msgstr "دافعنا الثقة. وتركيزنا عليك."
+
+#: .\templates\home.html:482
+msgid "Based in Dubai, we specialize in offering high-quality"
+msgstr "من مقرنا في دبي، نختص بتقديم سيارات مستعملة"
+
+#: .\templates\home.html:483
+msgid "used cars that go through rigorous inspections to ensure"
+msgstr "عالية الجودة تخضع لفحوصات دقيقة لضمان"
+
+#: .\templates\home.html:484
+msgid "safety, performance, and value."
+msgstr "السلامة، والأداء، والقيمة."
+
+#: .\templates\home.html:488
+msgid "Our dedicated team is committed to providing transparent"
+msgstr "التزام فريقنا المختص بتقديم أسعار شفافة"
+
+#: .\templates\home.html:489
+msgid "pricing, honest advice, and flexible payment options"
+msgstr "ونصائح صادقة وخيارات دفع مرنة"
+
+#: .\templates\home.html:490
+msgid "tailored to suit each customer’s needs."
+msgstr "مصممة لتناسب احتياجات كل عميل."
+
+#: .\templates\home.html:494
+msgid "We understand that buying a car is more than just a"
+msgstr "نحن ندرك أن شراء سيارة هو أكثر من مجرد"
+
+#: .\templates\home.html:495
+msgid "transaction — it’s an experience."
+msgstr "صفقة — إنه تجربة كاملة."
+
+#: .\templates\home.html:499
+msgid "More About Us"
+msgstr "المزيد عنا"
+
+#: .\templates\home.html:519
+msgid "PREMIUM"
+msgstr "ممتازة"
+
+#: .\templates\home.html:520
+msgid "QUALITY"
+msgstr "جودة"
+
+#: .\templates\home.html:532
+msgid "TRUSTED"
+msgstr "خدمة"
+
+#: .\templates\home.html:533
+msgid "SERVICE"
+msgstr "موثوقة"
+
+#: .\templates\home.html:545
+msgid "DEDICATED"
+msgstr "دعم"
+
+#: .\templates\home.html:546
+msgid "SUPPORT"
+msgstr "متواصل"
+
+#: .\templates\home.html:566
+msgid "Rigorous Inspections"
+msgstr "فحوصات دقيقة"
+
+#: .\templates\home.html:567
+msgid "Every car is thoroughly checked for your safety."
+msgstr "يتم فحص كل سيارة بدقة لضمان سلامتك."
+
+#: .\templates\home.html:577
+msgid "Transparent Pricing"
+msgstr "أسعار شفافة"
+
+#: .\templates\home.html:578
+msgid "No hidden fees, only honest and fair deals."
+msgstr "لا توجد رسوم خفية، فقط صفقات عادلة وصريحة."
+
+#: .\templates\home.html:588
+msgid "Trusted by Thousands"
+msgstr "محل ثقة الآلاف"
+
+#: .\templates\home.html:589
+msgid "Years of experience and happy customers."
+msgstr "سنوات من الخبرة والعملاء السعداء."
+
+#: .\templates\home.html:599
+msgid "Dedicated Support"
+msgstr "دعم مخصص"
+
+#: .\templates\home.html:600
+msgid "We’re here to assist you at every step."
+msgstr "نحن هنا لمساعدتك في كل خطوة."
+
 #: .\templates\home.html:626
 msgid ""
 "All the articles on this page are written by our dedicated team at C7 Motors "
@@ -835,16 +1124,36 @@ msgid ""
 "in the UAE. From expert tips to the latest trends, everything here is "
 "crafted to support your journey on the road"
 msgstr ""
-"جميع المقالات الموجودة في هذه الصفحة كُتبت بواسطة فريقنا المتخصص في سي 7 موتورز لإبقائك على اطلاع دائم وتزويدك بالثقة في كل ما يتعلق بامتلاك السيارات في الإمارات. من نصائح الخبراء إلى أحدث الاتجاهات، تم إعداد كل شيء لدعم رحلتك على الطريق."
+"جميع المقالات في هذه الصفحة أعدها فريقنا المختص في C7 Motors لإبقائك على اطلاع دائم وثقة تامة فيما يتعلق بامتلاك السيارات في الإمارات. من نصائح الخبراء إلى أحدث اتجاهات السوق، كل شيء هنا صُمم ليدعم رحلتك على الطريق."
 
 #: .\templates\home.html:645
 msgid "Article Image"
 msgstr "صورة المقال"
 
-#: .\templates\home.html:648
-msgid "Tips"
-msgstr "نصائح"
-
 #: .\templates\home.html:696
 msgid "More Articles"
 msgstr "المزيد من المقالات"
+
+#: .\templates\inventory.html:51 .\templates\inventory.html:251
+msgid "Filter Cars"
+msgstr "تصفية السيارات"
+
+#: .\templates\inventory.html:76 .\templates\inventory.html:289
+msgid "Brands"
+msgstr "العلامات التجارية"
+
+#: .\templates\inventory.html:108 .\templates\inventory.html:313
+msgid "Models"
+msgstr "المالوديلات"
+
+#: .\templates\inventory.html:154 .\templates\inventory.html:348
+msgid "Model Year"
+msgstr "سنة الصنع"
+
+#: .\templates\inventory.html:218 .\templates\inventory.html:396
+msgid "Search"
+msgstr "بحث"
+
+#: .\templates\inventory.html:231 .\templates\inventory.html:412
+msgid "Reset"
+msgstr "إعادة ضبط"

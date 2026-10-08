@@ -35,14 +35,18 @@
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
                     <i class="bi bi-exclamation-triangle display-1 text-secondary"></i>
 
+                    {% trans "Error" as default_error %}
+                    {% trans "Something went wrong" as default_title %}
+                    {% trans "An unexpected error occurred." as default_message %}
+
                     <!-- Dynamic error code -->
-                    <h1 class="display-1">{{ error_code|default:"{% trans 'Error' %}" }}</h1>
+                    <h1 class="display-1">{{ error_code|default:default_error }}</h1>
 
                     <!-- Dynamic error title -->
-                    <h1 class="mb-4">{{ error_title|default:"{% trans 'Something went wrong' %}" }}</h1>
+                    <h1 class="mb-4">{{ error_title|default:default_title }}</h1>
 
                     <!-- Dynamic error message -->
-                    <p class="mb-4">{{ error_message|default:"{% trans 'An unexpected error occurred.' %}" }}</p>
+                    <p class="mb-4">{{ error_message|default:default_message }}</p>
 
                     <a class="btn btn-primary rounded-pill py-3 px-5" href="{% url 'c7_motors:home' %}">{% trans "Go Back To Home" %}</a>
                 </div>
